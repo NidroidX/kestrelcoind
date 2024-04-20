@@ -4,25 +4,25 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/mempool"
 
-	"github.com/sedracoin/sedrad/app/protocol"
-	"github.com/sedracoin/sedrad/app/rpc"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/utxoindex"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	infrastructuredatabase "github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/NidroidX/kestrelcoind/app/protocol"
+	"github.com/NidroidX/kestrelcoind/app/rpc"
+	"github.com/NidroidX/kestrelcoind/domain"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/utxoindex"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	infrastructuredatabase "github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/addressmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/connmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/id"
+	"github.com/NidroidX/kestrelcoind/util/panics"
 )
 
-// ComponentManager is a wrapper for all the Sedrad Services
+// ComponentManager is a wrapper for all the kestrelcoind Services
 type ComponentManager struct {
 	cfg               *config.Config
 	addressManager    *addressmanager.AddressManager
@@ -34,14 +34,14 @@ type ComponentManager struct {
 	started, shutdown int32
 }
 
-// Start launches all the Sedrad Services.
+// Start launches all the kestrelcoind Services.
 func (a *ComponentManager) Start() {
 	// Already started?
 	if atomic.AddInt32(&a.started, 1) != 1 {
 		return
 	}
 
-	log.Trace("Starting sedrad")
+	log.Trace("Starting kestrelcoind")
 
 	err := a.netAdapter.Start()
 	if err != nil {
@@ -51,15 +51,15 @@ func (a *ComponentManager) Start() {
 	a.connectionManager.Start()
 }
 
-// Stop gracefully shuts down all the Sedrad Services.
+// Stop gracefully shuts down all the kestrelcoind Services.
 func (a *ComponentManager) Stop() {
 	// Make sure this only happens once.
 	if atomic.AddInt32(&a.shutdown, 1) != 1 {
-		log.Infof("sedrad is already in the process of shutting down")
+		log.Infof("kestrelcoind is already in the process of shutting down")
 		return
 	}
 
-	log.Warnf("sedrad shutting down")
+	log.Warnf("kestrelcoind shutting down")
 
 	a.connectionManager.Stop()
 
