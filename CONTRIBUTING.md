@@ -1,10 +1,10 @@
-# Contributing to sedrad
+# Contributing to kastrelcoind
 
 Any contribution to sedrad is very welcome.
 
 ## Getting started
 
-If you want to start contributing to sedrad and don't know where to start, you can pick an issue from
+If you want to start contributing to kastrelcoind and don't know where to start, you can pick an issue from
 the [list](https://github.com/NidroidX/kestrelcoind/issues).
 
 If you want to make a big change it's better to discuss it first by opening an issue or talk about it in
