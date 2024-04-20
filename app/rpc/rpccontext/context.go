@@ -1,13 +1,13 @@
 package rpccontext
 
 import (
-	"github.com/sedracoin/sedrad/app/protocol"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/utxoindex"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/app/protocol"
+	"github.com/NidroidX/kestrelcoind/domain"
+	"github.com/NidroidX/kestrelcoind/domain/utxoindex"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/addressmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/connmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
 )
 
 // Context represents the RPC context
