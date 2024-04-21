@@ -5,14 +5,14 @@ import (
 	"github.com/pkg/errors"
 	"math/big"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/blockheader"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/blockheader"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/hashes"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionid"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionid"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 )
 
 // DomainBlockToMsgBlock converts an externalapi.DomainBlock to MsgBlock
