@@ -1,9 +1,9 @@
 package multiset
 
 import (
-	"github.com/sedracoin/go-muhash"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/kestrelcoincoin/go-muhash"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 

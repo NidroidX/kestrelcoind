@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // BlockValidator exposes a set of validation classes, after which

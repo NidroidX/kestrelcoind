@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 type utxoCollection map[externalapi.DomainOutpoint]externalapi.UTXOEntry

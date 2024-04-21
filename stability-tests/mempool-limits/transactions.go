@@ -5,23 +5,23 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	utxopkg "github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	utxopkg "github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/rpcclient"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/mine"
+	"github.com/NidroidX/kestrelcoind/util"
 )
 
 const (
-	payAddress                       = "sedrasim:qzuax2jhawd354e54thhpd9m9wg03pdzwjlpr4vtq3k7xrpumhhtwa2hkr3ep"
+	payAddress                       = "kestrelcoinsim:qzuax2jhawd354e54thhpd9m9wg03pdzwjlpr4vtq3k7xrpumhhtwa2hkr3ep"
 	payAddressPrivateKey             = "05d8f681e954a550395ee2297fc1a14f6e801f554c0b9d48cd7165a7ea72ff77"
 	fundingCoinbaseTransactionAmount = 1000
 	outputsPerTransaction            = 3

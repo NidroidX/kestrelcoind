@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/mine"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/rpc"
+	"github.com/NidroidX/kestrelcoind/util/panics"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 	"github.com/pkg/errors"
 )
 

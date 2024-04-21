@@ -8,11 +8,11 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/server/grpcserver/protowire"
 	"github.com/pkg/errors"
 )
 
-func parseCommand(args []string, commandDescs []*commandDescription) (*protowire.SedradMessage, error) {
+func parseCommand(args []string, commandDescs []*commandDescription) (*protowire.kestrelcoindMessage, error) {
 	commandName, parameterStrings := args[0], args[1:]
 
 	var commandDesc *commandDescription
@@ -39,7 +39,7 @@ func parseCommand(args []string, commandDescs []*commandDescription) (*protowire
 		setField(commandValue, parameterValue, parameterDesc)
 	}
 
-	return generateSedradMessage(commandValue, commandDesc)
+	return generatekestrelcoindMessage(commandValue, commandDesc)
 }
 
 func setField(commandValue reflect.Value, parameterValue reflect.Value, parameterDesc *parameterDescription) {

@@ -3,13 +3,13 @@ package consensusstatemanager_test
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/multiset"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/testapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/multiset"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
 )
 
 func TestUTXOCommitment(t *testing.T) {

@@ -1,12 +1,12 @@
 package addressexchange
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/addressmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 // ReceiveAddressesContext is the interface for the context needed for the ReceiveAddresses flow.

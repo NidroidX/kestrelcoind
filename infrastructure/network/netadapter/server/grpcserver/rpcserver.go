@@ -1,9 +1,9 @@
 package grpcserver
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/server"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/NidroidX/kestrelcoind/util/panics"
 )
 
 type rpcServer struct {

@@ -2,18 +2,18 @@ package pruningmanager_test
 
 import (
 	"encoding/json"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
 	"os"
 	"path/filepath"
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 )
 
 type jsonBlock struct {

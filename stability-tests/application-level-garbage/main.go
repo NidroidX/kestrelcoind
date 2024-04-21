@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/standalone"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/standalone"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/util/panics"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 )
 
 func main() {
@@ -25,10 +25,10 @@ func main() {
 		profiling.Start(cfg.Profile, log)
 	}
 
-	sedradConfig := config.DefaultConfig()
-	sedradConfig.NetworkFlags = cfg.NetworkFlags
+	kestrelcoindConfig := config.DefaultConfig()
+	kestrelcoindConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(sedradConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(kestrelcoindConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating minimalNetAdapter: %+v", err)
 		backendLog.Close()

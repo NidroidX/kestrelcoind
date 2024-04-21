@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_IbdBlockLocatorHighestHash) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_IbdBlockLocatorHighestHash) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_IbdBlockLocatorHighestHash is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_IbdBlockLocatorHighestHash is nil")
 	}
 	return x.IbdBlockLocatorHighestHash.toAppMessgage()
 }
@@ -27,7 +27,7 @@ func (x *IbdBlockLocatorHighestHashMessage) toAppMessgage() (appmessage.Message,
 
 }
 
-func (x *SedradMessage_IbdBlockLocatorHighestHash) fromAppMessage(message *appmessage.MsgIBDBlockLocatorHighestHash) error {
+func (x *kestrelcoindMessage_IbdBlockLocatorHighestHash) fromAppMessage(message *appmessage.MsgIBDBlockLocatorHighestHash) error {
 	x.IbdBlockLocatorHighestHash = &IbdBlockLocatorHighestHashMessage{
 		HighestHash: domainHashToProto(message.HighestHash),
 	}

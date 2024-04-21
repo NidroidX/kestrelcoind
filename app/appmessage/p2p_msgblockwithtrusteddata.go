@@ -1,11 +1,11 @@
 package appmessage
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"math/big"
 )
 
-// MsgBlockWithTrustedData represents a sedra BlockWithTrustedData message
+// MsgBlockWithTrustedData represents a kestrelcoin BlockWithTrustedData message
 type MsgBlockWithTrustedData struct {
 	baseMessage
 

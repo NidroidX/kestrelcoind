@@ -3,16 +3,16 @@ package consensus
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashset"
-	"github.com/sedracoin/sedrad/util/staging"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/hashset"
+	"github.com/NidroidX/kestrelcoind/util/staging"
 	"io"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/testapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
 	"github.com/pkg/errors"
 )
 

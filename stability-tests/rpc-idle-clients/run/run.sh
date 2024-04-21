@@ -1,32 +1,32 @@
 #!/bin/bash
-rm -rf /tmp/sedrad-temp
+rm -rf /tmp/kestrelcoind-temp
 
 NUM_CLIENTS=128
-sedrad --devnet --appdir=/tmp/sedrad-temp --profile=6061 --rpcmaxwebsockets=$NUM_CLIENTS &
-SEDRAD_PID=$!
-SEDRAD_KILLED=0
-function killSedradIfNotKilled() {
-  if [ $SEDRAD_KILLED -eq 0 ]; then
-    kill $SEDRAD_PID
+kestrelcoind --devnet --appdir=/tmp/kestrelcoind-temp --profile=6061 --rpcmaxwebsockets=$NUM_CLIENTS &
+kestrelcoinD_PID=$!
+kestrelcoinD_KILLED=0
+function killkestrelcoindIfNotKilled() {
+  if [ $kestrelcoinD_KILLED -eq 0 ]; then
+    kill $kestrelcoinD_PID
   fi
 }
-trap "killSedradIfNotKilled" EXIT
+trap "killkestrelcoindIfNotKilled" EXIT
 
 sleep 1
 
 rpc-idle-clients --devnet --profile=7000 -n=$NUM_CLIENTS
 TEST_EXIT_CODE=$?
 
-kill $SEDRAD_PID
+kill $kestrelcoinD_PID
 
-wait $SEDRAD_PID
-SEDRAD_EXIT_CODE=$?
-SEDRAD_KILLED=1
+wait $kestrelcoinD_PID
+kestrelcoinD_EXIT_CODE=$?
+kestrelcoinD_KILLED=1
 
 echo "Exit code: $TEST_EXIT_CODE"
-echo "sedrad exit code: $SEDRAD_EXIT_CODE"
+echo "kestrelcoind exit code: $kestrelcoinD_EXIT_CODE"
 
-if [ $TEST_EXIT_CODE -eq 0 ] && [ $SEDRAD_EXIT_CODE -eq 0 ]; then
+if [ $TEST_EXIT_CODE -eq 0 ] && [ $kestrelcoinD_EXIT_CODE -eq 0 ]; then
   echo "rpc-idle-clients test: PASSED"
   exit 0
 fi

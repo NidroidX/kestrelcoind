@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
 	"github.com/pkg/errors"
 )
 

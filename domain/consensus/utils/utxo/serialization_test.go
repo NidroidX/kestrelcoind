@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 func Benchmark_serializeUTXO(b *testing.B) {

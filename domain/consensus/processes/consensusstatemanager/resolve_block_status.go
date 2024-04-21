@@ -3,12 +3,12 @@ package consensusstatemanager
 import (
 	"fmt"
 
-	"github.com/sedracoin/sedrad/util/staging"
+	"github.com/NidroidX/kestrelcoind/util/staging"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_RequestAnticone) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_RequestAnticone) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_RequestAnticone is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_RequestAnticone is nil")
 	}
 	return x.RequestAnticone.toAppMessage()
 }
@@ -33,7 +33,7 @@ func (x *RequestAnticoneMessage) toAppMessage() (appmessage.Message, error) {
 
 }
 
-func (x *SedradMessage_RequestAnticone) fromAppMessage(msgRequestPastDiff *appmessage.MsgRequestAnticone) error {
+func (x *kestrelcoindMessage_RequestAnticone) fromAppMessage(msgRequestPastDiff *appmessage.MsgRequestAnticone) error {
 	x.RequestAnticone = &RequestAnticoneMessage{
 		BlockHash:   domainHashToProto(msgRequestPastDiff.BlockHash),
 		ContextHash: domainHashToProto(msgRequestPastDiff.ContextHash),

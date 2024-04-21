@@ -3,8 +3,8 @@ package server
 import (
 	"context"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
 )
 
 type balancesType struct{ available, pending uint64 }
@@ -41,7 +41,7 @@ func (s *server) GetBalance(_ context.Context, _ *pb.GetBalanceRequest) (*pb.Get
 	i := 0
 	var available, pending uint64
 	for walletAddress, balances := range balancesMap {
-		address, err := libsedrawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, s.walletAddressPath(walletAddress), s.keysFile.ECDSA)
+		address, err := libkestrelcoinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, s.walletAddressPath(walletAddress), s.keysFile.ECDSA)
 		if err != nil {
 			return nil, err
 		}

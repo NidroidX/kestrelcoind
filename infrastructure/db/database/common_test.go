@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/db/database/ldb"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database/ldb"
 )
 
 type databasePrepareFunc func(t *testing.T, testName string) (db database.Database, name string, teardownFunc func())

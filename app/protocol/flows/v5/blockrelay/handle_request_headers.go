@@ -1,13 +1,13 @@
 package blockrelay
 
 import (
-	"github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/domain"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 // This constant must be equal at both syncer and syncee. Therefore, never (!!) change this constant unless a new p2p

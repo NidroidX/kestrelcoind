@@ -3,13 +3,13 @@ package consensusstatemanager_test
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
 )
 
 func TestVirtualDiff(t *testing.T) {

@@ -4,14 +4,14 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 
-	"github.com/sedracoin/sedrad/domain/consensus/database"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util/staging"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/database"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/util/staging"
 	"github.com/pkg/errors"
 )
 

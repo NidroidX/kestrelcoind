@@ -1,10 +1,10 @@
 package consensus
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/testapi"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
 )
 
 func (tc *testConsensus) DatabaseContext() model.DBManager {

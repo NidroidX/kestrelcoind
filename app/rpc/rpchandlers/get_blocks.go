@@ -1,11 +1,11 @@
 package rpchandlers
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/rpc/rpccontext"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/rpc/rpccontext"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/hashes"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 // HandleGetBlocks handles the respectively named RPC command

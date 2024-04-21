@@ -96,7 +96,7 @@ function. It accepts any io.Reader, but typically this will be a net.Conn to
 a remote node running a kestrelcoin peer. Example syntax is:
 
 	// Reads and validates the next kestrelcoin message from conn using the
-	// protocol version pver and the kestrelcoin network sedraNet. The returns
+	// protocol version pver and the kestrelcoin network kestrelcoinNet. The returns
 	// are a appmessage.Message, a []byte which contains the unmarshalled
 	// raw payload, and a possible error.
 	msg, rawPayload, err := appmessage.ReadMessage(conn, pver, kestrelcoinNet)
@@ -115,7 +115,7 @@ from a remote peer is:
 	msg := appmessage.NewMsgRequestAddresses()
 
 	// Writes a kestrelcoin message msg to conn using the protocol version
-	// pver, and the kestrelcoin network sedraNet. The return is a possible
+	// pver, and the kestrelcoin network kestrelcoinNet. The return is a possible
 	// error.
 	err := appmessage.WriteMessage(conn, msg, pver, kestrelcoinNet)
 	if err != nil {

@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/util"
 
-	"github.com/sedracoin/sedrad/version"
+	"github.com/NidroidX/kestrelcoind/version"
 
 	"github.com/pkg/errors"
 
 	_ "net/http/pprof"
 
-	"github.com/sedracoin/sedrad/infrastructure/os/signal"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/infrastructure/os/signal"
+	"github.com/NidroidX/kestrelcoind/util/panics"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 )
 
 func main() {

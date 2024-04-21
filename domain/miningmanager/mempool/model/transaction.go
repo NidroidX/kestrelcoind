@@ -1,6 +1,6 @@
 package model
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
 // Transaction represents a generic transaction either in the mempool's main TransactionPool or OrphanPool
 type Transaction interface {

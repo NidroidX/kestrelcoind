@@ -3,13 +3,13 @@ package mempool
 import (
 	"fmt"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/mempool/model"
 )
 
 type mempoolUTXOSet struct {

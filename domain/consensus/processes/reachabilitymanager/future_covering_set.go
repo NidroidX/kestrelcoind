@@ -1,8 +1,8 @@
 package reachabilitymanager
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // insertToFutureCoveringSet inserts the given block into this node's FutureCoveringSet

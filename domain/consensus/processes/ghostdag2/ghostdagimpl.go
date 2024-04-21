@@ -3,12 +3,12 @@ package ghostdag2
 import (
 	"sort"
 
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/NidroidX/kestrelcoind/util/difficulty"
 
 	"math/big"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 type ghostdagHelper struct {

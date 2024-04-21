@@ -20,147 +20,147 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type SedradMessage struct {
+type kestrelcoindMessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Payload:
-	//	*SedradMessage_Addresses
-	//	*SedradMessage_Block
-	//	*SedradMessage_Transaction
-	//	*SedradMessage_BlockLocator
-	//	*SedradMessage_RequestAddresses
-	//	*SedradMessage_RequestRelayBlocks
-	//	*SedradMessage_RequestTransactions
-	//	*SedradMessage_IbdBlock
-	//	*SedradMessage_InvRelayBlock
-	//	*SedradMessage_InvTransactions
-	//	*SedradMessage_Ping
-	//	*SedradMessage_Pong
-	//	*SedradMessage_Verack
-	//	*SedradMessage_Version
-	//	*SedradMessage_TransactionNotFound
-	//	*SedradMessage_Reject
-	//	*SedradMessage_PruningPointUtxoSetChunk
-	//	*SedradMessage_RequestIBDBlocks
-	//	*SedradMessage_UnexpectedPruningPoint
-	//	*SedradMessage_IbdBlockLocator
-	//	*SedradMessage_IbdBlockLocatorHighestHash
-	//	*SedradMessage_RequestNextPruningPointUtxoSetChunk
-	//	*SedradMessage_DonePruningPointUtxoSetChunks
-	//	*SedradMessage_IbdBlockLocatorHighestHashNotFound
-	//	*SedradMessage_BlockWithTrustedData
-	//	*SedradMessage_DoneBlocksWithTrustedData
-	//	*SedradMessage_RequestPruningPointAndItsAnticone
-	//	*SedradMessage_BlockHeaders
-	//	*SedradMessage_RequestNextHeaders
-	//	*SedradMessage_DoneHeaders
-	//	*SedradMessage_RequestPruningPointUTXOSet
-	//	*SedradMessage_RequestHeaders
-	//	*SedradMessage_RequestBlockLocator
-	//	*SedradMessage_PruningPoints
-	//	*SedradMessage_RequestPruningPointProof
-	//	*SedradMessage_PruningPointProof
-	//	*SedradMessage_Ready
-	//	*SedradMessage_BlockWithTrustedDataV4
-	//	*SedradMessage_TrustedData
-	//	*SedradMessage_RequestIBDChainBlockLocator
-	//	*SedradMessage_IbdChainBlockLocator
-	//	*SedradMessage_RequestAnticone
-	//	*SedradMessage_RequestNextPruningPointAndItsAnticoneBlocks
-	//	*SedradMessage_GetCurrentNetworkRequest
-	//	*SedradMessage_GetCurrentNetworkResponse
-	//	*SedradMessage_SubmitBlockRequest
-	//	*SedradMessage_SubmitBlockResponse
-	//	*SedradMessage_GetBlockTemplateRequest
-	//	*SedradMessage_GetBlockTemplateResponse
-	//	*SedradMessage_NotifyBlockAddedRequest
-	//	*SedradMessage_NotifyBlockAddedResponse
-	//	*SedradMessage_BlockAddedNotification
-	//	*SedradMessage_GetPeerAddressesRequest
-	//	*SedradMessage_GetPeerAddressesResponse
-	//	*SedradMessage_GetSelectedTipHashRequest
-	//	*SedradMessage_GetSelectedTipHashResponse
-	//	*SedradMessage_GetMempoolEntryRequest
-	//	*SedradMessage_GetMempoolEntryResponse
-	//	*SedradMessage_GetConnectedPeerInfoRequest
-	//	*SedradMessage_GetConnectedPeerInfoResponse
-	//	*SedradMessage_AddPeerRequest
-	//	*SedradMessage_AddPeerResponse
-	//	*SedradMessage_SubmitTransactionRequest
-	//	*SedradMessage_SubmitTransactionResponse
-	//	*SedradMessage_NotifyVirtualSelectedParentChainChangedRequest
-	//	*SedradMessage_NotifyVirtualSelectedParentChainChangedResponse
-	//	*SedradMessage_VirtualSelectedParentChainChangedNotification
-	//	*SedradMessage_GetBlockRequest
-	//	*SedradMessage_GetBlockResponse
-	//	*SedradMessage_GetSubnetworkRequest
-	//	*SedradMessage_GetSubnetworkResponse
-	//	*SedradMessage_GetVirtualSelectedParentChainFromBlockRequest
-	//	*SedradMessage_GetVirtualSelectedParentChainFromBlockResponse
-	//	*SedradMessage_GetBlocksRequest
-	//	*SedradMessage_GetBlocksResponse
-	//	*SedradMessage_GetBlockCountRequest
-	//	*SedradMessage_GetBlockCountResponse
-	//	*SedradMessage_GetBlockDagInfoRequest
-	//	*SedradMessage_GetBlockDagInfoResponse
-	//	*SedradMessage_ResolveFinalityConflictRequest
-	//	*SedradMessage_ResolveFinalityConflictResponse
-	//	*SedradMessage_NotifyFinalityConflictsRequest
-	//	*SedradMessage_NotifyFinalityConflictsResponse
-	//	*SedradMessage_FinalityConflictNotification
-	//	*SedradMessage_FinalityConflictResolvedNotification
-	//	*SedradMessage_GetMempoolEntriesRequest
-	//	*SedradMessage_GetMempoolEntriesResponse
-	//	*SedradMessage_ShutDownRequest
-	//	*SedradMessage_ShutDownResponse
-	//	*SedradMessage_GetHeadersRequest
-	//	*SedradMessage_GetHeadersResponse
-	//	*SedradMessage_NotifyUtxosChangedRequest
-	//	*SedradMessage_NotifyUtxosChangedResponse
-	//	*SedradMessage_UtxosChangedNotification
-	//	*SedradMessage_GetUtxosByAddressesRequest
-	//	*SedradMessage_GetUtxosByAddressesResponse
-	//	*SedradMessage_GetVirtualSelectedParentBlueScoreRequest
-	//	*SedradMessage_GetVirtualSelectedParentBlueScoreResponse
-	//	*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
-	//	*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
-	//	*SedradMessage_VirtualSelectedParentBlueScoreChangedNotification
-	//	*SedradMessage_BanRequest
-	//	*SedradMessage_BanResponse
-	//	*SedradMessage_UnbanRequest
-	//	*SedradMessage_UnbanResponse
-	//	*SedradMessage_GetInfoRequest
-	//	*SedradMessage_GetInfoResponse
-	//	*SedradMessage_StopNotifyingUtxosChangedRequest
-	//	*SedradMessage_StopNotifyingUtxosChangedResponse
-	//	*SedradMessage_NotifyPruningPointUTXOSetOverrideRequest
-	//	*SedradMessage_NotifyPruningPointUTXOSetOverrideResponse
-	//	*SedradMessage_PruningPointUTXOSetOverrideNotification
-	//	*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
-	//	*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
-	//	*SedradMessage_EstimateNetworkHashesPerSecondRequest
-	//	*SedradMessage_EstimateNetworkHashesPerSecondResponse
-	//	*SedradMessage_NotifyVirtualDaaScoreChangedRequest
-	//	*SedradMessage_NotifyVirtualDaaScoreChangedResponse
-	//	*SedradMessage_VirtualDaaScoreChangedNotification
-	//	*SedradMessage_GetBalanceByAddressRequest
-	//	*SedradMessage_GetBalanceByAddressResponse
-	//	*SedradMessage_GetBalancesByAddressesRequest
-	//	*SedradMessage_GetBalancesByAddressesResponse
-	//	*SedradMessage_NotifyNewBlockTemplateRequest
-	//	*SedradMessage_NotifyNewBlockTemplateResponse
-	//	*SedradMessage_NewBlockTemplateNotification
-	//	*SedradMessage_GetMempoolEntriesByAddressesRequest
-	//	*SedradMessage_GetMempoolEntriesByAddressesResponse
-	//	*SedradMessage_GetCoinSupplyRequest
-	//	*SedradMessage_GetCoinSupplyResponse
-	Payload isSedradMessage_Payload `protobuf_oneof:"payload"`
+	//	*kestrelcoindMessage_Addresses
+	//	*kestrelcoindMessage_Block
+	//	*kestrelcoindMessage_Transaction
+	//	*kestrelcoindMessage_BlockLocator
+	//	*kestrelcoindMessage_RequestAddresses
+	//	*kestrelcoindMessage_RequestRelayBlocks
+	//	*kestrelcoindMessage_RequestTransactions
+	//	*kestrelcoindMessage_IbdBlock
+	//	*kestrelcoindMessage_InvRelayBlock
+	//	*kestrelcoindMessage_InvTransactions
+	//	*kestrelcoindMessage_Ping
+	//	*kestrelcoindMessage_Pong
+	//	*kestrelcoindMessage_Verack
+	//	*kestrelcoindMessage_Version
+	//	*kestrelcoindMessage_TransactionNotFound
+	//	*kestrelcoindMessage_Reject
+	//	*kestrelcoindMessage_PruningPointUtxoSetChunk
+	//	*kestrelcoindMessage_RequestIBDBlocks
+	//	*kestrelcoindMessage_UnexpectedPruningPoint
+	//	*kestrelcoindMessage_IbdBlockLocator
+	//	*kestrelcoindMessage_IbdBlockLocatorHighestHash
+	//	*kestrelcoindMessage_RequestNextPruningPointUtxoSetChunk
+	//	*kestrelcoindMessage_DonePruningPointUtxoSetChunks
+	//	*kestrelcoindMessage_IbdBlockLocatorHighestHashNotFound
+	//	*kestrelcoindMessage_BlockWithTrustedData
+	//	*kestrelcoindMessage_DoneBlocksWithTrustedData
+	//	*kestrelcoindMessage_RequestPruningPointAndItsAnticone
+	//	*kestrelcoindMessage_BlockHeaders
+	//	*kestrelcoindMessage_RequestNextHeaders
+	//	*kestrelcoindMessage_DoneHeaders
+	//	*kestrelcoindMessage_RequestPruningPointUTXOSet
+	//	*kestrelcoindMessage_RequestHeaders
+	//	*kestrelcoindMessage_RequestBlockLocator
+	//	*kestrelcoindMessage_PruningPoints
+	//	*kestrelcoindMessage_RequestPruningPointProof
+	//	*kestrelcoindMessage_PruningPointProof
+	//	*kestrelcoindMessage_Ready
+	//	*kestrelcoindMessage_BlockWithTrustedDataV4
+	//	*kestrelcoindMessage_TrustedData
+	//	*kestrelcoindMessage_RequestIBDChainBlockLocator
+	//	*kestrelcoindMessage_IbdChainBlockLocator
+	//	*kestrelcoindMessage_RequestAnticone
+	//	*kestrelcoindMessage_RequestNextPruningPointAndItsAnticoneBlocks
+	//	*kestrelcoindMessage_GetCurrentNetworkRequest
+	//	*kestrelcoindMessage_GetCurrentNetworkResponse
+	//	*kestrelcoindMessage_SubmitBlockRequest
+	//	*kestrelcoindMessage_SubmitBlockResponse
+	//	*kestrelcoindMessage_GetBlockTemplateRequest
+	//	*kestrelcoindMessage_GetBlockTemplateResponse
+	//	*kestrelcoindMessage_NotifyBlockAddedRequest
+	//	*kestrelcoindMessage_NotifyBlockAddedResponse
+	//	*kestrelcoindMessage_BlockAddedNotification
+	//	*kestrelcoindMessage_GetPeerAddressesRequest
+	//	*kestrelcoindMessage_GetPeerAddressesResponse
+	//	*kestrelcoindMessage_GetSelectedTipHashRequest
+	//	*kestrelcoindMessage_GetSelectedTipHashResponse
+	//	*kestrelcoindMessage_GetMempoolEntryRequest
+	//	*kestrelcoindMessage_GetMempoolEntryResponse
+	//	*kestrelcoindMessage_GetConnectedPeerInfoRequest
+	//	*kestrelcoindMessage_GetConnectedPeerInfoResponse
+	//	*kestrelcoindMessage_AddPeerRequest
+	//	*kestrelcoindMessage_AddPeerResponse
+	//	*kestrelcoindMessage_SubmitTransactionRequest
+	//	*kestrelcoindMessage_SubmitTransactionResponse
+	//	*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedRequest
+	//	*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedResponse
+	//	*kestrelcoindMessage_VirtualSelectedParentChainChangedNotification
+	//	*kestrelcoindMessage_GetBlockRequest
+	//	*kestrelcoindMessage_GetBlockResponse
+	//	*kestrelcoindMessage_GetSubnetworkRequest
+	//	*kestrelcoindMessage_GetSubnetworkResponse
+	//	*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockRequest
+	//	*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockResponse
+	//	*kestrelcoindMessage_GetBlocksRequest
+	//	*kestrelcoindMessage_GetBlocksResponse
+	//	*kestrelcoindMessage_GetBlockCountRequest
+	//	*kestrelcoindMessage_GetBlockCountResponse
+	//	*kestrelcoindMessage_GetBlockDagInfoRequest
+	//	*kestrelcoindMessage_GetBlockDagInfoResponse
+	//	*kestrelcoindMessage_ResolveFinalityConflictRequest
+	//	*kestrelcoindMessage_ResolveFinalityConflictResponse
+	//	*kestrelcoindMessage_NotifyFinalityConflictsRequest
+	//	*kestrelcoindMessage_NotifyFinalityConflictsResponse
+	//	*kestrelcoindMessage_FinalityConflictNotification
+	//	*kestrelcoindMessage_FinalityConflictResolvedNotification
+	//	*kestrelcoindMessage_GetMempoolEntriesRequest
+	//	*kestrelcoindMessage_GetMempoolEntriesResponse
+	//	*kestrelcoindMessage_ShutDownRequest
+	//	*kestrelcoindMessage_ShutDownResponse
+	//	*kestrelcoindMessage_GetHeadersRequest
+	//	*kestrelcoindMessage_GetHeadersResponse
+	//	*kestrelcoindMessage_NotifyUtxosChangedRequest
+	//	*kestrelcoindMessage_NotifyUtxosChangedResponse
+	//	*kestrelcoindMessage_UtxosChangedNotification
+	//	*kestrelcoindMessage_GetUtxosByAddressesRequest
+	//	*kestrelcoindMessage_GetUtxosByAddressesResponse
+	//	*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreRequest
+	//	*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreResponse
+	//	*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
+	//	*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
+	//	*kestrelcoindMessage_VirtualSelectedParentBlueScoreChangedNotification
+	//	*kestrelcoindMessage_BanRequest
+	//	*kestrelcoindMessage_BanResponse
+	//	*kestrelcoindMessage_UnbanRequest
+	//	*kestrelcoindMessage_UnbanResponse
+	//	*kestrelcoindMessage_GetInfoRequest
+	//	*kestrelcoindMessage_GetInfoResponse
+	//	*kestrelcoindMessage_StopNotifyingUtxosChangedRequest
+	//	*kestrelcoindMessage_StopNotifyingUtxosChangedResponse
+	//	*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideRequest
+	//	*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideResponse
+	//	*kestrelcoindMessage_PruningPointUTXOSetOverrideNotification
+	//	*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
+	//	*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
+	//	*kestrelcoindMessage_EstimateNetworkHashesPerSecondRequest
+	//	*kestrelcoindMessage_EstimateNetworkHashesPerSecondResponse
+	//	*kestrelcoindMessage_NotifyVirtualDaaScoreChangedRequest
+	//	*kestrelcoindMessage_NotifyVirtualDaaScoreChangedResponse
+	//	*kestrelcoindMessage_VirtualDaaScoreChangedNotification
+	//	*kestrelcoindMessage_GetBalanceByAddressRequest
+	//	*kestrelcoindMessage_GetBalanceByAddressResponse
+	//	*kestrelcoindMessage_GetBalancesByAddressesRequest
+	//	*kestrelcoindMessage_GetBalancesByAddressesResponse
+	//	*kestrelcoindMessage_NotifyNewBlockTemplateRequest
+	//	*kestrelcoindMessage_NotifyNewBlockTemplateResponse
+	//	*kestrelcoindMessage_NewBlockTemplateNotification
+	//	*kestrelcoindMessage_GetMempoolEntriesByAddressesRequest
+	//	*kestrelcoindMessage_GetMempoolEntriesByAddressesResponse
+	//	*kestrelcoindMessage_GetCoinSupplyRequest
+	//	*kestrelcoindMessage_GetCoinSupplyResponse
+	Payload iskestrelcoindMessage_Payload `protobuf_oneof:"payload"`
 }
 
-func (x *SedradMessage) Reset() {
-	*x = SedradMessage{}
+func (x *kestrelcoindMessage) Reset() {
+	*x = kestrelcoindMessage{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_messages_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -168,13 +168,13 @@ func (x *SedradMessage) Reset() {
 	}
 }
 
-func (x *SedradMessage) String() string {
+func (x *kestrelcoindMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SedradMessage) ProtoMessage() {}
+func (*kestrelcoindMessage) ProtoMessage() {}
 
-func (x *SedradMessage) ProtoReflect() protoreflect.Message {
+func (x *kestrelcoindMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_messages_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -186,1711 +186,1711 @@ func (x *SedradMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SedradMessage.ProtoReflect.Descriptor instead.
-func (*SedradMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use kestrelcoindMessage.ProtoReflect.Descriptor instead.
+func (*kestrelcoindMessage) Descriptor() ([]byte, []int) {
 	return file_messages_proto_rawDescGZIP(), []int{0}
 }
 
-func (m *SedradMessage) GetPayload() isSedradMessage_Payload {
+func (m *kestrelcoindMessage) GetPayload() iskestrelcoindMessage_Payload {
 	if m != nil {
 		return m.Payload
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetAddresses() *AddressesMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Addresses); ok {
+func (x *kestrelcoindMessage) GetAddresses() *AddressesMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Addresses); ok {
 		return x.Addresses
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Block); ok {
+func (x *kestrelcoindMessage) GetBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Block); ok {
 		return x.Block
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetTransaction() *TransactionMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Transaction); ok {
+func (x *kestrelcoindMessage) GetTransaction() *TransactionMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Transaction); ok {
 		return x.Transaction
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBlockLocator() *BlockLocatorMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_BlockLocator); ok {
+func (x *kestrelcoindMessage) GetBlockLocator() *BlockLocatorMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_BlockLocator); ok {
 		return x.BlockLocator
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestAddresses() *RequestAddressesMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestAddresses); ok {
+func (x *kestrelcoindMessage) GetRequestAddresses() *RequestAddressesMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestAddresses); ok {
 		return x.RequestAddresses
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestRelayBlocks); ok {
+func (x *kestrelcoindMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestRelayBlocks); ok {
 		return x.RequestRelayBlocks
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestTransactions() *RequestTransactionsMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestTransactions); ok {
+func (x *kestrelcoindMessage) GetRequestTransactions() *RequestTransactionsMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestTransactions); ok {
 		return x.RequestTransactions
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetIbdBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_IbdBlock); ok {
+func (x *kestrelcoindMessage) GetIbdBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_IbdBlock); ok {
 		return x.IbdBlock
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetInvRelayBlock() *InvRelayBlockMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_InvRelayBlock); ok {
+func (x *kestrelcoindMessage) GetInvRelayBlock() *InvRelayBlockMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_InvRelayBlock); ok {
 		return x.InvRelayBlock
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetInvTransactions() *InvTransactionsMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_InvTransactions); ok {
+func (x *kestrelcoindMessage) GetInvTransactions() *InvTransactionsMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_InvTransactions); ok {
 		return x.InvTransactions
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetPing() *PingMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Ping); ok {
+func (x *kestrelcoindMessage) GetPing() *PingMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Ping); ok {
 		return x.Ping
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetPong() *PongMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Pong); ok {
+func (x *kestrelcoindMessage) GetPong() *PongMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Pong); ok {
 		return x.Pong
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetVerack() *VerackMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Verack); ok {
+func (x *kestrelcoindMessage) GetVerack() *VerackMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Verack); ok {
 		return x.Verack
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetVersion() *VersionMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Version); ok {
+func (x *kestrelcoindMessage) GetVersion() *VersionMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Version); ok {
 		return x.Version
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_TransactionNotFound); ok {
+func (x *kestrelcoindMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_TransactionNotFound); ok {
 		return x.TransactionNotFound
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetReject() *RejectMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Reject); ok {
+func (x *kestrelcoindMessage) GetReject() *RejectMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Reject); ok {
 		return x.Reject
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_PruningPointUtxoSetChunk); ok {
+func (x *kestrelcoindMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_PruningPointUtxoSetChunk); ok {
 		return x.PruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestIBDBlocks); ok {
+func (x *kestrelcoindMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestIBDBlocks); ok {
 		return x.RequestIBDBlocks
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_UnexpectedPruningPoint); ok {
+func (x *kestrelcoindMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_UnexpectedPruningPoint); ok {
 		return x.UnexpectedPruningPoint
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_IbdBlockLocator); ok {
+func (x *kestrelcoindMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_IbdBlockLocator); ok {
 		return x.IbdBlockLocator
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_IbdBlockLocatorHighestHash); ok {
+func (x *kestrelcoindMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_IbdBlockLocatorHighestHash); ok {
 		return x.IbdBlockLocatorHighestHash
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestNextPruningPointUtxoSetChunk); ok {
+func (x *kestrelcoindMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestNextPruningPointUtxoSetChunk); ok {
 		return x.RequestNextPruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_DonePruningPointUtxoSetChunks); ok {
+func (x *kestrelcoindMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_DonePruningPointUtxoSetChunks); ok {
 		return x.DonePruningPointUtxoSetChunks
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_IbdBlockLocatorHighestHashNotFound); ok {
+func (x *kestrelcoindMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_IbdBlockLocatorHighestHashNotFound); ok {
 		return x.IbdBlockLocatorHighestHashNotFound
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_BlockWithTrustedData); ok {
+func (x *kestrelcoindMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_BlockWithTrustedData); ok {
 		return x.BlockWithTrustedData
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_DoneBlocksWithTrustedData); ok {
+func (x *kestrelcoindMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_DoneBlocksWithTrustedData); ok {
 		return x.DoneBlocksWithTrustedData
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestPruningPointAndItsAnticone); ok {
+func (x *kestrelcoindMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestPruningPointAndItsAnticone); ok {
 		return x.RequestPruningPointAndItsAnticone
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBlockHeaders() *BlockHeadersMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_BlockHeaders); ok {
+func (x *kestrelcoindMessage) GetBlockHeaders() *BlockHeadersMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_BlockHeaders); ok {
 		return x.BlockHeaders
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestNextHeaders); ok {
+func (x *kestrelcoindMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestNextHeaders); ok {
 		return x.RequestNextHeaders
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetDoneHeaders() *DoneHeadersMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_DoneHeaders); ok {
+func (x *kestrelcoindMessage) GetDoneHeaders() *DoneHeadersMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_DoneHeaders); ok {
 		return x.DoneHeaders
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestPruningPointUTXOSet); ok {
+func (x *kestrelcoindMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestPruningPointUTXOSet); ok {
 		return x.RequestPruningPointUTXOSet
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestHeaders() *RequestHeadersMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestHeaders); ok {
+func (x *kestrelcoindMessage) GetRequestHeaders() *RequestHeadersMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestHeaders); ok {
 		return x.RequestHeaders
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestBlockLocator); ok {
+func (x *kestrelcoindMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestBlockLocator); ok {
 		return x.RequestBlockLocator
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetPruningPoints() *PruningPointsMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_PruningPoints); ok {
+func (x *kestrelcoindMessage) GetPruningPoints() *PruningPointsMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_PruningPoints); ok {
 		return x.PruningPoints
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestPruningPointProof); ok {
+func (x *kestrelcoindMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestPruningPointProof); ok {
 		return x.RequestPruningPointProof
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetPruningPointProof() *PruningPointProofMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_PruningPointProof); ok {
+func (x *kestrelcoindMessage) GetPruningPointProof() *PruningPointProofMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_PruningPointProof); ok {
 		return x.PruningPointProof
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetReady() *ReadyMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_Ready); ok {
+func (x *kestrelcoindMessage) GetReady() *ReadyMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_Ready); ok {
 		return x.Ready
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
-	if x, ok := x.GetPayload().(*SedradMessage_BlockWithTrustedDataV4); ok {
+func (x *kestrelcoindMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_BlockWithTrustedDataV4); ok {
 		return x.BlockWithTrustedDataV4
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetTrustedData() *TrustedDataMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_TrustedData); ok {
+func (x *kestrelcoindMessage) GetTrustedData() *TrustedDataMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_TrustedData); ok {
 		return x.TrustedData
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestIBDChainBlockLocator); ok {
+func (x *kestrelcoindMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestIBDChainBlockLocator); ok {
 		return x.RequestIBDChainBlockLocator
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_IbdChainBlockLocator); ok {
+func (x *kestrelcoindMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_IbdChainBlockLocator); ok {
 		return x.IbdChainBlockLocator
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestAnticone() *RequestAnticoneMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestAnticone); ok {
+func (x *kestrelcoindMessage) GetRequestAnticone() *RequestAnticoneMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestAnticone); ok {
 		return x.RequestAnticone
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
+func (x *kestrelcoindMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
 		return x.RequestNextPruningPointAndItsAnticoneBlocks
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetCurrentNetworkRequest); ok {
+func (x *kestrelcoindMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetCurrentNetworkRequest); ok {
 		return x.GetCurrentNetworkRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetCurrentNetworkResponse); ok {
+func (x *kestrelcoindMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetCurrentNetworkResponse); ok {
 		return x.GetCurrentNetworkResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_SubmitBlockRequest); ok {
+func (x *kestrelcoindMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_SubmitBlockRequest); ok {
 		return x.SubmitBlockRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_SubmitBlockResponse); ok {
+func (x *kestrelcoindMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_SubmitBlockResponse); ok {
 		return x.SubmitBlockResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockTemplateRequest); ok {
+func (x *kestrelcoindMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockTemplateRequest); ok {
 		return x.GetBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockTemplateResponse); ok {
+func (x *kestrelcoindMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockTemplateResponse); ok {
 		return x.GetBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyBlockAddedRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyBlockAddedRequest); ok {
 		return x.NotifyBlockAddedRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyBlockAddedResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyBlockAddedResponse); ok {
 		return x.NotifyBlockAddedResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_BlockAddedNotification); ok {
+func (x *kestrelcoindMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_BlockAddedNotification); ok {
 		return x.BlockAddedNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetPeerAddressesRequest); ok {
+func (x *kestrelcoindMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetPeerAddressesRequest); ok {
 		return x.GetPeerAddressesRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetPeerAddressesResponse); ok {
+func (x *kestrelcoindMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetPeerAddressesResponse); ok {
 		return x.GetPeerAddressesResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetSelectedTipHashRequest); ok {
+func (x *kestrelcoindMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetSelectedTipHashRequest); ok {
 		return x.GetSelectedTipHashRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetSelectedTipHashResponse); ok {
+func (x *kestrelcoindMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetSelectedTipHashResponse); ok {
 		return x.GetSelectedTipHashResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetMempoolEntryRequest); ok {
+func (x *kestrelcoindMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetMempoolEntryRequest); ok {
 		return x.GetMempoolEntryRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetMempoolEntryResponse); ok {
+func (x *kestrelcoindMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetMempoolEntryResponse); ok {
 		return x.GetMempoolEntryResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetConnectedPeerInfoRequest); ok {
+func (x *kestrelcoindMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetConnectedPeerInfoRequest); ok {
 		return x.GetConnectedPeerInfoRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetConnectedPeerInfoResponse); ok {
+func (x *kestrelcoindMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetConnectedPeerInfoResponse); ok {
 		return x.GetConnectedPeerInfoResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetAddPeerRequest() *AddPeerRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_AddPeerRequest); ok {
+func (x *kestrelcoindMessage) GetAddPeerRequest() *AddPeerRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_AddPeerRequest); ok {
 		return x.AddPeerRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetAddPeerResponse() *AddPeerResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_AddPeerResponse); ok {
+func (x *kestrelcoindMessage) GetAddPeerResponse() *AddPeerResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_AddPeerResponse); ok {
 		return x.AddPeerResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_SubmitTransactionRequest); ok {
+func (x *kestrelcoindMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_SubmitTransactionRequest); ok {
 		return x.SubmitTransactionRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_SubmitTransactionResponse); ok {
+func (x *kestrelcoindMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_SubmitTransactionResponse); ok {
 		return x.SubmitTransactionResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentChainChangedRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentChainChangedResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_VirtualSelectedParentChainChangedNotification); ok {
+func (x *kestrelcoindMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_VirtualSelectedParentChainChangedNotification); ok {
 		return x.VirtualSelectedParentChainChangedNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockRequest() *GetBlockRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockRequest); ok {
+func (x *kestrelcoindMessage) GetGetBlockRequest() *GetBlockRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockRequest); ok {
 		return x.GetBlockRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockResponse() *GetBlockResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockResponse); ok {
+func (x *kestrelcoindMessage) GetGetBlockResponse() *GetBlockResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockResponse); ok {
 		return x.GetBlockResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetSubnetworkRequest); ok {
+func (x *kestrelcoindMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetSubnetworkRequest); ok {
 		return x.GetSubnetworkRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetSubnetworkResponse); ok {
+func (x *kestrelcoindMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetSubnetworkResponse); ok {
 		return x.GetSubnetworkResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
+func (x *kestrelcoindMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
 		return x.GetVirtualSelectedParentChainFromBlockRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
+func (x *kestrelcoindMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
 		return x.GetVirtualSelectedParentChainFromBlockResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlocksRequest); ok {
+func (x *kestrelcoindMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlocksRequest); ok {
 		return x.GetBlocksRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlocksResponse); ok {
+func (x *kestrelcoindMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlocksResponse); ok {
 		return x.GetBlocksResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockCountRequest); ok {
+func (x *kestrelcoindMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockCountRequest); ok {
 		return x.GetBlockCountRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockCountResponse); ok {
+func (x *kestrelcoindMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockCountResponse); ok {
 		return x.GetBlockCountResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockDagInfoRequest); ok {
+func (x *kestrelcoindMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockDagInfoRequest); ok {
 		return x.GetBlockDagInfoRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBlockDagInfoResponse); ok {
+func (x *kestrelcoindMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBlockDagInfoResponse); ok {
 		return x.GetBlockDagInfoResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_ResolveFinalityConflictRequest); ok {
+func (x *kestrelcoindMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_ResolveFinalityConflictRequest); ok {
 		return x.ResolveFinalityConflictRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_ResolveFinalityConflictResponse); ok {
+func (x *kestrelcoindMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_ResolveFinalityConflictResponse); ok {
 		return x.ResolveFinalityConflictResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyFinalityConflictsRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyFinalityConflictsRequest); ok {
 		return x.NotifyFinalityConflictsRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyFinalityConflictsResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyFinalityConflictsResponse); ok {
 		return x.NotifyFinalityConflictsResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_FinalityConflictNotification); ok {
+func (x *kestrelcoindMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_FinalityConflictNotification); ok {
 		return x.FinalityConflictNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_FinalityConflictResolvedNotification); ok {
+func (x *kestrelcoindMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_FinalityConflictResolvedNotification); ok {
 		return x.FinalityConflictResolvedNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetMempoolEntriesRequest); ok {
+func (x *kestrelcoindMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetMempoolEntriesRequest); ok {
 		return x.GetMempoolEntriesRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetMempoolEntriesResponse); ok {
+func (x *kestrelcoindMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetMempoolEntriesResponse); ok {
 		return x.GetMempoolEntriesResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetShutDownRequest() *ShutDownRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_ShutDownRequest); ok {
+func (x *kestrelcoindMessage) GetShutDownRequest() *ShutDownRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_ShutDownRequest); ok {
 		return x.ShutDownRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetShutDownResponse() *ShutDownResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_ShutDownResponse); ok {
+func (x *kestrelcoindMessage) GetShutDownResponse() *ShutDownResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_ShutDownResponse); ok {
 		return x.ShutDownResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetHeadersRequest); ok {
+func (x *kestrelcoindMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetHeadersRequest); ok {
 		return x.GetHeadersRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetHeadersResponse); ok {
+func (x *kestrelcoindMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetHeadersResponse); ok {
 		return x.GetHeadersResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyUtxosChangedRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyUtxosChangedRequest); ok {
 		return x.NotifyUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyUtxosChangedResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyUtxosChangedResponse); ok {
 		return x.NotifyUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_UtxosChangedNotification); ok {
+func (x *kestrelcoindMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_UtxosChangedNotification); ok {
 		return x.UtxosChangedNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetUtxosByAddressesRequest); ok {
+func (x *kestrelcoindMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetUtxosByAddressesRequest); ok {
 		return x.GetUtxosByAddressesRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetUtxosByAddressesResponse); ok {
+func (x *kestrelcoindMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetUtxosByAddressesResponse); ok {
 		return x.GetUtxosByAddressesResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
+func (x *kestrelcoindMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
 		return x.GetVirtualSelectedParentBlueScoreRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
+func (x *kestrelcoindMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
 		return x.GetVirtualSelectedParentBlueScoreResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
+func (x *kestrelcoindMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
 		return x.VirtualSelectedParentBlueScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBanRequest() *BanRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_BanRequest); ok {
+func (x *kestrelcoindMessage) GetBanRequest() *BanRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_BanRequest); ok {
 		return x.BanRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetBanResponse() *BanResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_BanResponse); ok {
+func (x *kestrelcoindMessage) GetBanResponse() *BanResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_BanResponse); ok {
 		return x.BanResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetUnbanRequest() *UnbanRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_UnbanRequest); ok {
+func (x *kestrelcoindMessage) GetUnbanRequest() *UnbanRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_UnbanRequest); ok {
 		return x.UnbanRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetUnbanResponse() *UnbanResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_UnbanResponse); ok {
+func (x *kestrelcoindMessage) GetUnbanResponse() *UnbanResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_UnbanResponse); ok {
 		return x.UnbanResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetInfoRequest() *GetInfoRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetInfoRequest); ok {
+func (x *kestrelcoindMessage) GetGetInfoRequest() *GetInfoRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetInfoRequest); ok {
 		return x.GetInfoRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetInfoResponse() *GetInfoResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetInfoResponse); ok {
+func (x *kestrelcoindMessage) GetGetInfoResponse() *GetInfoResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetInfoResponse); ok {
 		return x.GetInfoResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_StopNotifyingUtxosChangedRequest); ok {
+func (x *kestrelcoindMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_StopNotifyingUtxosChangedRequest); ok {
 		return x.StopNotifyingUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_StopNotifyingUtxosChangedResponse); ok {
+func (x *kestrelcoindMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_StopNotifyingUtxosChangedResponse); ok {
 		return x.StopNotifyingUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
 		return x.NotifyPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
 		return x.NotifyPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_PruningPointUTXOSetOverrideNotification); ok {
+func (x *kestrelcoindMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_PruningPointUTXOSetOverrideNotification); ok {
 		return x.PruningPointUTXOSetOverrideNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
+func (x *kestrelcoindMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
+func (x *kestrelcoindMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_EstimateNetworkHashesPerSecondRequest); ok {
+func (x *kestrelcoindMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_EstimateNetworkHashesPerSecondRequest); ok {
 		return x.EstimateNetworkHashesPerSecondRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_EstimateNetworkHashesPerSecondResponse); ok {
+func (x *kestrelcoindMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_EstimateNetworkHashesPerSecondResponse); ok {
 		return x.EstimateNetworkHashesPerSecondResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyVirtualDaaScoreChangedRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyVirtualDaaScoreChangedRequest); ok {
 		return x.NotifyVirtualDaaScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyVirtualDaaScoreChangedResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyVirtualDaaScoreChangedResponse); ok {
 		return x.NotifyVirtualDaaScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_VirtualDaaScoreChangedNotification); ok {
+func (x *kestrelcoindMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_VirtualDaaScoreChangedNotification); ok {
 		return x.VirtualDaaScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBalanceByAddressRequest); ok {
+func (x *kestrelcoindMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBalanceByAddressRequest); ok {
 		return x.GetBalanceByAddressRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBalanceByAddressResponse); ok {
+func (x *kestrelcoindMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBalanceByAddressResponse); ok {
 		return x.GetBalanceByAddressResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBalancesByAddressesRequest); ok {
+func (x *kestrelcoindMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBalancesByAddressesRequest); ok {
 		return x.GetBalancesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetBalancesByAddressesResponse); ok {
+func (x *kestrelcoindMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetBalancesByAddressesResponse); ok {
 		return x.GetBalancesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyNewBlockTemplateRequest); ok {
+func (x *kestrelcoindMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyNewBlockTemplateRequest); ok {
 		return x.NotifyNewBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NotifyNewBlockTemplateResponse); ok {
+func (x *kestrelcoindMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NotifyNewBlockTemplateResponse); ok {
 		return x.NotifyNewBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_NewBlockTemplateNotification); ok {
+func (x *kestrelcoindMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_NewBlockTemplateNotification); ok {
 		return x.NewBlockTemplateNotification
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetMempoolEntriesByAddressesRequest); ok {
+func (x *kestrelcoindMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetMempoolEntriesByAddressesRequest); ok {
 		return x.GetMempoolEntriesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetMempoolEntriesByAddressesResponse); ok {
+func (x *kestrelcoindMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetMempoolEntriesByAddressesResponse); ok {
 		return x.GetMempoolEntriesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetCoinSupplyRequest); ok {
+func (x *kestrelcoindMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetCoinSupplyRequest); ok {
 		return x.GetCoinSupplyRequest
 	}
 	return nil
 }
 
-func (x *SedradMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
-	if x, ok := x.GetPayload().(*SedradMessage_GetCoinSupplyResponse); ok {
+func (x *kestrelcoindMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
+	if x, ok := x.GetPayload().(*kestrelcoindMessage_GetCoinSupplyResponse); ok {
 		return x.GetCoinSupplyResponse
 	}
 	return nil
 }
 
-type isSedradMessage_Payload interface {
-	isSedradMessage_Payload()
+type iskestrelcoindMessage_Payload interface {
+	iskestrelcoindMessage_Payload()
 }
 
-type SedradMessage_Addresses struct {
+type kestrelcoindMessage_Addresses struct {
 	Addresses *AddressesMessage `protobuf:"bytes,1,opt,name=addresses,proto3,oneof"`
 }
 
-type SedradMessage_Block struct {
+type kestrelcoindMessage_Block struct {
 	Block *BlockMessage `protobuf:"bytes,2,opt,name=block,proto3,oneof"`
 }
 
-type SedradMessage_Transaction struct {
+type kestrelcoindMessage_Transaction struct {
 	Transaction *TransactionMessage `protobuf:"bytes,3,opt,name=transaction,proto3,oneof"`
 }
 
-type SedradMessage_BlockLocator struct {
+type kestrelcoindMessage_BlockLocator struct {
 	BlockLocator *BlockLocatorMessage `protobuf:"bytes,5,opt,name=blockLocator,proto3,oneof"`
 }
 
-type SedradMessage_RequestAddresses struct {
+type kestrelcoindMessage_RequestAddresses struct {
 	RequestAddresses *RequestAddressesMessage `protobuf:"bytes,6,opt,name=requestAddresses,proto3,oneof"`
 }
 
-type SedradMessage_RequestRelayBlocks struct {
+type kestrelcoindMessage_RequestRelayBlocks struct {
 	RequestRelayBlocks *RequestRelayBlocksMessage `protobuf:"bytes,10,opt,name=requestRelayBlocks,proto3,oneof"`
 }
 
-type SedradMessage_RequestTransactions struct {
+type kestrelcoindMessage_RequestTransactions struct {
 	RequestTransactions *RequestTransactionsMessage `protobuf:"bytes,12,opt,name=requestTransactions,proto3,oneof"`
 }
 
-type SedradMessage_IbdBlock struct {
+type kestrelcoindMessage_IbdBlock struct {
 	IbdBlock *BlockMessage `protobuf:"bytes,13,opt,name=ibdBlock,proto3,oneof"`
 }
 
-type SedradMessage_InvRelayBlock struct {
+type kestrelcoindMessage_InvRelayBlock struct {
 	InvRelayBlock *InvRelayBlockMessage `protobuf:"bytes,14,opt,name=invRelayBlock,proto3,oneof"`
 }
 
-type SedradMessage_InvTransactions struct {
+type kestrelcoindMessage_InvTransactions struct {
 	InvTransactions *InvTransactionsMessage `protobuf:"bytes,15,opt,name=invTransactions,proto3,oneof"`
 }
 
-type SedradMessage_Ping struct {
+type kestrelcoindMessage_Ping struct {
 	Ping *PingMessage `protobuf:"bytes,16,opt,name=ping,proto3,oneof"`
 }
 
-type SedradMessage_Pong struct {
+type kestrelcoindMessage_Pong struct {
 	Pong *PongMessage `protobuf:"bytes,17,opt,name=pong,proto3,oneof"`
 }
 
-type SedradMessage_Verack struct {
+type kestrelcoindMessage_Verack struct {
 	Verack *VerackMessage `protobuf:"bytes,19,opt,name=verack,proto3,oneof"`
 }
 
-type SedradMessage_Version struct {
+type kestrelcoindMessage_Version struct {
 	Version *VersionMessage `protobuf:"bytes,20,opt,name=version,proto3,oneof"`
 }
 
-type SedradMessage_TransactionNotFound struct {
+type kestrelcoindMessage_TransactionNotFound struct {
 	TransactionNotFound *TransactionNotFoundMessage `protobuf:"bytes,21,opt,name=transactionNotFound,proto3,oneof"`
 }
 
-type SedradMessage_Reject struct {
+type kestrelcoindMessage_Reject struct {
 	Reject *RejectMessage `protobuf:"bytes,22,opt,name=reject,proto3,oneof"`
 }
 
-type SedradMessage_PruningPointUtxoSetChunk struct {
+type kestrelcoindMessage_PruningPointUtxoSetChunk struct {
 	PruningPointUtxoSetChunk *PruningPointUtxoSetChunkMessage `protobuf:"bytes,25,opt,name=pruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type SedradMessage_RequestIBDBlocks struct {
+type kestrelcoindMessage_RequestIBDBlocks struct {
 	RequestIBDBlocks *RequestIBDBlocksMessage `protobuf:"bytes,26,opt,name=requestIBDBlocks,proto3,oneof"`
 }
 
-type SedradMessage_UnexpectedPruningPoint struct {
+type kestrelcoindMessage_UnexpectedPruningPoint struct {
 	UnexpectedPruningPoint *UnexpectedPruningPointMessage `protobuf:"bytes,27,opt,name=unexpectedPruningPoint,proto3,oneof"`
 }
 
-type SedradMessage_IbdBlockLocator struct {
+type kestrelcoindMessage_IbdBlockLocator struct {
 	IbdBlockLocator *IbdBlockLocatorMessage `protobuf:"bytes,30,opt,name=ibdBlockLocator,proto3,oneof"`
 }
 
-type SedradMessage_IbdBlockLocatorHighestHash struct {
+type kestrelcoindMessage_IbdBlockLocatorHighestHash struct {
 	IbdBlockLocatorHighestHash *IbdBlockLocatorHighestHashMessage `protobuf:"bytes,31,opt,name=ibdBlockLocatorHighestHash,proto3,oneof"`
 }
 
-type SedradMessage_RequestNextPruningPointUtxoSetChunk struct {
+type kestrelcoindMessage_RequestNextPruningPointUtxoSetChunk struct {
 	RequestNextPruningPointUtxoSetChunk *RequestNextPruningPointUtxoSetChunkMessage `protobuf:"bytes,33,opt,name=requestNextPruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type SedradMessage_DonePruningPointUtxoSetChunks struct {
+type kestrelcoindMessage_DonePruningPointUtxoSetChunks struct {
 	DonePruningPointUtxoSetChunks *DonePruningPointUtxoSetChunksMessage `protobuf:"bytes,34,opt,name=donePruningPointUtxoSetChunks,proto3,oneof"`
 }
 
-type SedradMessage_IbdBlockLocatorHighestHashNotFound struct {
+type kestrelcoindMessage_IbdBlockLocatorHighestHashNotFound struct {
 	IbdBlockLocatorHighestHashNotFound *IbdBlockLocatorHighestHashNotFoundMessage `protobuf:"bytes,35,opt,name=ibdBlockLocatorHighestHashNotFound,proto3,oneof"`
 }
 
-type SedradMessage_BlockWithTrustedData struct {
+type kestrelcoindMessage_BlockWithTrustedData struct {
 	BlockWithTrustedData *BlockWithTrustedDataMessage `protobuf:"bytes,36,opt,name=blockWithTrustedData,proto3,oneof"`
 }
 
-type SedradMessage_DoneBlocksWithTrustedData struct {
+type kestrelcoindMessage_DoneBlocksWithTrustedData struct {
 	DoneBlocksWithTrustedData *DoneBlocksWithTrustedDataMessage `protobuf:"bytes,37,opt,name=doneBlocksWithTrustedData,proto3,oneof"`
 }
 
-type SedradMessage_RequestPruningPointAndItsAnticone struct {
+type kestrelcoindMessage_RequestPruningPointAndItsAnticone struct {
 	RequestPruningPointAndItsAnticone *RequestPruningPointAndItsAnticoneMessage `protobuf:"bytes,40,opt,name=requestPruningPointAndItsAnticone,proto3,oneof"`
 }
 
-type SedradMessage_BlockHeaders struct {
+type kestrelcoindMessage_BlockHeaders struct {
 	BlockHeaders *BlockHeadersMessage `protobuf:"bytes,41,opt,name=blockHeaders,proto3,oneof"`
 }
 
-type SedradMessage_RequestNextHeaders struct {
+type kestrelcoindMessage_RequestNextHeaders struct {
 	RequestNextHeaders *RequestNextHeadersMessage `protobuf:"bytes,42,opt,name=requestNextHeaders,proto3,oneof"`
 }
 
-type SedradMessage_DoneHeaders struct {
+type kestrelcoindMessage_DoneHeaders struct {
 	DoneHeaders *DoneHeadersMessage `protobuf:"bytes,43,opt,name=DoneHeaders,proto3,oneof"`
 }
 
-type SedradMessage_RequestPruningPointUTXOSet struct {
+type kestrelcoindMessage_RequestPruningPointUTXOSet struct {
 	RequestPruningPointUTXOSet *RequestPruningPointUTXOSetMessage `protobuf:"bytes,44,opt,name=requestPruningPointUTXOSet,proto3,oneof"`
 }
 
-type SedradMessage_RequestHeaders struct {
+type kestrelcoindMessage_RequestHeaders struct {
 	RequestHeaders *RequestHeadersMessage `protobuf:"bytes,45,opt,name=requestHeaders,proto3,oneof"`
 }
 
-type SedradMessage_RequestBlockLocator struct {
+type kestrelcoindMessage_RequestBlockLocator struct {
 	RequestBlockLocator *RequestBlockLocatorMessage `protobuf:"bytes,46,opt,name=requestBlockLocator,proto3,oneof"`
 }
 
-type SedradMessage_PruningPoints struct {
+type kestrelcoindMessage_PruningPoints struct {
 	PruningPoints *PruningPointsMessage `protobuf:"bytes,47,opt,name=pruningPoints,proto3,oneof"`
 }
 
-type SedradMessage_RequestPruningPointProof struct {
+type kestrelcoindMessage_RequestPruningPointProof struct {
 	RequestPruningPointProof *RequestPruningPointProofMessage `protobuf:"bytes,48,opt,name=requestPruningPointProof,proto3,oneof"`
 }
 
-type SedradMessage_PruningPointProof struct {
+type kestrelcoindMessage_PruningPointProof struct {
 	PruningPointProof *PruningPointProofMessage `protobuf:"bytes,49,opt,name=pruningPointProof,proto3,oneof"`
 }
 
-type SedradMessage_Ready struct {
+type kestrelcoindMessage_Ready struct {
 	Ready *ReadyMessage `protobuf:"bytes,50,opt,name=ready,proto3,oneof"`
 }
 
-type SedradMessage_BlockWithTrustedDataV4 struct {
+type kestrelcoindMessage_BlockWithTrustedDataV4 struct {
 	BlockWithTrustedDataV4 *BlockWithTrustedDataV4Message `protobuf:"bytes,51,opt,name=blockWithTrustedDataV4,proto3,oneof"`
 }
 
-type SedradMessage_TrustedData struct {
+type kestrelcoindMessage_TrustedData struct {
 	TrustedData *TrustedDataMessage `protobuf:"bytes,52,opt,name=trustedData,proto3,oneof"`
 }
 
-type SedradMessage_RequestIBDChainBlockLocator struct {
+type kestrelcoindMessage_RequestIBDChainBlockLocator struct {
 	RequestIBDChainBlockLocator *RequestIBDChainBlockLocatorMessage `protobuf:"bytes,53,opt,name=requestIBDChainBlockLocator,proto3,oneof"`
 }
 
-type SedradMessage_IbdChainBlockLocator struct {
+type kestrelcoindMessage_IbdChainBlockLocator struct {
 	IbdChainBlockLocator *IbdChainBlockLocatorMessage `protobuf:"bytes,54,opt,name=ibdChainBlockLocator,proto3,oneof"`
 }
 
-type SedradMessage_RequestAnticone struct {
+type kestrelcoindMessage_RequestAnticone struct {
 	RequestAnticone *RequestAnticoneMessage `protobuf:"bytes,55,opt,name=requestAnticone,proto3,oneof"`
 }
 
-type SedradMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
+type kestrelcoindMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
 	RequestNextPruningPointAndItsAnticoneBlocks *RequestNextPruningPointAndItsAnticoneBlocksMessage `protobuf:"bytes,56,opt,name=requestNextPruningPointAndItsAnticoneBlocks,proto3,oneof"`
 }
 
-type SedradMessage_GetCurrentNetworkRequest struct {
+type kestrelcoindMessage_GetCurrentNetworkRequest struct {
 	GetCurrentNetworkRequest *GetCurrentNetworkRequestMessage `protobuf:"bytes,1001,opt,name=getCurrentNetworkRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetCurrentNetworkResponse struct {
+type kestrelcoindMessage_GetCurrentNetworkResponse struct {
 	GetCurrentNetworkResponse *GetCurrentNetworkResponseMessage `protobuf:"bytes,1002,opt,name=getCurrentNetworkResponse,proto3,oneof"`
 }
 
-type SedradMessage_SubmitBlockRequest struct {
+type kestrelcoindMessage_SubmitBlockRequest struct {
 	SubmitBlockRequest *SubmitBlockRequestMessage `protobuf:"bytes,1003,opt,name=submitBlockRequest,proto3,oneof"`
 }
 
-type SedradMessage_SubmitBlockResponse struct {
+type kestrelcoindMessage_SubmitBlockResponse struct {
 	SubmitBlockResponse *SubmitBlockResponseMessage `protobuf:"bytes,1004,opt,name=submitBlockResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockTemplateRequest struct {
+type kestrelcoindMessage_GetBlockTemplateRequest struct {
 	GetBlockTemplateRequest *GetBlockTemplateRequestMessage `protobuf:"bytes,1005,opt,name=getBlockTemplateRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockTemplateResponse struct {
+type kestrelcoindMessage_GetBlockTemplateResponse struct {
 	GetBlockTemplateResponse *GetBlockTemplateResponseMessage `protobuf:"bytes,1006,opt,name=getBlockTemplateResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyBlockAddedRequest struct {
+type kestrelcoindMessage_NotifyBlockAddedRequest struct {
 	NotifyBlockAddedRequest *NotifyBlockAddedRequestMessage `protobuf:"bytes,1007,opt,name=notifyBlockAddedRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyBlockAddedResponse struct {
+type kestrelcoindMessage_NotifyBlockAddedResponse struct {
 	NotifyBlockAddedResponse *NotifyBlockAddedResponseMessage `protobuf:"bytes,1008,opt,name=notifyBlockAddedResponse,proto3,oneof"`
 }
 
-type SedradMessage_BlockAddedNotification struct {
+type kestrelcoindMessage_BlockAddedNotification struct {
 	BlockAddedNotification *BlockAddedNotificationMessage `protobuf:"bytes,1009,opt,name=blockAddedNotification,proto3,oneof"`
 }
 
-type SedradMessage_GetPeerAddressesRequest struct {
+type kestrelcoindMessage_GetPeerAddressesRequest struct {
 	GetPeerAddressesRequest *GetPeerAddressesRequestMessage `protobuf:"bytes,1010,opt,name=getPeerAddressesRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetPeerAddressesResponse struct {
+type kestrelcoindMessage_GetPeerAddressesResponse struct {
 	GetPeerAddressesResponse *GetPeerAddressesResponseMessage `protobuf:"bytes,1011,opt,name=getPeerAddressesResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetSelectedTipHashRequest struct {
+type kestrelcoindMessage_GetSelectedTipHashRequest struct {
 	GetSelectedTipHashRequest *GetSelectedTipHashRequestMessage `protobuf:"bytes,1012,opt,name=getSelectedTipHashRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetSelectedTipHashResponse struct {
+type kestrelcoindMessage_GetSelectedTipHashResponse struct {
 	GetSelectedTipHashResponse *GetSelectedTipHashResponseMessage `protobuf:"bytes,1013,opt,name=getSelectedTipHashResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetMempoolEntryRequest struct {
+type kestrelcoindMessage_GetMempoolEntryRequest struct {
 	GetMempoolEntryRequest *GetMempoolEntryRequestMessage `protobuf:"bytes,1014,opt,name=getMempoolEntryRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetMempoolEntryResponse struct {
+type kestrelcoindMessage_GetMempoolEntryResponse struct {
 	GetMempoolEntryResponse *GetMempoolEntryResponseMessage `protobuf:"bytes,1015,opt,name=getMempoolEntryResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetConnectedPeerInfoRequest struct {
+type kestrelcoindMessage_GetConnectedPeerInfoRequest struct {
 	GetConnectedPeerInfoRequest *GetConnectedPeerInfoRequestMessage `protobuf:"bytes,1016,opt,name=getConnectedPeerInfoRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetConnectedPeerInfoResponse struct {
+type kestrelcoindMessage_GetConnectedPeerInfoResponse struct {
 	GetConnectedPeerInfoResponse *GetConnectedPeerInfoResponseMessage `protobuf:"bytes,1017,opt,name=getConnectedPeerInfoResponse,proto3,oneof"`
 }
 
-type SedradMessage_AddPeerRequest struct {
+type kestrelcoindMessage_AddPeerRequest struct {
 	AddPeerRequest *AddPeerRequestMessage `protobuf:"bytes,1018,opt,name=addPeerRequest,proto3,oneof"`
 }
 
-type SedradMessage_AddPeerResponse struct {
+type kestrelcoindMessage_AddPeerResponse struct {
 	AddPeerResponse *AddPeerResponseMessage `protobuf:"bytes,1019,opt,name=addPeerResponse,proto3,oneof"`
 }
 
-type SedradMessage_SubmitTransactionRequest struct {
+type kestrelcoindMessage_SubmitTransactionRequest struct {
 	SubmitTransactionRequest *SubmitTransactionRequestMessage `protobuf:"bytes,1020,opt,name=submitTransactionRequest,proto3,oneof"`
 }
 
-type SedradMessage_SubmitTransactionResponse struct {
+type kestrelcoindMessage_SubmitTransactionResponse struct {
 	SubmitTransactionResponse *SubmitTransactionResponseMessage `protobuf:"bytes,1021,opt,name=submitTransactionResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
+type kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
 	NotifyVirtualSelectedParentChainChangedRequest *NotifyVirtualSelectedParentChainChangedRequestMessage `protobuf:"bytes,1022,opt,name=notifyVirtualSelectedParentChainChangedRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
+type kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
 	NotifyVirtualSelectedParentChainChangedResponse *NotifyVirtualSelectedParentChainChangedResponseMessage `protobuf:"bytes,1023,opt,name=notifyVirtualSelectedParentChainChangedResponse,proto3,oneof"`
 }
 
-type SedradMessage_VirtualSelectedParentChainChangedNotification struct {
+type kestrelcoindMessage_VirtualSelectedParentChainChangedNotification struct {
 	VirtualSelectedParentChainChangedNotification *VirtualSelectedParentChainChangedNotificationMessage `protobuf:"bytes,1024,opt,name=virtualSelectedParentChainChangedNotification,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockRequest struct {
+type kestrelcoindMessage_GetBlockRequest struct {
 	GetBlockRequest *GetBlockRequestMessage `protobuf:"bytes,1025,opt,name=getBlockRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockResponse struct {
+type kestrelcoindMessage_GetBlockResponse struct {
 	GetBlockResponse *GetBlockResponseMessage `protobuf:"bytes,1026,opt,name=getBlockResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetSubnetworkRequest struct {
+type kestrelcoindMessage_GetSubnetworkRequest struct {
 	GetSubnetworkRequest *GetSubnetworkRequestMessage `protobuf:"bytes,1027,opt,name=getSubnetworkRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetSubnetworkResponse struct {
+type kestrelcoindMessage_GetSubnetworkResponse struct {
 	GetSubnetworkResponse *GetSubnetworkResponseMessage `protobuf:"bytes,1028,opt,name=getSubnetworkResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
+type kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
 	GetVirtualSelectedParentChainFromBlockRequest *GetVirtualSelectedParentChainFromBlockRequestMessage `protobuf:"bytes,1029,opt,name=getVirtualSelectedParentChainFromBlockRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
+type kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
 	GetVirtualSelectedParentChainFromBlockResponse *GetVirtualSelectedParentChainFromBlockResponseMessage `protobuf:"bytes,1030,opt,name=getVirtualSelectedParentChainFromBlockResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetBlocksRequest struct {
+type kestrelcoindMessage_GetBlocksRequest struct {
 	GetBlocksRequest *GetBlocksRequestMessage `protobuf:"bytes,1031,opt,name=getBlocksRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetBlocksResponse struct {
+type kestrelcoindMessage_GetBlocksResponse struct {
 	GetBlocksResponse *GetBlocksResponseMessage `protobuf:"bytes,1032,opt,name=getBlocksResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockCountRequest struct {
+type kestrelcoindMessage_GetBlockCountRequest struct {
 	GetBlockCountRequest *GetBlockCountRequestMessage `protobuf:"bytes,1033,opt,name=getBlockCountRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockCountResponse struct {
+type kestrelcoindMessage_GetBlockCountResponse struct {
 	GetBlockCountResponse *GetBlockCountResponseMessage `protobuf:"bytes,1034,opt,name=getBlockCountResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockDagInfoRequest struct {
+type kestrelcoindMessage_GetBlockDagInfoRequest struct {
 	GetBlockDagInfoRequest *GetBlockDagInfoRequestMessage `protobuf:"bytes,1035,opt,name=getBlockDagInfoRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetBlockDagInfoResponse struct {
+type kestrelcoindMessage_GetBlockDagInfoResponse struct {
 	GetBlockDagInfoResponse *GetBlockDagInfoResponseMessage `protobuf:"bytes,1036,opt,name=getBlockDagInfoResponse,proto3,oneof"`
 }
 
-type SedradMessage_ResolveFinalityConflictRequest struct {
+type kestrelcoindMessage_ResolveFinalityConflictRequest struct {
 	ResolveFinalityConflictRequest *ResolveFinalityConflictRequestMessage `protobuf:"bytes,1037,opt,name=resolveFinalityConflictRequest,proto3,oneof"`
 }
 
-type SedradMessage_ResolveFinalityConflictResponse struct {
+type kestrelcoindMessage_ResolveFinalityConflictResponse struct {
 	ResolveFinalityConflictResponse *ResolveFinalityConflictResponseMessage `protobuf:"bytes,1038,opt,name=resolveFinalityConflictResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyFinalityConflictsRequest struct {
+type kestrelcoindMessage_NotifyFinalityConflictsRequest struct {
 	NotifyFinalityConflictsRequest *NotifyFinalityConflictsRequestMessage `protobuf:"bytes,1039,opt,name=notifyFinalityConflictsRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyFinalityConflictsResponse struct {
+type kestrelcoindMessage_NotifyFinalityConflictsResponse struct {
 	NotifyFinalityConflictsResponse *NotifyFinalityConflictsResponseMessage `protobuf:"bytes,1040,opt,name=notifyFinalityConflictsResponse,proto3,oneof"`
 }
 
-type SedradMessage_FinalityConflictNotification struct {
+type kestrelcoindMessage_FinalityConflictNotification struct {
 	FinalityConflictNotification *FinalityConflictNotificationMessage `protobuf:"bytes,1041,opt,name=finalityConflictNotification,proto3,oneof"`
 }
 
-type SedradMessage_FinalityConflictResolvedNotification struct {
+type kestrelcoindMessage_FinalityConflictResolvedNotification struct {
 	FinalityConflictResolvedNotification *FinalityConflictResolvedNotificationMessage `protobuf:"bytes,1042,opt,name=finalityConflictResolvedNotification,proto3,oneof"`
 }
 
-type SedradMessage_GetMempoolEntriesRequest struct {
+type kestrelcoindMessage_GetMempoolEntriesRequest struct {
 	GetMempoolEntriesRequest *GetMempoolEntriesRequestMessage `protobuf:"bytes,1043,opt,name=getMempoolEntriesRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetMempoolEntriesResponse struct {
+type kestrelcoindMessage_GetMempoolEntriesResponse struct {
 	GetMempoolEntriesResponse *GetMempoolEntriesResponseMessage `protobuf:"bytes,1044,opt,name=getMempoolEntriesResponse,proto3,oneof"`
 }
 
-type SedradMessage_ShutDownRequest struct {
+type kestrelcoindMessage_ShutDownRequest struct {
 	ShutDownRequest *ShutDownRequestMessage `protobuf:"bytes,1045,opt,name=shutDownRequest,proto3,oneof"`
 }
 
-type SedradMessage_ShutDownResponse struct {
+type kestrelcoindMessage_ShutDownResponse struct {
 	ShutDownResponse *ShutDownResponseMessage `protobuf:"bytes,1046,opt,name=shutDownResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetHeadersRequest struct {
+type kestrelcoindMessage_GetHeadersRequest struct {
 	GetHeadersRequest *GetHeadersRequestMessage `protobuf:"bytes,1047,opt,name=getHeadersRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetHeadersResponse struct {
+type kestrelcoindMessage_GetHeadersResponse struct {
 	GetHeadersResponse *GetHeadersResponseMessage `protobuf:"bytes,1048,opt,name=getHeadersResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyUtxosChangedRequest struct {
+type kestrelcoindMessage_NotifyUtxosChangedRequest struct {
 	NotifyUtxosChangedRequest *NotifyUtxosChangedRequestMessage `protobuf:"bytes,1049,opt,name=notifyUtxosChangedRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyUtxosChangedResponse struct {
+type kestrelcoindMessage_NotifyUtxosChangedResponse struct {
 	NotifyUtxosChangedResponse *NotifyUtxosChangedResponseMessage `protobuf:"bytes,1050,opt,name=notifyUtxosChangedResponse,proto3,oneof"`
 }
 
-type SedradMessage_UtxosChangedNotification struct {
+type kestrelcoindMessage_UtxosChangedNotification struct {
 	UtxosChangedNotification *UtxosChangedNotificationMessage `protobuf:"bytes,1051,opt,name=utxosChangedNotification,proto3,oneof"`
 }
 
-type SedradMessage_GetUtxosByAddressesRequest struct {
+type kestrelcoindMessage_GetUtxosByAddressesRequest struct {
 	GetUtxosByAddressesRequest *GetUtxosByAddressesRequestMessage `protobuf:"bytes,1052,opt,name=getUtxosByAddressesRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetUtxosByAddressesResponse struct {
+type kestrelcoindMessage_GetUtxosByAddressesResponse struct {
 	GetUtxosByAddressesResponse *GetUtxosByAddressesResponseMessage `protobuf:"bytes,1053,opt,name=getUtxosByAddressesResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetVirtualSelectedParentBlueScoreRequest struct {
+type kestrelcoindMessage_GetVirtualSelectedParentBlueScoreRequest struct {
 	GetVirtualSelectedParentBlueScoreRequest *GetVirtualSelectedParentBlueScoreRequestMessage `protobuf:"bytes,1054,opt,name=getVirtualSelectedParentBlueScoreRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetVirtualSelectedParentBlueScoreResponse struct {
+type kestrelcoindMessage_GetVirtualSelectedParentBlueScoreResponse struct {
 	GetVirtualSelectedParentBlueScoreResponse *GetVirtualSelectedParentBlueScoreResponseMessage `protobuf:"bytes,1055,opt,name=getVirtualSelectedParentBlueScoreResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
+type kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
 	NotifyVirtualSelectedParentBlueScoreChangedRequest *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage `protobuf:"bytes,1056,opt,name=notifyVirtualSelectedParentBlueScoreChangedRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
+type kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
 	NotifyVirtualSelectedParentBlueScoreChangedResponse *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage `protobuf:"bytes,1057,opt,name=notifyVirtualSelectedParentBlueScoreChangedResponse,proto3,oneof"`
 }
 
-type SedradMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
+type kestrelcoindMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
 	VirtualSelectedParentBlueScoreChangedNotification *VirtualSelectedParentBlueScoreChangedNotificationMessage `protobuf:"bytes,1058,opt,name=virtualSelectedParentBlueScoreChangedNotification,proto3,oneof"`
 }
 
-type SedradMessage_BanRequest struct {
+type kestrelcoindMessage_BanRequest struct {
 	BanRequest *BanRequestMessage `protobuf:"bytes,1059,opt,name=banRequest,proto3,oneof"`
 }
 
-type SedradMessage_BanResponse struct {
+type kestrelcoindMessage_BanResponse struct {
 	BanResponse *BanResponseMessage `protobuf:"bytes,1060,opt,name=banResponse,proto3,oneof"`
 }
 
-type SedradMessage_UnbanRequest struct {
+type kestrelcoindMessage_UnbanRequest struct {
 	UnbanRequest *UnbanRequestMessage `protobuf:"bytes,1061,opt,name=unbanRequest,proto3,oneof"`
 }
 
-type SedradMessage_UnbanResponse struct {
+type kestrelcoindMessage_UnbanResponse struct {
 	UnbanResponse *UnbanResponseMessage `protobuf:"bytes,1062,opt,name=unbanResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetInfoRequest struct {
+type kestrelcoindMessage_GetInfoRequest struct {
 	GetInfoRequest *GetInfoRequestMessage `protobuf:"bytes,1063,opt,name=getInfoRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetInfoResponse struct {
+type kestrelcoindMessage_GetInfoResponse struct {
 	GetInfoResponse *GetInfoResponseMessage `protobuf:"bytes,1064,opt,name=getInfoResponse,proto3,oneof"`
 }
 
-type SedradMessage_StopNotifyingUtxosChangedRequest struct {
+type kestrelcoindMessage_StopNotifyingUtxosChangedRequest struct {
 	StopNotifyingUtxosChangedRequest *StopNotifyingUtxosChangedRequestMessage `protobuf:"bytes,1065,opt,name=stopNotifyingUtxosChangedRequest,proto3,oneof"`
 }
 
-type SedradMessage_StopNotifyingUtxosChangedResponse struct {
+type kestrelcoindMessage_StopNotifyingUtxosChangedResponse struct {
 	StopNotifyingUtxosChangedResponse *StopNotifyingUtxosChangedResponseMessage `protobuf:"bytes,1066,opt,name=stopNotifyingUtxosChangedResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
+type kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
 	NotifyPruningPointUTXOSetOverrideRequest *NotifyPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1067,opt,name=notifyPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
+type kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
 	NotifyPruningPointUTXOSetOverrideResponse *NotifyPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1068,opt,name=notifyPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type SedradMessage_PruningPointUTXOSetOverrideNotification struct {
+type kestrelcoindMessage_PruningPointUTXOSetOverrideNotification struct {
 	PruningPointUTXOSetOverrideNotification *PruningPointUTXOSetOverrideNotificationMessage `protobuf:"bytes,1069,opt,name=pruningPointUTXOSetOverrideNotification,proto3,oneof"`
 }
 
-type SedradMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
+type kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
 	StopNotifyingPruningPointUTXOSetOverrideRequest *StopNotifyingPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1070,opt,name=stopNotifyingPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type SedradMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
+type kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
 	StopNotifyingPruningPointUTXOSetOverrideResponse *StopNotifyingPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1071,opt,name=stopNotifyingPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type SedradMessage_EstimateNetworkHashesPerSecondRequest struct {
+type kestrelcoindMessage_EstimateNetworkHashesPerSecondRequest struct {
 	EstimateNetworkHashesPerSecondRequest *EstimateNetworkHashesPerSecondRequestMessage `protobuf:"bytes,1072,opt,name=estimateNetworkHashesPerSecondRequest,proto3,oneof"`
 }
 
-type SedradMessage_EstimateNetworkHashesPerSecondResponse struct {
+type kestrelcoindMessage_EstimateNetworkHashesPerSecondResponse struct {
 	EstimateNetworkHashesPerSecondResponse *EstimateNetworkHashesPerSecondResponseMessage `protobuf:"bytes,1073,opt,name=estimateNetworkHashesPerSecondResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyVirtualDaaScoreChangedRequest struct {
+type kestrelcoindMessage_NotifyVirtualDaaScoreChangedRequest struct {
 	NotifyVirtualDaaScoreChangedRequest *NotifyVirtualDaaScoreChangedRequestMessage `protobuf:"bytes,1074,opt,name=notifyVirtualDaaScoreChangedRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyVirtualDaaScoreChangedResponse struct {
+type kestrelcoindMessage_NotifyVirtualDaaScoreChangedResponse struct {
 	NotifyVirtualDaaScoreChangedResponse *NotifyVirtualDaaScoreChangedResponseMessage `protobuf:"bytes,1075,opt,name=notifyVirtualDaaScoreChangedResponse,proto3,oneof"`
 }
 
-type SedradMessage_VirtualDaaScoreChangedNotification struct {
+type kestrelcoindMessage_VirtualDaaScoreChangedNotification struct {
 	VirtualDaaScoreChangedNotification *VirtualDaaScoreChangedNotificationMessage `protobuf:"bytes,1076,opt,name=virtualDaaScoreChangedNotification,proto3,oneof"`
 }
 
-type SedradMessage_GetBalanceByAddressRequest struct {
+type kestrelcoindMessage_GetBalanceByAddressRequest struct {
 	GetBalanceByAddressRequest *GetBalanceByAddressRequestMessage `protobuf:"bytes,1077,opt,name=getBalanceByAddressRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetBalanceByAddressResponse struct {
+type kestrelcoindMessage_GetBalanceByAddressResponse struct {
 	GetBalanceByAddressResponse *GetBalanceByAddressResponseMessage `protobuf:"bytes,1078,opt,name=getBalanceByAddressResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetBalancesByAddressesRequest struct {
+type kestrelcoindMessage_GetBalancesByAddressesRequest struct {
 	GetBalancesByAddressesRequest *GetBalancesByAddressesRequestMessage `protobuf:"bytes,1079,opt,name=getBalancesByAddressesRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetBalancesByAddressesResponse struct {
+type kestrelcoindMessage_GetBalancesByAddressesResponse struct {
 	GetBalancesByAddressesResponse *GetBalancesByAddressesResponseMessage `protobuf:"bytes,1080,opt,name=getBalancesByAddressesResponse,proto3,oneof"`
 }
 
-type SedradMessage_NotifyNewBlockTemplateRequest struct {
+type kestrelcoindMessage_NotifyNewBlockTemplateRequest struct {
 	NotifyNewBlockTemplateRequest *NotifyNewBlockTemplateRequestMessage `protobuf:"bytes,1081,opt,name=notifyNewBlockTemplateRequest,proto3,oneof"`
 }
 
-type SedradMessage_NotifyNewBlockTemplateResponse struct {
+type kestrelcoindMessage_NotifyNewBlockTemplateResponse struct {
 	NotifyNewBlockTemplateResponse *NotifyNewBlockTemplateResponseMessage `protobuf:"bytes,1082,opt,name=notifyNewBlockTemplateResponse,proto3,oneof"`
 }
 
-type SedradMessage_NewBlockTemplateNotification struct {
+type kestrelcoindMessage_NewBlockTemplateNotification struct {
 	NewBlockTemplateNotification *NewBlockTemplateNotificationMessage `protobuf:"bytes,1083,opt,name=newBlockTemplateNotification,proto3,oneof"`
 }
 
-type SedradMessage_GetMempoolEntriesByAddressesRequest struct {
+type kestrelcoindMessage_GetMempoolEntriesByAddressesRequest struct {
 	GetMempoolEntriesByAddressesRequest *GetMempoolEntriesByAddressesRequestMessage `protobuf:"bytes,1084,opt,name=getMempoolEntriesByAddressesRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetMempoolEntriesByAddressesResponse struct {
+type kestrelcoindMessage_GetMempoolEntriesByAddressesResponse struct {
 	GetMempoolEntriesByAddressesResponse *GetMempoolEntriesByAddressesResponseMessage `protobuf:"bytes,1085,opt,name=getMempoolEntriesByAddressesResponse,proto3,oneof"`
 }
 
-type SedradMessage_GetCoinSupplyRequest struct {
+type kestrelcoindMessage_GetCoinSupplyRequest struct {
 	GetCoinSupplyRequest *GetCoinSupplyRequestMessage `protobuf:"bytes,1086,opt,name=getCoinSupplyRequest,proto3,oneof"`
 }
 
-type SedradMessage_GetCoinSupplyResponse struct {
+type kestrelcoindMessage_GetCoinSupplyResponse struct {
 	GetCoinSupplyResponse *GetCoinSupplyResponseMessage `protobuf:"bytes,1087,opt,name=getCoinSupplyResponse,proto3,oneof"`
 }
 
-func (*SedradMessage_Addresses) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Addresses) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Block) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Block) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Transaction) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Transaction) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_BlockLocator) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_BlockLocator) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestAddresses) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestAddresses) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestRelayBlocks) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestRelayBlocks) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestTransactions) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestTransactions) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_IbdBlock) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_IbdBlock) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_InvRelayBlock) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_InvRelayBlock) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_InvTransactions) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_InvTransactions) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Ping) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Ping) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Pong) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Pong) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Verack) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Verack) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Version) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Version) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_TransactionNotFound) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_TransactionNotFound) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Reject) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Reject) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_PruningPointUtxoSetChunk) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_PruningPointUtxoSetChunk) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestIBDBlocks) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestIBDBlocks) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_UnexpectedPruningPoint) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_UnexpectedPruningPoint) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_IbdBlockLocator) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_IbdBlockLocator) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_IbdBlockLocatorHighestHash) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_IbdBlockLocatorHighestHash) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestNextPruningPointUtxoSetChunk) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestNextPruningPointUtxoSetChunk) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_DonePruningPointUtxoSetChunks) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_DonePruningPointUtxoSetChunks) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_IbdBlockLocatorHighestHashNotFound) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_IbdBlockLocatorHighestHashNotFound) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_BlockWithTrustedData) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_BlockWithTrustedData) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_DoneBlocksWithTrustedData) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_DoneBlocksWithTrustedData) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestPruningPointAndItsAnticone) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestPruningPointAndItsAnticone) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_BlockHeaders) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_BlockHeaders) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestNextHeaders) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestNextHeaders) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_DoneHeaders) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_DoneHeaders) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestPruningPointUTXOSet) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestPruningPointUTXOSet) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestHeaders) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestHeaders) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestBlockLocator) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestBlockLocator) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_PruningPoints) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_PruningPoints) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestPruningPointProof) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestPruningPointProof) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_PruningPointProof) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_PruningPointProof) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_Ready) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_Ready) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_BlockWithTrustedDataV4) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_BlockWithTrustedDataV4) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_TrustedData) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_TrustedData) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestIBDChainBlockLocator) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestIBDChainBlockLocator) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_IbdChainBlockLocator) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_IbdChainBlockLocator) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestAnticone) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestAnticone) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_RequestNextPruningPointAndItsAnticoneBlocks) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_RequestNextPruningPointAndItsAnticoneBlocks) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetCurrentNetworkRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetCurrentNetworkRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetCurrentNetworkResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetCurrentNetworkResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_SubmitBlockRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_SubmitBlockRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_SubmitBlockResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_SubmitBlockResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockTemplateRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockTemplateRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockTemplateResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockTemplateResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyBlockAddedRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyBlockAddedRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyBlockAddedResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyBlockAddedResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_BlockAddedNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_BlockAddedNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetPeerAddressesRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetPeerAddressesRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetPeerAddressesResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetPeerAddressesResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetSelectedTipHashRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetSelectedTipHashRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetSelectedTipHashResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetSelectedTipHashResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetMempoolEntryRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetMempoolEntryRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetMempoolEntryResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetMempoolEntryResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetConnectedPeerInfoRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetConnectedPeerInfoRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetConnectedPeerInfoResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetConnectedPeerInfoResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_AddPeerRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_AddPeerRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_AddPeerResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_AddPeerResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_SubmitTransactionRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_SubmitTransactionRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_SubmitTransactionResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_SubmitTransactionResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyVirtualSelectedParentChainChangedRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyVirtualSelectedParentChainChangedResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_VirtualSelectedParentChainChangedNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_VirtualSelectedParentChainChangedNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetSubnetworkRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetSubnetworkRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetSubnetworkResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetSubnetworkResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetVirtualSelectedParentChainFromBlockRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetVirtualSelectedParentChainFromBlockResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlocksRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlocksRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlocksResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlocksResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockCountRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockCountRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockCountResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockCountResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockDagInfoRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockDagInfoRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBlockDagInfoResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBlockDagInfoResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_ResolveFinalityConflictRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_ResolveFinalityConflictRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_ResolveFinalityConflictResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_ResolveFinalityConflictResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyFinalityConflictsRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyFinalityConflictsRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyFinalityConflictsResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyFinalityConflictsResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_FinalityConflictNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_FinalityConflictNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_FinalityConflictResolvedNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_FinalityConflictResolvedNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetMempoolEntriesRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetMempoolEntriesRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetMempoolEntriesResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetMempoolEntriesResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_ShutDownRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_ShutDownRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_ShutDownResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_ShutDownResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetHeadersRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetHeadersRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetHeadersResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetHeadersResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyUtxosChangedRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyUtxosChangedRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyUtxosChangedResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyUtxosChangedResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_UtxosChangedNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_UtxosChangedNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetUtxosByAddressesRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetUtxosByAddressesRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetUtxosByAddressesResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetUtxosByAddressesResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetVirtualSelectedParentBlueScoreRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetVirtualSelectedParentBlueScoreResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_VirtualSelectedParentBlueScoreChangedNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_VirtualSelectedParentBlueScoreChangedNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_BanRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_BanRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_BanResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_BanResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_UnbanRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_UnbanRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_UnbanResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_UnbanResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetInfoRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetInfoRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetInfoResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetInfoResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_StopNotifyingUtxosChangedRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_StopNotifyingUtxosChangedRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_StopNotifyingUtxosChangedResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_StopNotifyingUtxosChangedResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyPruningPointUTXOSetOverrideRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyPruningPointUTXOSetOverrideResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_PruningPointUTXOSetOverrideNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_PruningPointUTXOSetOverrideNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_EstimateNetworkHashesPerSecondRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_EstimateNetworkHashesPerSecondRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_EstimateNetworkHashesPerSecondResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_EstimateNetworkHashesPerSecondResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyVirtualDaaScoreChangedRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyVirtualDaaScoreChangedRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyVirtualDaaScoreChangedResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyVirtualDaaScoreChangedResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_VirtualDaaScoreChangedNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_VirtualDaaScoreChangedNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBalanceByAddressRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBalanceByAddressRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBalanceByAddressResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBalanceByAddressResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBalancesByAddressesRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBalancesByAddressesRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetBalancesByAddressesResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetBalancesByAddressesResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyNewBlockTemplateRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyNewBlockTemplateRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NotifyNewBlockTemplateResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NotifyNewBlockTemplateResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_NewBlockTemplateNotification) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_NewBlockTemplateNotification) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetMempoolEntriesByAddressesRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetMempoolEntriesByAddressesRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetMempoolEntriesByAddressesResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetMempoolEntriesByAddressesResponse) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetCoinSupplyRequest) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetCoinSupplyRequest) iskestrelcoindMessage_Payload() {}
 
-func (*SedradMessage_GetCoinSupplyResponse) isSedradMessage_Payload() {}
+func (*kestrelcoindMessage_GetCoinSupplyResponse) iskestrelcoindMessage_Payload() {}
 
 var File_messages_proto protoreflect.FileDescriptor
 
@@ -2804,7 +2804,7 @@ func file_messages_proto_rawDescGZIP() []byte {
 
 var file_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_messages_proto_goTypes = []interface{}{
-	(*SedradMessage)(nil),                                              // 0: protowire.SedradMessage
+	(*kestrelcoindMessage)(nil),                                              // 0: protowire.kestrelcoindMessage
 	(*AddressesMessage)(nil),                                           // 1: protowire.AddressesMessage
 	(*BlockMessage)(nil),                                               // 2: protowire.BlockMessage
 	(*TransactionMessage)(nil),                                         // 3: protowire.TransactionMessage
@@ -2936,140 +2936,140 @@ var file_messages_proto_goTypes = []interface{}{
 	(*GetCoinSupplyResponseMessage)(nil),                               // 129: protowire.GetCoinSupplyResponseMessage
 }
 var file_messages_proto_depIdxs = []int32{
-	1,   // 0: protowire.SedradMessage.addresses:type_name -> protowire.AddressesMessage
-	2,   // 1: protowire.SedradMessage.block:type_name -> protowire.BlockMessage
-	3,   // 2: protowire.SedradMessage.transaction:type_name -> protowire.TransactionMessage
-	4,   // 3: protowire.SedradMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
-	5,   // 4: protowire.SedradMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
-	6,   // 5: protowire.SedradMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
-	7,   // 6: protowire.SedradMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
-	2,   // 7: protowire.SedradMessage.ibdBlock:type_name -> protowire.BlockMessage
-	8,   // 8: protowire.SedradMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
-	9,   // 9: protowire.SedradMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
-	10,  // 10: protowire.SedradMessage.ping:type_name -> protowire.PingMessage
-	11,  // 11: protowire.SedradMessage.pong:type_name -> protowire.PongMessage
-	12,  // 12: protowire.SedradMessage.verack:type_name -> protowire.VerackMessage
-	13,  // 13: protowire.SedradMessage.version:type_name -> protowire.VersionMessage
-	14,  // 14: protowire.SedradMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
-	15,  // 15: protowire.SedradMessage.reject:type_name -> protowire.RejectMessage
-	16,  // 16: protowire.SedradMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
-	17,  // 17: protowire.SedradMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
-	18,  // 18: protowire.SedradMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
-	19,  // 19: protowire.SedradMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
-	20,  // 20: protowire.SedradMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
-	21,  // 21: protowire.SedradMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
-	22,  // 22: protowire.SedradMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
-	23,  // 23: protowire.SedradMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
-	24,  // 24: protowire.SedradMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
-	25,  // 25: protowire.SedradMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
-	26,  // 26: protowire.SedradMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
-	27,  // 27: protowire.SedradMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
-	28,  // 28: protowire.SedradMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
-	29,  // 29: protowire.SedradMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
-	30,  // 30: protowire.SedradMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
-	31,  // 31: protowire.SedradMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
-	32,  // 32: protowire.SedradMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
-	33,  // 33: protowire.SedradMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
-	34,  // 34: protowire.SedradMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
-	35,  // 35: protowire.SedradMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
-	36,  // 36: protowire.SedradMessage.ready:type_name -> protowire.ReadyMessage
-	37,  // 37: protowire.SedradMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
-	38,  // 38: protowire.SedradMessage.trustedData:type_name -> protowire.TrustedDataMessage
-	39,  // 39: protowire.SedradMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
-	40,  // 40: protowire.SedradMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
-	41,  // 41: protowire.SedradMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
-	42,  // 42: protowire.SedradMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
-	43,  // 43: protowire.SedradMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
-	44,  // 44: protowire.SedradMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
-	45,  // 45: protowire.SedradMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
-	46,  // 46: protowire.SedradMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
-	47,  // 47: protowire.SedradMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
-	48,  // 48: protowire.SedradMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
-	49,  // 49: protowire.SedradMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
-	50,  // 50: protowire.SedradMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
-	51,  // 51: protowire.SedradMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
-	52,  // 52: protowire.SedradMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
-	53,  // 53: protowire.SedradMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
-	54,  // 54: protowire.SedradMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
-	55,  // 55: protowire.SedradMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
-	56,  // 56: protowire.SedradMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
-	57,  // 57: protowire.SedradMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
-	58,  // 58: protowire.SedradMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
-	59,  // 59: protowire.SedradMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
-	60,  // 60: protowire.SedradMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
-	61,  // 61: protowire.SedradMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
-	62,  // 62: protowire.SedradMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
-	63,  // 63: protowire.SedradMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
-	64,  // 64: protowire.SedradMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
-	65,  // 65: protowire.SedradMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
-	66,  // 66: protowire.SedradMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
-	67,  // 67: protowire.SedradMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
-	68,  // 68: protowire.SedradMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
-	69,  // 69: protowire.SedradMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
-	70,  // 70: protowire.SedradMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
-	71,  // 71: protowire.SedradMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
-	72,  // 72: protowire.SedradMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
-	73,  // 73: protowire.SedradMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
-	74,  // 74: protowire.SedradMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
-	75,  // 75: protowire.SedradMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
-	76,  // 76: protowire.SedradMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
-	77,  // 77: protowire.SedradMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
-	78,  // 78: protowire.SedradMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
-	79,  // 79: protowire.SedradMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
-	80,  // 80: protowire.SedradMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
-	81,  // 81: protowire.SedradMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
-	82,  // 82: protowire.SedradMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
-	83,  // 83: protowire.SedradMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
-	84,  // 84: protowire.SedradMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
-	85,  // 85: protowire.SedradMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
-	86,  // 86: protowire.SedradMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
-	87,  // 87: protowire.SedradMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
-	88,  // 88: protowire.SedradMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
-	89,  // 89: protowire.SedradMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
-	90,  // 90: protowire.SedradMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
-	91,  // 91: protowire.SedradMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
-	92,  // 92: protowire.SedradMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
-	93,  // 93: protowire.SedradMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
-	94,  // 94: protowire.SedradMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
-	95,  // 95: protowire.SedradMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
-	96,  // 96: protowire.SedradMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
-	97,  // 97: protowire.SedradMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
-	98,  // 98: protowire.SedradMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
-	99,  // 99: protowire.SedradMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
-	100, // 100: protowire.SedradMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
-	101, // 101: protowire.SedradMessage.banRequest:type_name -> protowire.BanRequestMessage
-	102, // 102: protowire.SedradMessage.banResponse:type_name -> protowire.BanResponseMessage
-	103, // 103: protowire.SedradMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
-	104, // 104: protowire.SedradMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
-	105, // 105: protowire.SedradMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
-	106, // 106: protowire.SedradMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
-	107, // 107: protowire.SedradMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
-	108, // 108: protowire.SedradMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
-	109, // 109: protowire.SedradMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
-	110, // 110: protowire.SedradMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
-	111, // 111: protowire.SedradMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
-	112, // 112: protowire.SedradMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
-	113, // 113: protowire.SedradMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
-	114, // 114: protowire.SedradMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
-	115, // 115: protowire.SedradMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
-	116, // 116: protowire.SedradMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
-	117, // 117: protowire.SedradMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
-	118, // 118: protowire.SedradMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
-	119, // 119: protowire.SedradMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
-	120, // 120: protowire.SedradMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
-	121, // 121: protowire.SedradMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
-	122, // 122: protowire.SedradMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
-	123, // 123: protowire.SedradMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
-	124, // 124: protowire.SedradMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
-	125, // 125: protowire.SedradMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
-	126, // 126: protowire.SedradMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
-	127, // 127: protowire.SedradMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
-	128, // 128: protowire.SedradMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
-	129, // 129: protowire.SedradMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
-	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.SedradMessage
-	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.SedradMessage
-	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.SedradMessage
-	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.SedradMessage
+	1,   // 0: protowire.kestrelcoindMessage.addresses:type_name -> protowire.AddressesMessage
+	2,   // 1: protowire.kestrelcoindMessage.block:type_name -> protowire.BlockMessage
+	3,   // 2: protowire.kestrelcoindMessage.transaction:type_name -> protowire.TransactionMessage
+	4,   // 3: protowire.kestrelcoindMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
+	5,   // 4: protowire.kestrelcoindMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
+	6,   // 5: protowire.kestrelcoindMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
+	7,   // 6: protowire.kestrelcoindMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
+	2,   // 7: protowire.kestrelcoindMessage.ibdBlock:type_name -> protowire.BlockMessage
+	8,   // 8: protowire.kestrelcoindMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
+	9,   // 9: protowire.kestrelcoindMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
+	10,  // 10: protowire.kestrelcoindMessage.ping:type_name -> protowire.PingMessage
+	11,  // 11: protowire.kestrelcoindMessage.pong:type_name -> protowire.PongMessage
+	12,  // 12: protowire.kestrelcoindMessage.verack:type_name -> protowire.VerackMessage
+	13,  // 13: protowire.kestrelcoindMessage.version:type_name -> protowire.VersionMessage
+	14,  // 14: protowire.kestrelcoindMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
+	15,  // 15: protowire.kestrelcoindMessage.reject:type_name -> protowire.RejectMessage
+	16,  // 16: protowire.kestrelcoindMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
+	17,  // 17: protowire.kestrelcoindMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
+	18,  // 18: protowire.kestrelcoindMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
+	19,  // 19: protowire.kestrelcoindMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
+	20,  // 20: protowire.kestrelcoindMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
+	21,  // 21: protowire.kestrelcoindMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
+	22,  // 22: protowire.kestrelcoindMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
+	23,  // 23: protowire.kestrelcoindMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
+	24,  // 24: protowire.kestrelcoindMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
+	25,  // 25: protowire.kestrelcoindMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
+	26,  // 26: protowire.kestrelcoindMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
+	27,  // 27: protowire.kestrelcoindMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
+	28,  // 28: protowire.kestrelcoindMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
+	29,  // 29: protowire.kestrelcoindMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
+	30,  // 30: protowire.kestrelcoindMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
+	31,  // 31: protowire.kestrelcoindMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
+	32,  // 32: protowire.kestrelcoindMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
+	33,  // 33: protowire.kestrelcoindMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
+	34,  // 34: protowire.kestrelcoindMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
+	35,  // 35: protowire.kestrelcoindMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
+	36,  // 36: protowire.kestrelcoindMessage.ready:type_name -> protowire.ReadyMessage
+	37,  // 37: protowire.kestrelcoindMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
+	38,  // 38: protowire.kestrelcoindMessage.trustedData:type_name -> protowire.TrustedDataMessage
+	39,  // 39: protowire.kestrelcoindMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
+	40,  // 40: protowire.kestrelcoindMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
+	41,  // 41: protowire.kestrelcoindMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
+	42,  // 42: protowire.kestrelcoindMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
+	43,  // 43: protowire.kestrelcoindMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
+	44,  // 44: protowire.kestrelcoindMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
+	45,  // 45: protowire.kestrelcoindMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
+	46,  // 46: protowire.kestrelcoindMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
+	47,  // 47: protowire.kestrelcoindMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
+	48,  // 48: protowire.kestrelcoindMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
+	49,  // 49: protowire.kestrelcoindMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
+	50,  // 50: protowire.kestrelcoindMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
+	51,  // 51: protowire.kestrelcoindMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
+	52,  // 52: protowire.kestrelcoindMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
+	53,  // 53: protowire.kestrelcoindMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
+	54,  // 54: protowire.kestrelcoindMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
+	55,  // 55: protowire.kestrelcoindMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
+	56,  // 56: protowire.kestrelcoindMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
+	57,  // 57: protowire.kestrelcoindMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
+	58,  // 58: protowire.kestrelcoindMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
+	59,  // 59: protowire.kestrelcoindMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
+	60,  // 60: protowire.kestrelcoindMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
+	61,  // 61: protowire.kestrelcoindMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
+	62,  // 62: protowire.kestrelcoindMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
+	63,  // 63: protowire.kestrelcoindMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
+	64,  // 64: protowire.kestrelcoindMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
+	65,  // 65: protowire.kestrelcoindMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
+	66,  // 66: protowire.kestrelcoindMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
+	67,  // 67: protowire.kestrelcoindMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
+	68,  // 68: protowire.kestrelcoindMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
+	69,  // 69: protowire.kestrelcoindMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
+	70,  // 70: protowire.kestrelcoindMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
+	71,  // 71: protowire.kestrelcoindMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
+	72,  // 72: protowire.kestrelcoindMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
+	73,  // 73: protowire.kestrelcoindMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
+	74,  // 74: protowire.kestrelcoindMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
+	75,  // 75: protowire.kestrelcoindMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
+	76,  // 76: protowire.kestrelcoindMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
+	77,  // 77: protowire.kestrelcoindMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
+	78,  // 78: protowire.kestrelcoindMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
+	79,  // 79: protowire.kestrelcoindMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
+	80,  // 80: protowire.kestrelcoindMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
+	81,  // 81: protowire.kestrelcoindMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
+	82,  // 82: protowire.kestrelcoindMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
+	83,  // 83: protowire.kestrelcoindMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
+	84,  // 84: protowire.kestrelcoindMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
+	85,  // 85: protowire.kestrelcoindMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
+	86,  // 86: protowire.kestrelcoindMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
+	87,  // 87: protowire.kestrelcoindMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
+	88,  // 88: protowire.kestrelcoindMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
+	89,  // 89: protowire.kestrelcoindMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
+	90,  // 90: protowire.kestrelcoindMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
+	91,  // 91: protowire.kestrelcoindMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
+	92,  // 92: protowire.kestrelcoindMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
+	93,  // 93: protowire.kestrelcoindMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
+	94,  // 94: protowire.kestrelcoindMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
+	95,  // 95: protowire.kestrelcoindMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
+	96,  // 96: protowire.kestrelcoindMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
+	97,  // 97: protowire.kestrelcoindMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
+	98,  // 98: protowire.kestrelcoindMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
+	99,  // 99: protowire.kestrelcoindMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
+	100, // 100: protowire.kestrelcoindMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
+	101, // 101: protowire.kestrelcoindMessage.banRequest:type_name -> protowire.BanRequestMessage
+	102, // 102: protowire.kestrelcoindMessage.banResponse:type_name -> protowire.BanResponseMessage
+	103, // 103: protowire.kestrelcoindMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
+	104, // 104: protowire.kestrelcoindMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
+	105, // 105: protowire.kestrelcoindMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
+	106, // 106: protowire.kestrelcoindMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
+	107, // 107: protowire.kestrelcoindMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
+	108, // 108: protowire.kestrelcoindMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
+	109, // 109: protowire.kestrelcoindMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
+	110, // 110: protowire.kestrelcoindMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
+	111, // 111: protowire.kestrelcoindMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
+	112, // 112: protowire.kestrelcoindMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
+	113, // 113: protowire.kestrelcoindMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
+	114, // 114: protowire.kestrelcoindMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
+	115, // 115: protowire.kestrelcoindMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
+	116, // 116: protowire.kestrelcoindMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
+	117, // 117: protowire.kestrelcoindMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
+	118, // 118: protowire.kestrelcoindMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
+	119, // 119: protowire.kestrelcoindMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
+	120, // 120: protowire.kestrelcoindMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
+	121, // 121: protowire.kestrelcoindMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
+	122, // 122: protowire.kestrelcoindMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
+	123, // 123: protowire.kestrelcoindMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
+	124, // 124: protowire.kestrelcoindMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
+	125, // 125: protowire.kestrelcoindMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
+	126, // 126: protowire.kestrelcoindMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
+	127, // 127: protowire.kestrelcoindMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
+	128, // 128: protowire.kestrelcoindMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
+	129, // 129: protowire.kestrelcoindMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
+	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.kestrelcoindMessage
+	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.kestrelcoindMessage
+	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.kestrelcoindMessage
+	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.kestrelcoindMessage
 	132, // [132:134] is the sub-list for method output_type
 	130, // [130:132] is the sub-list for method input_type
 	130, // [130:130] is the sub-list for extension type_name
@@ -3086,7 +3086,7 @@ func file_messages_proto_init() {
 	file_rpc_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_messages_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SedradMessage); i {
+			switch v := v.(*kestrelcoindMessage); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3099,136 +3099,136 @@ func file_messages_proto_init() {
 		}
 	}
 	file_messages_proto_msgTypes[0].OneofWrappers = []interface{}{
-		(*SedradMessage_Addresses)(nil),
-		(*SedradMessage_Block)(nil),
-		(*SedradMessage_Transaction)(nil),
-		(*SedradMessage_BlockLocator)(nil),
-		(*SedradMessage_RequestAddresses)(nil),
-		(*SedradMessage_RequestRelayBlocks)(nil),
-		(*SedradMessage_RequestTransactions)(nil),
-		(*SedradMessage_IbdBlock)(nil),
-		(*SedradMessage_InvRelayBlock)(nil),
-		(*SedradMessage_InvTransactions)(nil),
-		(*SedradMessage_Ping)(nil),
-		(*SedradMessage_Pong)(nil),
-		(*SedradMessage_Verack)(nil),
-		(*SedradMessage_Version)(nil),
-		(*SedradMessage_TransactionNotFound)(nil),
-		(*SedradMessage_Reject)(nil),
-		(*SedradMessage_PruningPointUtxoSetChunk)(nil),
-		(*SedradMessage_RequestIBDBlocks)(nil),
-		(*SedradMessage_UnexpectedPruningPoint)(nil),
-		(*SedradMessage_IbdBlockLocator)(nil),
-		(*SedradMessage_IbdBlockLocatorHighestHash)(nil),
-		(*SedradMessage_RequestNextPruningPointUtxoSetChunk)(nil),
-		(*SedradMessage_DonePruningPointUtxoSetChunks)(nil),
-		(*SedradMessage_IbdBlockLocatorHighestHashNotFound)(nil),
-		(*SedradMessage_BlockWithTrustedData)(nil),
-		(*SedradMessage_DoneBlocksWithTrustedData)(nil),
-		(*SedradMessage_RequestPruningPointAndItsAnticone)(nil),
-		(*SedradMessage_BlockHeaders)(nil),
-		(*SedradMessage_RequestNextHeaders)(nil),
-		(*SedradMessage_DoneHeaders)(nil),
-		(*SedradMessage_RequestPruningPointUTXOSet)(nil),
-		(*SedradMessage_RequestHeaders)(nil),
-		(*SedradMessage_RequestBlockLocator)(nil),
-		(*SedradMessage_PruningPoints)(nil),
-		(*SedradMessage_RequestPruningPointProof)(nil),
-		(*SedradMessage_PruningPointProof)(nil),
-		(*SedradMessage_Ready)(nil),
-		(*SedradMessage_BlockWithTrustedDataV4)(nil),
-		(*SedradMessage_TrustedData)(nil),
-		(*SedradMessage_RequestIBDChainBlockLocator)(nil),
-		(*SedradMessage_IbdChainBlockLocator)(nil),
-		(*SedradMessage_RequestAnticone)(nil),
-		(*SedradMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
-		(*SedradMessage_GetCurrentNetworkRequest)(nil),
-		(*SedradMessage_GetCurrentNetworkResponse)(nil),
-		(*SedradMessage_SubmitBlockRequest)(nil),
-		(*SedradMessage_SubmitBlockResponse)(nil),
-		(*SedradMessage_GetBlockTemplateRequest)(nil),
-		(*SedradMessage_GetBlockTemplateResponse)(nil),
-		(*SedradMessage_NotifyBlockAddedRequest)(nil),
-		(*SedradMessage_NotifyBlockAddedResponse)(nil),
-		(*SedradMessage_BlockAddedNotification)(nil),
-		(*SedradMessage_GetPeerAddressesRequest)(nil),
-		(*SedradMessage_GetPeerAddressesResponse)(nil),
-		(*SedradMessage_GetSelectedTipHashRequest)(nil),
-		(*SedradMessage_GetSelectedTipHashResponse)(nil),
-		(*SedradMessage_GetMempoolEntryRequest)(nil),
-		(*SedradMessage_GetMempoolEntryResponse)(nil),
-		(*SedradMessage_GetConnectedPeerInfoRequest)(nil),
-		(*SedradMessage_GetConnectedPeerInfoResponse)(nil),
-		(*SedradMessage_AddPeerRequest)(nil),
-		(*SedradMessage_AddPeerResponse)(nil),
-		(*SedradMessage_SubmitTransactionRequest)(nil),
-		(*SedradMessage_SubmitTransactionResponse)(nil),
-		(*SedradMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
-		(*SedradMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
-		(*SedradMessage_VirtualSelectedParentChainChangedNotification)(nil),
-		(*SedradMessage_GetBlockRequest)(nil),
-		(*SedradMessage_GetBlockResponse)(nil),
-		(*SedradMessage_GetSubnetworkRequest)(nil),
-		(*SedradMessage_GetSubnetworkResponse)(nil),
-		(*SedradMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
-		(*SedradMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
-		(*SedradMessage_GetBlocksRequest)(nil),
-		(*SedradMessage_GetBlocksResponse)(nil),
-		(*SedradMessage_GetBlockCountRequest)(nil),
-		(*SedradMessage_GetBlockCountResponse)(nil),
-		(*SedradMessage_GetBlockDagInfoRequest)(nil),
-		(*SedradMessage_GetBlockDagInfoResponse)(nil),
-		(*SedradMessage_ResolveFinalityConflictRequest)(nil),
-		(*SedradMessage_ResolveFinalityConflictResponse)(nil),
-		(*SedradMessage_NotifyFinalityConflictsRequest)(nil),
-		(*SedradMessage_NotifyFinalityConflictsResponse)(nil),
-		(*SedradMessage_FinalityConflictNotification)(nil),
-		(*SedradMessage_FinalityConflictResolvedNotification)(nil),
-		(*SedradMessage_GetMempoolEntriesRequest)(nil),
-		(*SedradMessage_GetMempoolEntriesResponse)(nil),
-		(*SedradMessage_ShutDownRequest)(nil),
-		(*SedradMessage_ShutDownResponse)(nil),
-		(*SedradMessage_GetHeadersRequest)(nil),
-		(*SedradMessage_GetHeadersResponse)(nil),
-		(*SedradMessage_NotifyUtxosChangedRequest)(nil),
-		(*SedradMessage_NotifyUtxosChangedResponse)(nil),
-		(*SedradMessage_UtxosChangedNotification)(nil),
-		(*SedradMessage_GetUtxosByAddressesRequest)(nil),
-		(*SedradMessage_GetUtxosByAddressesResponse)(nil),
-		(*SedradMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
-		(*SedradMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
-		(*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
-		(*SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
-		(*SedradMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
-		(*SedradMessage_BanRequest)(nil),
-		(*SedradMessage_BanResponse)(nil),
-		(*SedradMessage_UnbanRequest)(nil),
-		(*SedradMessage_UnbanResponse)(nil),
-		(*SedradMessage_GetInfoRequest)(nil),
-		(*SedradMessage_GetInfoResponse)(nil),
-		(*SedradMessage_StopNotifyingUtxosChangedRequest)(nil),
-		(*SedradMessage_StopNotifyingUtxosChangedResponse)(nil),
-		(*SedradMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
-		(*SedradMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
-		(*SedradMessage_PruningPointUTXOSetOverrideNotification)(nil),
-		(*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
-		(*SedradMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
-		(*SedradMessage_EstimateNetworkHashesPerSecondRequest)(nil),
-		(*SedradMessage_EstimateNetworkHashesPerSecondResponse)(nil),
-		(*SedradMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
-		(*SedradMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
-		(*SedradMessage_VirtualDaaScoreChangedNotification)(nil),
-		(*SedradMessage_GetBalanceByAddressRequest)(nil),
-		(*SedradMessage_GetBalanceByAddressResponse)(nil),
-		(*SedradMessage_GetBalancesByAddressesRequest)(nil),
-		(*SedradMessage_GetBalancesByAddressesResponse)(nil),
-		(*SedradMessage_NotifyNewBlockTemplateRequest)(nil),
-		(*SedradMessage_NotifyNewBlockTemplateResponse)(nil),
-		(*SedradMessage_NewBlockTemplateNotification)(nil),
-		(*SedradMessage_GetMempoolEntriesByAddressesRequest)(nil),
-		(*SedradMessage_GetMempoolEntriesByAddressesResponse)(nil),
-		(*SedradMessage_GetCoinSupplyRequest)(nil),
-		(*SedradMessage_GetCoinSupplyResponse)(nil),
+		(*kestrelcoindMessage_Addresses)(nil),
+		(*kestrelcoindMessage_Block)(nil),
+		(*kestrelcoindMessage_Transaction)(nil),
+		(*kestrelcoindMessage_BlockLocator)(nil),
+		(*kestrelcoindMessage_RequestAddresses)(nil),
+		(*kestrelcoindMessage_RequestRelayBlocks)(nil),
+		(*kestrelcoindMessage_RequestTransactions)(nil),
+		(*kestrelcoindMessage_IbdBlock)(nil),
+		(*kestrelcoindMessage_InvRelayBlock)(nil),
+		(*kestrelcoindMessage_InvTransactions)(nil),
+		(*kestrelcoindMessage_Ping)(nil),
+		(*kestrelcoindMessage_Pong)(nil),
+		(*kestrelcoindMessage_Verack)(nil),
+		(*kestrelcoindMessage_Version)(nil),
+		(*kestrelcoindMessage_TransactionNotFound)(nil),
+		(*kestrelcoindMessage_Reject)(nil),
+		(*kestrelcoindMessage_PruningPointUtxoSetChunk)(nil),
+		(*kestrelcoindMessage_RequestIBDBlocks)(nil),
+		(*kestrelcoindMessage_UnexpectedPruningPoint)(nil),
+		(*kestrelcoindMessage_IbdBlockLocator)(nil),
+		(*kestrelcoindMessage_IbdBlockLocatorHighestHash)(nil),
+		(*kestrelcoindMessage_RequestNextPruningPointUtxoSetChunk)(nil),
+		(*kestrelcoindMessage_DonePruningPointUtxoSetChunks)(nil),
+		(*kestrelcoindMessage_IbdBlockLocatorHighestHashNotFound)(nil),
+		(*kestrelcoindMessage_BlockWithTrustedData)(nil),
+		(*kestrelcoindMessage_DoneBlocksWithTrustedData)(nil),
+		(*kestrelcoindMessage_RequestPruningPointAndItsAnticone)(nil),
+		(*kestrelcoindMessage_BlockHeaders)(nil),
+		(*kestrelcoindMessage_RequestNextHeaders)(nil),
+		(*kestrelcoindMessage_DoneHeaders)(nil),
+		(*kestrelcoindMessage_RequestPruningPointUTXOSet)(nil),
+		(*kestrelcoindMessage_RequestHeaders)(nil),
+		(*kestrelcoindMessage_RequestBlockLocator)(nil),
+		(*kestrelcoindMessage_PruningPoints)(nil),
+		(*kestrelcoindMessage_RequestPruningPointProof)(nil),
+		(*kestrelcoindMessage_PruningPointProof)(nil),
+		(*kestrelcoindMessage_Ready)(nil),
+		(*kestrelcoindMessage_BlockWithTrustedDataV4)(nil),
+		(*kestrelcoindMessage_TrustedData)(nil),
+		(*kestrelcoindMessage_RequestIBDChainBlockLocator)(nil),
+		(*kestrelcoindMessage_IbdChainBlockLocator)(nil),
+		(*kestrelcoindMessage_RequestAnticone)(nil),
+		(*kestrelcoindMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
+		(*kestrelcoindMessage_GetCurrentNetworkRequest)(nil),
+		(*kestrelcoindMessage_GetCurrentNetworkResponse)(nil),
+		(*kestrelcoindMessage_SubmitBlockRequest)(nil),
+		(*kestrelcoindMessage_SubmitBlockResponse)(nil),
+		(*kestrelcoindMessage_GetBlockTemplateRequest)(nil),
+		(*kestrelcoindMessage_GetBlockTemplateResponse)(nil),
+		(*kestrelcoindMessage_NotifyBlockAddedRequest)(nil),
+		(*kestrelcoindMessage_NotifyBlockAddedResponse)(nil),
+		(*kestrelcoindMessage_BlockAddedNotification)(nil),
+		(*kestrelcoindMessage_GetPeerAddressesRequest)(nil),
+		(*kestrelcoindMessage_GetPeerAddressesResponse)(nil),
+		(*kestrelcoindMessage_GetSelectedTipHashRequest)(nil),
+		(*kestrelcoindMessage_GetSelectedTipHashResponse)(nil),
+		(*kestrelcoindMessage_GetMempoolEntryRequest)(nil),
+		(*kestrelcoindMessage_GetMempoolEntryResponse)(nil),
+		(*kestrelcoindMessage_GetConnectedPeerInfoRequest)(nil),
+		(*kestrelcoindMessage_GetConnectedPeerInfoResponse)(nil),
+		(*kestrelcoindMessage_AddPeerRequest)(nil),
+		(*kestrelcoindMessage_AddPeerResponse)(nil),
+		(*kestrelcoindMessage_SubmitTransactionRequest)(nil),
+		(*kestrelcoindMessage_SubmitTransactionResponse)(nil),
+		(*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
+		(*kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
+		(*kestrelcoindMessage_VirtualSelectedParentChainChangedNotification)(nil),
+		(*kestrelcoindMessage_GetBlockRequest)(nil),
+		(*kestrelcoindMessage_GetBlockResponse)(nil),
+		(*kestrelcoindMessage_GetSubnetworkRequest)(nil),
+		(*kestrelcoindMessage_GetSubnetworkResponse)(nil),
+		(*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
+		(*kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
+		(*kestrelcoindMessage_GetBlocksRequest)(nil),
+		(*kestrelcoindMessage_GetBlocksResponse)(nil),
+		(*kestrelcoindMessage_GetBlockCountRequest)(nil),
+		(*kestrelcoindMessage_GetBlockCountResponse)(nil),
+		(*kestrelcoindMessage_GetBlockDagInfoRequest)(nil),
+		(*kestrelcoindMessage_GetBlockDagInfoResponse)(nil),
+		(*kestrelcoindMessage_ResolveFinalityConflictRequest)(nil),
+		(*kestrelcoindMessage_ResolveFinalityConflictResponse)(nil),
+		(*kestrelcoindMessage_NotifyFinalityConflictsRequest)(nil),
+		(*kestrelcoindMessage_NotifyFinalityConflictsResponse)(nil),
+		(*kestrelcoindMessage_FinalityConflictNotification)(nil),
+		(*kestrelcoindMessage_FinalityConflictResolvedNotification)(nil),
+		(*kestrelcoindMessage_GetMempoolEntriesRequest)(nil),
+		(*kestrelcoindMessage_GetMempoolEntriesResponse)(nil),
+		(*kestrelcoindMessage_ShutDownRequest)(nil),
+		(*kestrelcoindMessage_ShutDownResponse)(nil),
+		(*kestrelcoindMessage_GetHeadersRequest)(nil),
+		(*kestrelcoindMessage_GetHeadersResponse)(nil),
+		(*kestrelcoindMessage_NotifyUtxosChangedRequest)(nil),
+		(*kestrelcoindMessage_NotifyUtxosChangedResponse)(nil),
+		(*kestrelcoindMessage_UtxosChangedNotification)(nil),
+		(*kestrelcoindMessage_GetUtxosByAddressesRequest)(nil),
+		(*kestrelcoindMessage_GetUtxosByAddressesResponse)(nil),
+		(*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
+		(*kestrelcoindMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
+		(*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
+		(*kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
+		(*kestrelcoindMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
+		(*kestrelcoindMessage_BanRequest)(nil),
+		(*kestrelcoindMessage_BanResponse)(nil),
+		(*kestrelcoindMessage_UnbanRequest)(nil),
+		(*kestrelcoindMessage_UnbanResponse)(nil),
+		(*kestrelcoindMessage_GetInfoRequest)(nil),
+		(*kestrelcoindMessage_GetInfoResponse)(nil),
+		(*kestrelcoindMessage_StopNotifyingUtxosChangedRequest)(nil),
+		(*kestrelcoindMessage_StopNotifyingUtxosChangedResponse)(nil),
+		(*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
+		(*kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
+		(*kestrelcoindMessage_PruningPointUTXOSetOverrideNotification)(nil),
+		(*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
+		(*kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
+		(*kestrelcoindMessage_EstimateNetworkHashesPerSecondRequest)(nil),
+		(*kestrelcoindMessage_EstimateNetworkHashesPerSecondResponse)(nil),
+		(*kestrelcoindMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
+		(*kestrelcoindMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
+		(*kestrelcoindMessage_VirtualDaaScoreChangedNotification)(nil),
+		(*kestrelcoindMessage_GetBalanceByAddressRequest)(nil),
+		(*kestrelcoindMessage_GetBalanceByAddressResponse)(nil),
+		(*kestrelcoindMessage_GetBalancesByAddressesRequest)(nil),
+		(*kestrelcoindMessage_GetBalancesByAddressesResponse)(nil),
+		(*kestrelcoindMessage_NotifyNewBlockTemplateRequest)(nil),
+		(*kestrelcoindMessage_NotifyNewBlockTemplateResponse)(nil),
+		(*kestrelcoindMessage_NewBlockTemplateNotification)(nil),
+		(*kestrelcoindMessage_GetMempoolEntriesByAddressesRequest)(nil),
+		(*kestrelcoindMessage_GetMempoolEntriesByAddressesResponse)(nil),
+		(*kestrelcoindMessage_GetCoinSupplyRequest)(nil),
+		(*kestrelcoindMessage_GetCoinSupplyResponse)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

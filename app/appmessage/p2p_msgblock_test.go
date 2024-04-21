@@ -6,14 +6,14 @@ package appmessage
 
 import (
 	"github.com/davecgh/go-spew/spew"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 	"math"
 	"reflect"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // TestBlock tests the MsgBlock API.

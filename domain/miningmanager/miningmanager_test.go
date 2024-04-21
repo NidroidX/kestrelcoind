@@ -1,28 +1,28 @@
 package miningmanager_test
 
 import (
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/domain/consensusreference"
-	"github.com/sedracoin/sedrad/domain/miningmanager/model"
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/domain/consensusreference"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/model"
+	"github.com/NidroidX/kestrelcoind/util"
+	"github.com/NidroidX/kestrelcoind/version"
 	"reflect"
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/mempool"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/miningmanager"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/testapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager"
 	"github.com/pkg/errors"
 )
 
@@ -885,7 +885,7 @@ func generateNewCoinbase(addressPrefix util.Bech32Prefix, op opType) (*externala
 			ExtraData:       nil,
 		}, nil
 	}
-	_, publicKey, err := libsedrawallet.CreateKeyPair(op == opECDSA)
+	_, publicKey, err := libkestrelcoinwallet.CreateKeyPair(op == opECDSA)
 	if err != nil {
 		return nil, err
 	}

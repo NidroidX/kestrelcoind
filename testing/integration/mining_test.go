@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/mining"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/mining"
 )
 
 func mineNextBlock(t *testing.T, harness *appHarness) *externalapi.DomainBlock {

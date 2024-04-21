@@ -3,13 +3,13 @@ package transactionvalidator_test
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
 	"github.com/pkg/errors"
 )
 
@@ -44,22 +44,22 @@ func TestValidateTransactionInIsolationAndPopulateMass(t *testing.T) {
 			{"good one", 1, 1, 1, subnetworks.SubnetworkIDNative, nil, nil, nil, 0},
 			{"no inputs", 0, 1, 1, subnetworks.SubnetworkIDNative, nil, nil, ruleerrors.ErrNoTxInputs, 0},
 			{"no outputs", 1, 0, 1, subnetworks.SubnetworkIDNative, nil, nil, nil, 0},
-			{"too much seep in one output", 1, 1, constants.MaxSeep + 1,
+			{"too much Sium in one output", 1, 1, constants.MaxSium + 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				nil,
 				ruleerrors.ErrBadTxOutValue, 0},
-			{"too much seep before- valid now", 1, 1, 21e14 + 1,
+			{"too much Sium before- valid now", 1, 1, 21e14 + 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				nil,
 				nil, 0},
-			{"too much seep in one output - after hf", 1, 1, constants.MaxSeep + 1,
+			{"too much Sium in one output - after hf", 1, 1, constants.MaxSium + 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				nil,
 				ruleerrors.ErrBadTxOutValue, 0},
-			{"too much seep in one output", 1, 1, constants.MaxSeep + 1,
+			{"too much Sium in one output", 1, 1, constants.MaxSium + 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				nil,
@@ -93,7 +93,7 @@ func TestValidateTransactionInIsolationAndPopulateMass(t *testing.T) {
 				&txSubnetworkData{subnetworks.SubnetworkIDCoinbase, 0, make([]byte, consensusConfig.MaxCoinbasePayloadLength+1)},
 				nil,
 				ruleerrors.ErrBadCoinbasePayloadLen, 0},
-			{"non-zero gas in sedra", 1, 1, 1,
+			{"non-zero gas in kestrelcoin", 1, 1, 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				func(tx *externalapi.DomainTransaction) {
@@ -105,7 +105,7 @@ func TestValidateTransactionInIsolationAndPopulateMass(t *testing.T) {
 				&txSubnetworkData{subnetworks.SubnetworkIDRegistry, 1, []byte{}},
 				nil,
 				ruleerrors.ErrInvalidGas, 0},
-			{"non-zero payload in sedra", 1, 1, 1,
+			{"non-zero payload in kestrelcoin", 1, 1, 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				func(tx *externalapi.DomainTransaction) {

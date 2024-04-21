@@ -1,30 +1,30 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetBlockCountRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetBlockCountRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetBlockCountRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetBlockCountRequest is nil")
 	}
 	return &appmessage.GetBlockCountRequestMessage{}, nil
 }
 
-func (x *SedradMessage_GetBlockCountRequest) fromAppMessage(_ *appmessage.GetBlockCountRequestMessage) error {
+func (x *kestrelcoindMessage_GetBlockCountRequest) fromAppMessage(_ *appmessage.GetBlockCountRequestMessage) error {
 	x.GetBlockCountRequest = &GetBlockCountRequestMessage{}
 	return nil
 }
 
-func (x *SedradMessage_GetBlockCountResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetBlockCountResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetBlockCountResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetBlockCountResponse is nil")
 	}
 	return x.GetBlockCountResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetBlockCountResponse) fromAppMessage(message *appmessage.GetBlockCountResponseMessage) error {
+func (x *kestrelcoindMessage_GetBlockCountResponse) fromAppMessage(message *appmessage.GetBlockCountResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

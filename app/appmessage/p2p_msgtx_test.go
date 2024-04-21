@@ -11,13 +11,13 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionid"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionid"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // TestTx tests the MsgTx API.

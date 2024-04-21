@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/serialization"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"strings"
@@ -43,22 +43,22 @@ func parse(conf *parseConfig) error {
 		fmt.Printf("Transaction #%d ID: \t%s\n", i+1, consensushashing.TransactionID(partiallySignedTransaction.Tx))
 		fmt.Println()
 
-		allInputSeep := uint64(0)
+		allInputSium := uint64(0)
 		for index, input := range partiallySignedTransaction.Tx.Inputs {
 			partiallySignedInput := partiallySignedTransaction.PartiallySignedInputs[index]
 
 			if conf.Verbose {
-				fmt.Printf("Input %d: \tOutpoint: %s:%d \tAmount: %.2f sedra\n", index, input.PreviousOutpoint.TransactionID,
-					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.SeepPerSedra))
+				fmt.Printf("Input %d: \tOutpoint: %s:%d \tAmount: %.2f kestrelcoin\n", index, input.PreviousOutpoint.TransactionID,
+					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.SiumPerkestrelcoin))
 			}
 
-			allInputSeep += partiallySignedInput.PrevOutput.Value
+			allInputSium += partiallySignedInput.PrevOutput.Value
 		}
 		if conf.Verbose {
 			fmt.Println()
 		}
 
-		allOutputSeep := uint64(0)
+		allOutputSium := uint64(0)
 		for index, output := range partiallySignedTransaction.Tx.Outputs {
 			scriptPublicKeyType, scriptPublicKeyAddress, err := txscript.ExtractScriptPubKeyAddress(output.ScriptPublicKey, conf.ActiveNetParams)
 			if err != nil {
@@ -71,14 +71,14 @@ func parse(conf *parseConfig) error {
 				addressString = fmt.Sprintf("<Non-standard transaction script public key: %s>", scriptPublicKeyHex)
 			}
 
-			fmt.Printf("Output %d: \tRecipient: %s \tAmount: %.2f sedra\n",
-				index, addressString, float64(output.Value)/float64(constants.SeepPerSedra))
+			fmt.Printf("Output %d: \tRecipient: %s \tAmount: %.2f kestrelcoin\n",
+				index, addressString, float64(output.Value)/float64(constants.SiumPerkestrelcoin))
 
-			allOutputSeep += output.Value
+			allOutputSium += output.Value
 		}
 		fmt.Println()
 
-		fmt.Printf("Fee:\t%d Seep\n\n", allInputSeep-allOutputSeep)
+		fmt.Printf("Fee:\t%d Sium\n\n", allInputSium-allOutputSium)
 	}
 
 	return nil

@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/client"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
 )
 
 func showAddresses(conf *showAddressesConfig) error {

@@ -7,8 +7,8 @@ package blocklogger
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 )
 
 // BlockLogger is a type tracking the amount of blocks/headers/transactions to log the time it took to receive them

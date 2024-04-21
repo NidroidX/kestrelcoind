@@ -7,18 +7,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/blockheader"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/merkle"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/mining"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/pow"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/blockheader"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/merkle"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/mining"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/pow"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/util/difficulty"
 	"github.com/pkg/errors"
 )
 
@@ -102,7 +102,7 @@ func TestPOW(t *testing.T) {
 		}
 		random := rand.New(rand.NewSource(0))
 		// Difficulty is too high on mainnet to actually mine.
-		if consensusConfig.Name != "sedra-mainnet" {
+		if consensusConfig.Name != "kestrelcoin-mainnet" {
 			mining.SolveBlock(validBlock, random)
 			err = tc.ValidateAndInsertBlock(validBlock, true)
 			if err != nil {

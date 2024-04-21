@@ -1,10 +1,10 @@
 package blockrelay
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 func (flow *handleRelayInvsFlow) sendGetBlockLocator(highHash *externalapi.DomainHash, limit uint32) error {

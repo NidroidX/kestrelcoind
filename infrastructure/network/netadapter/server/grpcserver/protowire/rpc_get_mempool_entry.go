@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetMempoolEntryRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetMempoolEntryRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetMempoolEntryRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetMempoolEntryRequest is nil")
 	}
 	return x.GetMempoolEntryRequest.toAppMessage()
 }
 
-func (x *SedradMessage_GetMempoolEntryRequest) fromAppMessage(message *appmessage.GetMempoolEntryRequestMessage) error {
+func (x *kestrelcoindMessage_GetMempoolEntryRequest) fromAppMessage(message *appmessage.GetMempoolEntryRequestMessage) error {
 	x.GetMempoolEntryRequest = &GetMempoolEntryRequestMessage{
 		TxId:                  message.TxID,
 		IncludeOrphanPool:     message.IncludeOrphanPool,
@@ -32,14 +32,14 @@ func (x *GetMempoolEntryRequestMessage) toAppMessage() (appmessage.Message, erro
 	}, nil
 }
 
-func (x *SedradMessage_GetMempoolEntryResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetMempoolEntryResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetMempoolEntryResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetMempoolEntryResponse is nil")
 	}
 	return x.GetMempoolEntryResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetMempoolEntryResponse) fromAppMessage(message *appmessage.GetMempoolEntryResponseMessage) error {
+func (x *kestrelcoindMessage_GetMempoolEntryResponse) fromAppMessage(message *appmessage.GetMempoolEntryResponseMessage) error {
 	var rpcErr *RPCError
 	if message.Error != nil {
 		rpcErr = &RPCError{Message: message.Error.Message}

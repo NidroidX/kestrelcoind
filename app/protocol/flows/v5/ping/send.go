@@ -1,16 +1,16 @@
 package ping
 
 import (
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flowcontext"
 	"github.com/pkg/errors"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/util/random"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/util/random"
 )
 
 // SendPingsContext is the interface for the context needed for the SendPings flow.

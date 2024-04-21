@@ -1,14 +1,14 @@
-package libsedrawallet
+package libkestrelcoinwallet
 
 import (
 	"math"
 	"sort"
 	"strings"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/bip32"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/util"
 	"github.com/pkg/errors"
 )
 

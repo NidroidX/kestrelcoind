@@ -2,24 +2,24 @@ package transactionrelay_test
 
 import (
 	"errors"
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/transactionrelay"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flowcontext"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flows/v5/transactionrelay"
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/domain"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/mempool"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/util/panics"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 type mocTransactionsRelayContext struct {

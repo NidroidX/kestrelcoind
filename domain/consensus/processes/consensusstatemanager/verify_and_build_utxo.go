@@ -3,15 +3,15 @@ package consensusstatemanager
 import (
 	"sort"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/merkle"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/merkle"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
 	"github.com/pkg/errors"
 )
 

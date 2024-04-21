@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.26.0
 // 	protoc        v3.21.12
-// source: sedrawalletd.proto
+// source: kestrelcoinwalletd.proto
 
 package pb
 
@@ -29,7 +29,7 @@ type GetBalanceRequest struct {
 func (x *GetBalanceRequest) Reset() {
 	*x = GetBalanceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[0]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -42,7 +42,7 @@ func (x *GetBalanceRequest) String() string {
 func (*GetBalanceRequest) ProtoMessage() {}
 
 func (x *GetBalanceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[0]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *GetBalanceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetBalanceRequest.ProtoReflect.Descriptor instead.
 func (*GetBalanceRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{0}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{0}
 }
 
 type GetBalanceResponse struct {
@@ -71,7 +71,7 @@ type GetBalanceResponse struct {
 func (x *GetBalanceResponse) Reset() {
 	*x = GetBalanceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[1]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -84,7 +84,7 @@ func (x *GetBalanceResponse) String() string {
 func (*GetBalanceResponse) ProtoMessage() {}
 
 func (x *GetBalanceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[1]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -97,7 +97,7 @@ func (x *GetBalanceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetBalanceResponse.ProtoReflect.Descriptor instead.
 func (*GetBalanceResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{1}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetBalanceResponse) GetAvailable() uint64 {
@@ -134,7 +134,7 @@ type AddressBalances struct {
 func (x *AddressBalances) Reset() {
 	*x = AddressBalances{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[2]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -147,7 +147,7 @@ func (x *AddressBalances) String() string {
 func (*AddressBalances) ProtoMessage() {}
 
 func (x *AddressBalances) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[2]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -160,7 +160,7 @@ func (x *AddressBalances) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressBalances.ProtoReflect.Descriptor instead.
 func (*AddressBalances) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{2}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AddressBalances) GetAddress() string {
@@ -199,7 +199,7 @@ type CreateUnsignedTransactionsRequest struct {
 func (x *CreateUnsignedTransactionsRequest) Reset() {
 	*x = CreateUnsignedTransactionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[3]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -212,7 +212,7 @@ func (x *CreateUnsignedTransactionsRequest) String() string {
 func (*CreateUnsignedTransactionsRequest) ProtoMessage() {}
 
 func (x *CreateUnsignedTransactionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[3]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -225,7 +225,7 @@ func (x *CreateUnsignedTransactionsRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CreateUnsignedTransactionsRequest.ProtoReflect.Descriptor instead.
 func (*CreateUnsignedTransactionsRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{3}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateUnsignedTransactionsRequest) GetAddress() string {
@@ -274,7 +274,7 @@ type CreateUnsignedTransactionsResponse struct {
 func (x *CreateUnsignedTransactionsResponse) Reset() {
 	*x = CreateUnsignedTransactionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[4]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *CreateUnsignedTransactionsResponse) String() string {
 func (*CreateUnsignedTransactionsResponse) ProtoMessage() {}
 
 func (x *CreateUnsignedTransactionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[4]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *CreateUnsignedTransactionsResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CreateUnsignedTransactionsResponse.ProtoReflect.Descriptor instead.
 func (*CreateUnsignedTransactionsResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{4}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateUnsignedTransactionsResponse) GetUnsignedTransactions() [][]byte {
@@ -319,7 +319,7 @@ type ShowAddressesRequest struct {
 func (x *ShowAddressesRequest) Reset() {
 	*x = ShowAddressesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[5]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -332,7 +332,7 @@ func (x *ShowAddressesRequest) String() string {
 func (*ShowAddressesRequest) ProtoMessage() {}
 
 func (x *ShowAddressesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[5]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -345,7 +345,7 @@ func (x *ShowAddressesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShowAddressesRequest.ProtoReflect.Descriptor instead.
 func (*ShowAddressesRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{5}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{5}
 }
 
 type ShowAddressesResponse struct {
@@ -359,7 +359,7 @@ type ShowAddressesResponse struct {
 func (x *ShowAddressesResponse) Reset() {
 	*x = ShowAddressesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[6]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -372,7 +372,7 @@ func (x *ShowAddressesResponse) String() string {
 func (*ShowAddressesResponse) ProtoMessage() {}
 
 func (x *ShowAddressesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[6]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -385,7 +385,7 @@ func (x *ShowAddressesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShowAddressesResponse.ProtoReflect.Descriptor instead.
 func (*ShowAddressesResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{6}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ShowAddressesResponse) GetAddress() []string {
@@ -404,7 +404,7 @@ type NewAddressRequest struct {
 func (x *NewAddressRequest) Reset() {
 	*x = NewAddressRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[7]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -417,7 +417,7 @@ func (x *NewAddressRequest) String() string {
 func (*NewAddressRequest) ProtoMessage() {}
 
 func (x *NewAddressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[7]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -430,7 +430,7 @@ func (x *NewAddressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NewAddressRequest.ProtoReflect.Descriptor instead.
 func (*NewAddressRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{7}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{7}
 }
 
 type NewAddressResponse struct {
@@ -444,7 +444,7 @@ type NewAddressResponse struct {
 func (x *NewAddressResponse) Reset() {
 	*x = NewAddressResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[8]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -457,7 +457,7 @@ func (x *NewAddressResponse) String() string {
 func (*NewAddressResponse) ProtoMessage() {}
 
 func (x *NewAddressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[8]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -470,7 +470,7 @@ func (x *NewAddressResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NewAddressResponse.ProtoReflect.Descriptor instead.
 func (*NewAddressResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{8}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *NewAddressResponse) GetAddress() string {
@@ -492,7 +492,7 @@ type BroadcastRequest struct {
 func (x *BroadcastRequest) Reset() {
 	*x = BroadcastRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[9]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -505,7 +505,7 @@ func (x *BroadcastRequest) String() string {
 func (*BroadcastRequest) ProtoMessage() {}
 
 func (x *BroadcastRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[9]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -518,7 +518,7 @@ func (x *BroadcastRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BroadcastRequest.ProtoReflect.Descriptor instead.
 func (*BroadcastRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{9}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *BroadcastRequest) GetIsDomain() bool {
@@ -546,7 +546,7 @@ type BroadcastResponse struct {
 func (x *BroadcastResponse) Reset() {
 	*x = BroadcastResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[10]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -559,7 +559,7 @@ func (x *BroadcastResponse) String() string {
 func (*BroadcastResponse) ProtoMessage() {}
 
 func (x *BroadcastResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[10]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -572,7 +572,7 @@ func (x *BroadcastResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BroadcastResponse.ProtoReflect.Descriptor instead.
 func (*BroadcastResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{10}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *BroadcastResponse) GetTxIDs() []string {
@@ -591,7 +591,7 @@ type ShutdownRequest struct {
 func (x *ShutdownRequest) Reset() {
 	*x = ShutdownRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[11]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -604,7 +604,7 @@ func (x *ShutdownRequest) String() string {
 func (*ShutdownRequest) ProtoMessage() {}
 
 func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[11]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -617,7 +617,7 @@ func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownRequest.ProtoReflect.Descriptor instead.
 func (*ShutdownRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{11}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{11}
 }
 
 type ShutdownResponse struct {
@@ -629,7 +629,7 @@ type ShutdownResponse struct {
 func (x *ShutdownResponse) Reset() {
 	*x = ShutdownResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[12]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -642,7 +642,7 @@ func (x *ShutdownResponse) String() string {
 func (*ShutdownResponse) ProtoMessage() {}
 
 func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[12]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -655,7 +655,7 @@ func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownResponse.ProtoReflect.Descriptor instead.
 func (*ShutdownResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{12}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{12}
 }
 
 type Outpoint struct {
@@ -670,7 +670,7 @@ type Outpoint struct {
 func (x *Outpoint) Reset() {
 	*x = Outpoint{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[13]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -683,7 +683,7 @@ func (x *Outpoint) String() string {
 func (*Outpoint) ProtoMessage() {}
 
 func (x *Outpoint) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[13]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -696,7 +696,7 @@ func (x *Outpoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Outpoint.ProtoReflect.Descriptor instead.
 func (*Outpoint) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{13}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *Outpoint) GetTransactionId() string {
@@ -726,7 +726,7 @@ type UtxosByAddressesEntry struct {
 func (x *UtxosByAddressesEntry) Reset() {
 	*x = UtxosByAddressesEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[14]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -739,7 +739,7 @@ func (x *UtxosByAddressesEntry) String() string {
 func (*UtxosByAddressesEntry) ProtoMessage() {}
 
 func (x *UtxosByAddressesEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[14]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -752,7 +752,7 @@ func (x *UtxosByAddressesEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UtxosByAddressesEntry.ProtoReflect.Descriptor instead.
 func (*UtxosByAddressesEntry) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{14}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *UtxosByAddressesEntry) GetAddress() string {
@@ -788,7 +788,7 @@ type ScriptPublicKey struct {
 func (x *ScriptPublicKey) Reset() {
 	*x = ScriptPublicKey{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[15]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -801,7 +801,7 @@ func (x *ScriptPublicKey) String() string {
 func (*ScriptPublicKey) ProtoMessage() {}
 
 func (x *ScriptPublicKey) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[15]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -814,7 +814,7 @@ func (x *ScriptPublicKey) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScriptPublicKey.ProtoReflect.Descriptor instead.
 func (*ScriptPublicKey) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{15}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ScriptPublicKey) GetVersion() uint32 {
@@ -845,7 +845,7 @@ type UtxoEntry struct {
 func (x *UtxoEntry) Reset() {
 	*x = UtxoEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[16]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -858,7 +858,7 @@ func (x *UtxoEntry) String() string {
 func (*UtxoEntry) ProtoMessage() {}
 
 func (x *UtxoEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[16]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -871,7 +871,7 @@ func (x *UtxoEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UtxoEntry.ProtoReflect.Descriptor instead.
 func (*UtxoEntry) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{16}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *UtxoEntry) GetAmount() uint64 {
@@ -913,7 +913,7 @@ type GetExternalSpendableUTXOsRequest struct {
 func (x *GetExternalSpendableUTXOsRequest) Reset() {
 	*x = GetExternalSpendableUTXOsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[17]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -926,7 +926,7 @@ func (x *GetExternalSpendableUTXOsRequest) String() string {
 func (*GetExternalSpendableUTXOsRequest) ProtoMessage() {}
 
 func (x *GetExternalSpendableUTXOsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[17]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -939,7 +939,7 @@ func (x *GetExternalSpendableUTXOsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetExternalSpendableUTXOsRequest.ProtoReflect.Descriptor instead.
 func (*GetExternalSpendableUTXOsRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{17}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *GetExternalSpendableUTXOsRequest) GetAddress() string {
@@ -960,7 +960,7 @@ type GetExternalSpendableUTXOsResponse struct {
 func (x *GetExternalSpendableUTXOsResponse) Reset() {
 	*x = GetExternalSpendableUTXOsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[18]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -973,7 +973,7 @@ func (x *GetExternalSpendableUTXOsResponse) String() string {
 func (*GetExternalSpendableUTXOsResponse) ProtoMessage() {}
 
 func (x *GetExternalSpendableUTXOsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[18]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -986,7 +986,7 @@ func (x *GetExternalSpendableUTXOsResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetExternalSpendableUTXOsResponse.ProtoReflect.Descriptor instead.
 func (*GetExternalSpendableUTXOsResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{18}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetExternalSpendableUTXOsResponse) GetEntries() []*UtxosByAddressesEntry {
@@ -1013,7 +1013,7 @@ type SendRequest struct {
 func (x *SendRequest) Reset() {
 	*x = SendRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[19]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1026,7 +1026,7 @@ func (x *SendRequest) String() string {
 func (*SendRequest) ProtoMessage() {}
 
 func (x *SendRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[19]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1039,7 +1039,7 @@ func (x *SendRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendRequest.ProtoReflect.Descriptor instead.
 func (*SendRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{19}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *SendRequest) GetToAddress() string {
@@ -1096,7 +1096,7 @@ type SendResponse struct {
 func (x *SendResponse) Reset() {
 	*x = SendResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[20]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1109,7 +1109,7 @@ func (x *SendResponse) String() string {
 func (*SendResponse) ProtoMessage() {}
 
 func (x *SendResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[20]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1122,7 +1122,7 @@ func (x *SendResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendResponse.ProtoReflect.Descriptor instead.
 func (*SendResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{20}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *SendResponse) GetTxIDs() []string {
@@ -1152,7 +1152,7 @@ type SignRequest struct {
 func (x *SignRequest) Reset() {
 	*x = SignRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[21]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1165,7 +1165,7 @@ func (x *SignRequest) String() string {
 func (*SignRequest) ProtoMessage() {}
 
 func (x *SignRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[21]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1178,7 +1178,7 @@ func (x *SignRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignRequest.ProtoReflect.Descriptor instead.
 func (*SignRequest) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{21}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *SignRequest) GetUnsignedTransactions() [][]byte {
@@ -1206,7 +1206,7 @@ type SignResponse struct {
 func (x *SignResponse) Reset() {
 	*x = SignResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_sedrawalletd_proto_msgTypes[22]
+		mi := &file_kestrelcoinwalletd_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1219,7 +1219,7 @@ func (x *SignResponse) String() string {
 func (*SignResponse) ProtoMessage() {}
 
 func (x *SignResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sedrawalletd_proto_msgTypes[22]
+	mi := &file_kestrelcoinwalletd_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1232,7 +1232,7 @@ func (x *SignResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignResponse.ProtoReflect.Descriptor instead.
 func (*SignResponse) Descriptor() ([]byte, []int) {
-	return file_sedrawalletd_proto_rawDescGZIP(), []int{22}
+	return file_kestrelcoinwalletd_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *SignResponse) GetSignedTransactions() [][]byte {
@@ -1242,9 +1242,9 @@ func (x *SignResponse) GetSignedTransactions() [][]byte {
 	return nil
 }
 
-var File_sedrawalletd_proto protoreflect.FileDescriptor
+var File_kestrelcoinwalletd_proto protoreflect.FileDescriptor
 
-var file_sedrawalletd_proto_rawDesc = []byte{
+var file_kestrelcoinwalletd_proto_rawDesc = []byte{
 	0x0a, 0x12, 0x6b, 0x61, 0x73, 0x70, 0x61, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x64, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c, 0x6b, 0x61, 0x73, 0x70, 0x61, 0x77, 0x61, 0x6c, 0x6c, 0x65,
 	0x74, 0x64, 0x22, 0x13, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65,
@@ -1430,67 +1430,67 @@ var file_sedrawalletd_proto_rawDesc = []byte{
 }
 
 var (
-	file_sedrawalletd_proto_rawDescOnce sync.Once
-	file_sedrawalletd_proto_rawDescData = file_sedrawalletd_proto_rawDesc
+	file_kestrelcoinwalletd_proto_rawDescOnce sync.Once
+	file_kestrelcoinwalletd_proto_rawDescData = file_kestrelcoinwalletd_proto_rawDesc
 )
 
-func file_sedrawalletd_proto_rawDescGZIP() []byte {
-	file_sedrawalletd_proto_rawDescOnce.Do(func() {
-		file_sedrawalletd_proto_rawDescData = protoimpl.X.CompressGZIP(file_sedrawalletd_proto_rawDescData)
+func file_kestrelcoinwalletd_proto_rawDescGZIP() []byte {
+	file_kestrelcoinwalletd_proto_rawDescOnce.Do(func() {
+		file_kestrelcoinwalletd_proto_rawDescData = protoimpl.X.CompressGZIP(file_kestrelcoinwalletd_proto_rawDescData)
 	})
-	return file_sedrawalletd_proto_rawDescData
+	return file_kestrelcoinwalletd_proto_rawDescData
 }
 
-var file_sedrawalletd_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
-var file_sedrawalletd_proto_goTypes = []interface{}{
-	(*GetBalanceRequest)(nil),                  // 0: sedrawalletd.GetBalanceRequest
-	(*GetBalanceResponse)(nil),                 // 1: sedrawalletd.GetBalanceResponse
-	(*AddressBalances)(nil),                    // 2: sedrawalletd.AddressBalances
-	(*CreateUnsignedTransactionsRequest)(nil),  // 3: sedrawalletd.CreateUnsignedTransactionsRequest
-	(*CreateUnsignedTransactionsResponse)(nil), // 4: sedrawalletd.CreateUnsignedTransactionsResponse
-	(*ShowAddressesRequest)(nil),               // 5: sedrawalletd.ShowAddressesRequest
-	(*ShowAddressesResponse)(nil),              // 6: sedrawalletd.ShowAddressesResponse
-	(*NewAddressRequest)(nil),                  // 7: sedrawalletd.NewAddressRequest
-	(*NewAddressResponse)(nil),                 // 8: sedrawalletd.NewAddressResponse
-	(*BroadcastRequest)(nil),                   // 9: sedrawalletd.BroadcastRequest
-	(*BroadcastResponse)(nil),                  // 10: sedrawalletd.BroadcastResponse
-	(*ShutdownRequest)(nil),                    // 11: sedrawalletd.ShutdownRequest
-	(*ShutdownResponse)(nil),                   // 12: sedrawalletd.ShutdownResponse
-	(*Outpoint)(nil),                           // 13: sedrawalletd.Outpoint
-	(*UtxosByAddressesEntry)(nil),              // 14: sedrawalletd.UtxosByAddressesEntry
-	(*ScriptPublicKey)(nil),                    // 15: sedrawalletd.ScriptPublicKey
-	(*UtxoEntry)(nil),                          // 16: sedrawalletd.UtxoEntry
-	(*GetExternalSpendableUTXOsRequest)(nil),   // 17: sedrawalletd.GetExternalSpendableUTXOsRequest
-	(*GetExternalSpendableUTXOsResponse)(nil),  // 18: sedrawalletd.GetExternalSpendableUTXOsResponse
-	(*SendRequest)(nil),                        // 19: sedrawalletd.SendRequest
-	(*SendResponse)(nil),                       // 20: sedrawalletd.SendResponse
-	(*SignRequest)(nil),                        // 21: sedrawalletd.SignRequest
-	(*SignResponse)(nil),                       // 22: sedrawalletd.SignResponse
+var file_kestrelcoinwalletd_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_kestrelcoinwalletd_proto_goTypes = []interface{}{
+	(*GetBalanceRequest)(nil),                  // 0: kestrelcoinwalletd.GetBalanceRequest
+	(*GetBalanceResponse)(nil),                 // 1: kestrelcoinwalletd.GetBalanceResponse
+	(*AddressBalances)(nil),                    // 2: kestrelcoinwalletd.AddressBalances
+	(*CreateUnsignedTransactionsRequest)(nil),  // 3: kestrelcoinwalletd.CreateUnsignedTransactionsRequest
+	(*CreateUnsignedTransactionsResponse)(nil), // 4: kestrelcoinwalletd.CreateUnsignedTransactionsResponse
+	(*ShowAddressesRequest)(nil),               // 5: kestrelcoinwalletd.ShowAddressesRequest
+	(*ShowAddressesResponse)(nil),              // 6: kestrelcoinwalletd.ShowAddressesResponse
+	(*NewAddressRequest)(nil),                  // 7: kestrelcoinwalletd.NewAddressRequest
+	(*NewAddressResponse)(nil),                 // 8: kestrelcoinwalletd.NewAddressResponse
+	(*BroadcastRequest)(nil),                   // 9: kestrelcoinwalletd.BroadcastRequest
+	(*BroadcastResponse)(nil),                  // 10: kestrelcoinwalletd.BroadcastResponse
+	(*ShutdownRequest)(nil),                    // 11: kestrelcoinwalletd.ShutdownRequest
+	(*ShutdownResponse)(nil),                   // 12: kestrelcoinwalletd.ShutdownResponse
+	(*Outpoint)(nil),                           // 13: kestrelcoinwalletd.Outpoint
+	(*UtxosByAddressesEntry)(nil),              // 14: kestrelcoinwalletd.UtxosByAddressesEntry
+	(*ScriptPublicKey)(nil),                    // 15: kestrelcoinwalletd.ScriptPublicKey
+	(*UtxoEntry)(nil),                          // 16: kestrelcoinwalletd.UtxoEntry
+	(*GetExternalSpendableUTXOsRequest)(nil),   // 17: kestrelcoinwalletd.GetExternalSpendableUTXOsRequest
+	(*GetExternalSpendableUTXOsResponse)(nil),  // 18: kestrelcoinwalletd.GetExternalSpendableUTXOsResponse
+	(*SendRequest)(nil),                        // 19: kestrelcoinwalletd.SendRequest
+	(*SendResponse)(nil),                       // 20: kestrelcoinwalletd.SendResponse
+	(*SignRequest)(nil),                        // 21: kestrelcoinwalletd.SignRequest
+	(*SignResponse)(nil),                       // 22: kestrelcoinwalletd.SignResponse
 }
-var file_sedrawalletd_proto_depIdxs = []int32{
-	2,  // 0: sedrawalletd.GetBalanceResponse.addressBalances:type_name -> sedrawalletd.AddressBalances
-	13, // 1: sedrawalletd.UtxosByAddressesEntry.outpoint:type_name -> sedrawalletd.Outpoint
-	16, // 2: sedrawalletd.UtxosByAddressesEntry.utxoEntry:type_name -> sedrawalletd.UtxoEntry
-	15, // 3: sedrawalletd.UtxoEntry.scriptPublicKey:type_name -> sedrawalletd.ScriptPublicKey
-	14, // 4: sedrawalletd.GetExternalSpendableUTXOsResponse.Entries:type_name -> sedrawalletd.UtxosByAddressesEntry
-	0,  // 5: sedrawalletd.sedrawalletd.GetBalance:input_type -> sedrawalletd.GetBalanceRequest
-	17, // 6: sedrawalletd.sedrawalletd.GetExternalSpendableUTXOs:input_type -> sedrawalletd.GetExternalSpendableUTXOsRequest
-	3,  // 7: sedrawalletd.sedrawalletd.CreateUnsignedTransactions:input_type -> sedrawalletd.CreateUnsignedTransactionsRequest
-	5,  // 8: sedrawalletd.sedrawalletd.ShowAddresses:input_type -> sedrawalletd.ShowAddressesRequest
-	7,  // 9: sedrawalletd.sedrawalletd.NewAddress:input_type -> sedrawalletd.NewAddressRequest
-	11, // 10: sedrawalletd.sedrawalletd.Shutdown:input_type -> sedrawalletd.ShutdownRequest
-	9,  // 11: sedrawalletd.sedrawalletd.Broadcast:input_type -> sedrawalletd.BroadcastRequest
-	19, // 12: sedrawalletd.sedrawalletd.Send:input_type -> sedrawalletd.SendRequest
-	21, // 13: sedrawalletd.sedrawalletd.Sign:input_type -> sedrawalletd.SignRequest
-	1,  // 14: sedrawalletd.sedrawalletd.GetBalance:output_type -> sedrawalletd.GetBalanceResponse
-	18, // 15: sedrawalletd.sedrawalletd.GetExternalSpendableUTXOs:output_type -> sedrawalletd.GetExternalSpendableUTXOsResponse
-	4,  // 16: sedrawalletd.sedrawalletd.CreateUnsignedTransactions:output_type -> sedrawalletd.CreateUnsignedTransactionsResponse
-	6,  // 17: sedrawalletd.sedrawalletd.ShowAddresses:output_type -> sedrawalletd.ShowAddressesResponse
-	8,  // 18: sedrawalletd.sedrawalletd.NewAddress:output_type -> sedrawalletd.NewAddressResponse
-	12, // 19: sedrawalletd.sedrawalletd.Shutdown:output_type -> sedrawalletd.ShutdownResponse
-	10, // 20: sedrawalletd.sedrawalletd.Broadcast:output_type -> sedrawalletd.BroadcastResponse
-	20, // 21: sedrawalletd.sedrawalletd.Send:output_type -> sedrawalletd.SendResponse
-	22, // 22: sedrawalletd.sedrawalletd.Sign:output_type -> sedrawalletd.SignResponse
+var file_kestrelcoinwalletd_proto_depIdxs = []int32{
+	2,  // 0: kestrelcoinwalletd.GetBalanceResponse.addressBalances:type_name -> kestrelcoinwalletd.AddressBalances
+	13, // 1: kestrelcoinwalletd.UtxosByAddressesEntry.outpoint:type_name -> kestrelcoinwalletd.Outpoint
+	16, // 2: kestrelcoinwalletd.UtxosByAddressesEntry.utxoEntry:type_name -> kestrelcoinwalletd.UtxoEntry
+	15, // 3: kestrelcoinwalletd.UtxoEntry.scriptPublicKey:type_name -> kestrelcoinwalletd.ScriptPublicKey
+	14, // 4: kestrelcoinwalletd.GetExternalSpendableUTXOsResponse.Entries:type_name -> kestrelcoinwalletd.UtxosByAddressesEntry
+	0,  // 5: kestrelcoinwalletd.kestrelcoinwalletd.GetBalance:input_type -> kestrelcoinwalletd.GetBalanceRequest
+	17, // 6: kestrelcoinwalletd.kestrelcoinwalletd.GetExternalSpendableUTXOs:input_type -> kestrelcoinwalletd.GetExternalSpendableUTXOsRequest
+	3,  // 7: kestrelcoinwalletd.kestrelcoinwalletd.CreateUnsignedTransactions:input_type -> kestrelcoinwalletd.CreateUnsignedTransactionsRequest
+	5,  // 8: kestrelcoinwalletd.kestrelcoinwalletd.ShowAddresses:input_type -> kestrelcoinwalletd.ShowAddressesRequest
+	7,  // 9: kestrelcoinwalletd.kestrelcoinwalletd.NewAddress:input_type -> kestrelcoinwalletd.NewAddressRequest
+	11, // 10: kestrelcoinwalletd.kestrelcoinwalletd.Shutdown:input_type -> kestrelcoinwalletd.ShutdownRequest
+	9,  // 11: kestrelcoinwalletd.kestrelcoinwalletd.Broadcast:input_type -> kestrelcoinwalletd.BroadcastRequest
+	19, // 12: kestrelcoinwalletd.kestrelcoinwalletd.Send:input_type -> kestrelcoinwalletd.SendRequest
+	21, // 13: kestrelcoinwalletd.kestrelcoinwalletd.Sign:input_type -> kestrelcoinwalletd.SignRequest
+	1,  // 14: kestrelcoinwalletd.kestrelcoinwalletd.GetBalance:output_type -> kestrelcoinwalletd.GetBalanceResponse
+	18, // 15: kestrelcoinwalletd.kestrelcoinwalletd.GetExternalSpendableUTXOs:output_type -> kestrelcoinwalletd.GetExternalSpendableUTXOsResponse
+	4,  // 16: kestrelcoinwalletd.kestrelcoinwalletd.CreateUnsignedTransactions:output_type -> kestrelcoinwalletd.CreateUnsignedTransactionsResponse
+	6,  // 17: kestrelcoinwalletd.kestrelcoinwalletd.ShowAddresses:output_type -> kestrelcoinwalletd.ShowAddressesResponse
+	8,  // 18: kestrelcoinwalletd.kestrelcoinwalletd.NewAddress:output_type -> kestrelcoinwalletd.NewAddressResponse
+	12, // 19: kestrelcoinwalletd.kestrelcoinwalletd.Shutdown:output_type -> kestrelcoinwalletd.ShutdownResponse
+	10, // 20: kestrelcoinwalletd.kestrelcoinwalletd.Broadcast:output_type -> kestrelcoinwalletd.BroadcastResponse
+	20, // 21: kestrelcoinwalletd.kestrelcoinwalletd.Send:output_type -> kestrelcoinwalletd.SendResponse
+	22, // 22: kestrelcoinwalletd.kestrelcoinwalletd.Sign:output_type -> kestrelcoinwalletd.SignResponse
 	14, // [14:23] is the sub-list for method output_type
 	5,  // [5:14] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -1498,13 +1498,13 @@ var file_sedrawalletd_proto_depIdxs = []int32{
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_sedrawalletd_proto_init() }
-func file_sedrawalletd_proto_init() {
-	if File_sedrawalletd_proto != nil {
+func init() { file_kestrelcoinwalletd_proto_init() }
+func file_kestrelcoinwalletd_proto_init() {
+	if File_kestrelcoinwalletd_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_sedrawalletd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetBalanceRequest); i {
 			case 0:
 				return &v.state
@@ -1516,7 +1516,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetBalanceResponse); i {
 			case 0:
 				return &v.state
@@ -1528,7 +1528,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddressBalances); i {
 			case 0:
 				return &v.state
@@ -1540,7 +1540,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUnsignedTransactionsRequest); i {
 			case 0:
 				return &v.state
@@ -1552,7 +1552,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUnsignedTransactionsResponse); i {
 			case 0:
 				return &v.state
@@ -1564,7 +1564,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShowAddressesRequest); i {
 			case 0:
 				return &v.state
@@ -1576,7 +1576,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShowAddressesResponse); i {
 			case 0:
 				return &v.state
@@ -1588,7 +1588,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NewAddressRequest); i {
 			case 0:
 				return &v.state
@@ -1600,7 +1600,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NewAddressResponse); i {
 			case 0:
 				return &v.state
@@ -1612,7 +1612,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BroadcastRequest); i {
 			case 0:
 				return &v.state
@@ -1624,7 +1624,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BroadcastResponse); i {
 			case 0:
 				return &v.state
@@ -1636,7 +1636,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownRequest); i {
 			case 0:
 				return &v.state
@@ -1648,7 +1648,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownResponse); i {
 			case 0:
 				return &v.state
@@ -1660,7 +1660,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Outpoint); i {
 			case 0:
 				return &v.state
@@ -1672,7 +1672,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UtxosByAddressesEntry); i {
 			case 0:
 				return &v.state
@@ -1684,7 +1684,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ScriptPublicKey); i {
 			case 0:
 				return &v.state
@@ -1696,7 +1696,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UtxoEntry); i {
 			case 0:
 				return &v.state
@@ -1708,7 +1708,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetExternalSpendableUTXOsRequest); i {
 			case 0:
 				return &v.state
@@ -1720,7 +1720,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetExternalSpendableUTXOsResponse); i {
 			case 0:
 				return &v.state
@@ -1732,7 +1732,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendRequest); i {
 			case 0:
 				return &v.state
@@ -1744,7 +1744,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendResponse); i {
 			case 0:
 				return &v.state
@@ -1756,7 +1756,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SignRequest); i {
 			case 0:
 				return &v.state
@@ -1768,7 +1768,7 @@ func file_sedrawalletd_proto_init() {
 				return nil
 			}
 		}
-		file_sedrawalletd_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_kestrelcoinwalletd_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SignResponse); i {
 			case 0:
 				return &v.state
@@ -1785,18 +1785,18 @@ func file_sedrawalletd_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_sedrawalletd_proto_rawDesc,
+			RawDescriptor: file_kestrelcoinwalletd_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_sedrawalletd_proto_goTypes,
-		DependencyIndexes: file_sedrawalletd_proto_depIdxs,
-		MessageInfos:      file_sedrawalletd_proto_msgTypes,
+		GoTypes:           file_kestrelcoinwalletd_proto_goTypes,
+		DependencyIndexes: file_kestrelcoinwalletd_proto_depIdxs,
+		MessageInfos:      file_kestrelcoinwalletd_proto_msgTypes,
 	}.Build()
-	File_sedrawalletd_proto = out.File
-	file_sedrawalletd_proto_rawDesc = nil
-	file_sedrawalletd_proto_goTypes = nil
-	file_sedrawalletd_proto_depIdxs = nil
+	File_kestrelcoinwalletd_proto = out.File
+	file_kestrelcoinwalletd_proto_rawDesc = nil
+	file_kestrelcoinwalletd_proto_goTypes = nil
+	file_kestrelcoinwalletd_proto_depIdxs = nil
 }

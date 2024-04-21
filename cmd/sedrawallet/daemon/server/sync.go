@@ -5,13 +5,13 @@ import (
 	"sort"
 	"time"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-var keyChains = []uint8{libsedrawallet.ExternalKeychain, libsedrawallet.InternalKeychain}
+var keyChains = []uint8{libkestrelcoinwallet.ExternalKeychain, libkestrelcoinwallet.InternalKeychain}
 
 type walletAddressSet map[string]*walletAddress
 
@@ -188,7 +188,7 @@ func (s *server) updateAddressesAndLastUsedIndexes(requestedAddressSet walletAdd
 
 		s.addressSet[entry.Address] = walletAddress
 
-		if walletAddress.keyChain == libsedrawallet.ExternalKeychain {
+		if walletAddress.keyChain == libkestrelcoinwallet.ExternalKeychain {
 			if walletAddress.index > lastUsedExternalIndex {
 				lastUsedExternalIndex = walletAddress.index
 			}

@@ -1,6 +1,6 @@
 package model
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
 // MultisetStore represents a store of Multisets
 type MultisetStore interface {

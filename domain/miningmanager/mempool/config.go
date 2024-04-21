@@ -3,11 +3,11 @@ package mempool
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/util"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 )
 
 const (
@@ -24,7 +24,7 @@ const (
 	defaultMaximumOrphanTransactionCount = 50
 
 	// defaultMinimumRelayTransactionFee specifies the minimum transaction fee for a transaction to be accepted to
-	// the mempool and relayed. It is specified in seep per 1kg (or 1000 grams) of transaction mass.
+	// the mempool and relayed. It is specified in Sium per 1kg (or 1000 grams) of transaction mass.
 	defaultMinimumRelayTransactionFee = util.Amount(1000)
 
 	// Standard transaction version range might be different from what consensus accepts, therefore

@@ -3,8 +3,8 @@ package grpcserver
 import (
 	"context"
 	"fmt"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/server"
+	"github.com/NidroidX/kestrelcoind/util/panics"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/peer"

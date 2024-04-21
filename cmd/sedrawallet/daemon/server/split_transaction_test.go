@@ -3,21 +3,21 @@ package server
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/serialization"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
-	"github.com/sedracoin/sedrad/util/txmass"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/keys"
+	"github.com/NidroidX/kestrelcoind/util/txmass"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
 )
 
 func TestEstimateMassAfterSignatures(t *testing.T) {
@@ -43,17 +43,17 @@ func TestEstimateMassAfterSignatures(t *testing.T) {
 			t.Fatalf("Error from estimateMassAfterSignatures: %s", err)
 		}
 
-		signedTxStep1Bytes, err := libsedrawallet.Sign(params, mnemonics[:1], unsignedTransactionBytes, false)
+		signedTxStep1Bytes, err := libkestrelcoinwallet.Sign(params, mnemonics[:1], unsignedTransactionBytes, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		signedTxStep2Bytes, err := libsedrawallet.Sign(params, mnemonics[1:2], signedTxStep1Bytes, false)
+		signedTxStep2Bytes, err := libkestrelcoinwallet.Sign(params, mnemonics[1:2], signedTxStep1Bytes, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		extractedSignedTx, err := libsedrawallet.ExtractTransaction(signedTxStep2Bytes, false)
+		extractedSignedTx, err := libkestrelcoinwallet.ExtractTransaction(signedTxStep2Bytes, false)
 		if err != nil {
 			t.Fatalf("ExtractTransaction: %+v", err)
 		}
@@ -83,12 +83,12 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 	publicKeys := make([]string, numKeys)
 	for i := 0; i < numKeys; i++ {
 		var err error
-		mnemonics[i], err = libsedrawallet.CreateMnemonic()
+		mnemonics[i], err = libkestrelcoinwallet.CreateMnemonic()
 		if err != nil {
 			t.Fatalf("CreateMnemonic: %+v", err)
 		}
 
-		publicKeys[i], err = libsedrawallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
+		publicKeys[i], err = libkestrelcoinwallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
 		if err != nil {
 			t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 		}
@@ -96,7 +96,7 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 
 	const minimumSignatures = 2
 	path := "m/1/2/3"
-	address, err := libsedrawallet.Address(params, publicKeys, minimumSignatures, path, false)
+	address, err := libkestrelcoinwallet.Address(params, publicKeys, minimumSignatures, path, false)
 	if err != nil {
 		t.Fatalf("Address: %+v", err)
 	}
@@ -128,7 +128,7 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 
 	block1Tx := block1.Transactions[0]
 	block1TxOut := block1Tx.Outputs[0]
-	selectedUTXOs := []*libsedrawallet.UTXO{
+	selectedUTXOs := []*libkestrelcoinwallet.UTXO{
 		{
 			Outpoint: &externalapi.DomainOutpoint{
 				TransactionID: *consensushashing.TransactionID(block1.Transactions[0]),
@@ -139,8 +139,8 @@ func testEstimateMassIncreaseForSignaturesSetUp(t *testing.T, consensusConfig *c
 		},
 	}
 
-	unsignedTransaction, err := libsedrawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-		[]*libsedrawallet.Payment{{
+	unsignedTransaction, err := libkestrelcoinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+		[]*libkestrelcoinwallet.Payment{{
 			Address: address,
 			Amount:  10,
 		}}, selectedUTXOs)

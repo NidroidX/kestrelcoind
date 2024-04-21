@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgRequestNextPruningPointUTXOSetChunk represents a sedra RequestNextPruningPointUTXOSetChunk message
+// MsgRequestNextPruningPointUTXOSetChunk represents a kestrelcoin RequestNextPruningPointUTXOSetChunk message
 type MsgRequestNextPruningPointUTXOSetChunk struct {
 	baseMessage
 }

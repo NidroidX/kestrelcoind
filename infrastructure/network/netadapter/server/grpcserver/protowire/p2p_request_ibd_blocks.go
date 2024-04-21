@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_RequestIBDBlocks) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_RequestIBDBlocks) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_RequestIBDBlocks is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_RequestIBDBlocks is nil")
 	}
 	return x.RequestIBDBlocks.toAppMessage()
 }
@@ -23,7 +23,7 @@ func (x *RequestIBDBlocksMessage) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.MsgRequestIBDBlocks{Hashes: hashes}, nil
 }
 
-func (x *SedradMessage_RequestIBDBlocks) fromAppMessage(msgRequestIBDBlocks *appmessage.MsgRequestIBDBlocks) error {
+func (x *kestrelcoindMessage_RequestIBDBlocks) fromAppMessage(msgRequestIBDBlocks *appmessage.MsgRequestIBDBlocks) error {
 	x.RequestIBDBlocks = &RequestIBDBlocksMessage{
 		Hashes: domainHashesToProto(msgRequestIBDBlocks.Hashes),
 	}

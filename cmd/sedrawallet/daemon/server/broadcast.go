@@ -2,12 +2,12 @@ package server
 
 import (
 	"context"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/serialization"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
 	"time"
 )
@@ -38,7 +38,7 @@ func (s *server) broadcast(transactions [][]byte, isDomain bool) ([]string, erro
 				return nil, err
 			}
 		} else if !isDomain { //default in proto3 is false
-			tx, err = libsedrawallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
+			tx, err = libkestrelcoinwallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
 			if err != nil {
 				return nil, err
 			}

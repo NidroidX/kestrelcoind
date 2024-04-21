@@ -3,9 +3,9 @@ package mine
 import (
 	"path/filepath"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/db/database/ldb"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database/ldb"
 )
 
 const leveldbCacheSizeMiB = 256

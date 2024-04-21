@@ -2,7 +2,7 @@ package panics
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 	"os"
 	"runtime/debug"
 	"sync/atomic"

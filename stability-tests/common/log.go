@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/mine"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/rpc"
+	"github.com/NidroidX/kestrelcoind/util/panics"
 )
 
 // log is a logger that is initialized with no output filters. This

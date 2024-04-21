@@ -5,13 +5,13 @@
 package txscript
 
 import (
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/util"
 )
 
 // RawTxInSignature returns the serialized Schnorr signature for the input idx of

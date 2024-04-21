@@ -1,16 +1,16 @@
 package testing
 
 import (
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/addressexchange"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flows/v5/addressexchange"
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/addressmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 type fakeReceiveAddressesContext struct{}

@@ -1,14 +1,14 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_RequestIBDChainBlockLocator) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_RequestIBDChainBlockLocator) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_RequestIBDChainBlockLocator is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_RequestIBDChainBlockLocator is nil")
 	}
 	return x.RequestIBDChainBlockLocator.toAppMessage()
 }
@@ -38,7 +38,7 @@ func (x *RequestIBDChainBlockLocatorMessage) toAppMessage() (appmessage.Message,
 
 }
 
-func (x *SedradMessage_RequestIBDChainBlockLocator) fromAppMessage(msgGetBlockLocator *appmessage.MsgRequestIBDChainBlockLocator) error {
+func (x *kestrelcoindMessage_RequestIBDChainBlockLocator) fromAppMessage(msgGetBlockLocator *appmessage.MsgRequestIBDChainBlockLocator) error {
 	var highHash, lowHash *Hash
 	if msgGetBlockLocator.HighHash != nil {
 		highHash = domainHashToProto(msgGetBlockLocator.HighHash)

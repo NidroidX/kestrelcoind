@@ -1,9 +1,9 @@
 package coinbasemanager
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 	"strconv"
 	"testing"
 )
@@ -12,7 +12,7 @@ func TestCalcDeflationaryPeriodBlockSubsidy(t *testing.T) {
 	const secondsPerMonth = 2629800
 	const secondsPerHalving = secondsPerMonth * 12
 	const deflationaryPhaseDaaScore = secondsPerMonth * 6
-	const deflationaryPhaseBaseSubsidy = 440 * constants.SeepPerSedra
+	const deflationaryPhaseBaseSubsidy = 440 * constants.SiumPerkestrelcoin
 	coinbaseManagerInterface := New(
 		nil,
 		0,
@@ -83,7 +83,7 @@ func TestCalcDeflationaryPeriodBlockSubsidy(t *testing.T) {
 
 func TestBuildSubsidyTable(t *testing.T) {
 	deflationaryPhaseBaseSubsidy := dagconfig.MainnetParams.DeflationaryPhaseBaseSubsidy
-	if deflationaryPhaseBaseSubsidy != 440*constants.SeepPerSedra {
+	if deflationaryPhaseBaseSubsidy != 440*constants.SiumPerkestrelcoin {
 		t.Errorf("TestBuildSubsidyTable: table generation function was not updated to reflect "+
 			"the new base subsidy %d. Please fix the constant above and replace subsidyByDeflationaryMonthTable "+
 			"in coinbasemanager.go with the printed table", deflationaryPhaseBaseSubsidy)

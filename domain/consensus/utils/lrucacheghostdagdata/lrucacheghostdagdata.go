@@ -1,6 +1,6 @@
 package lrucacheghostdagdata
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
 type lruKey struct {
 	blockHash     externalapi.DomainHash

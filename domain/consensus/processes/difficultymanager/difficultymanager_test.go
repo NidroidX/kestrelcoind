@@ -4,17 +4,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/NidroidX/kestrelcoind/util/difficulty"
 
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 )
 
 func TestDifficulty(t *testing.T) {

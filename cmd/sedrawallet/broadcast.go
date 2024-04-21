@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/client"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
 	"github.com/pkg/errors"
 )
 

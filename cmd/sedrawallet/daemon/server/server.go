@@ -7,25 +7,25 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/util/txmass"
+	"github.com/NidroidX/kestrelcoind/util/txmass"
 
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
-	"github.com/sedracoin/sedrad/infrastructure/os/signal"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/keys"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/rpcclient"
+	"github.com/NidroidX/kestrelcoind/infrastructure/os/signal"
+	"github.com/NidroidX/kestrelcoind/util/panics"
 	"github.com/pkg/errors"
 
 	"google.golang.org/grpc"
 )
 
 type server struct {
-	pb.UnimplementedSedrawalletdServer
+	pb.UnimplementedkestrelcoinwalletdServer
 
 	rpcClient *rpcclient.RPCClient
 	params    *dagconfig.Params
@@ -48,7 +48,7 @@ type server struct {
 // Currently, set to 100MB
 const MaxDaemonSendMsgSize = 100_000_000
 
-// Start starts the sedrawalletd server
+// Start starts the kestrelcoinwalletd server
 func Start(params *dagconfig.Params, listen, rpcServer string, keysFilePath string, profile string, timeout uint32) error {
 	initLog(defaultLogFile, defaultErrLogFile)
 
@@ -106,7 +106,7 @@ func Start(params *dagconfig.Params, listen, rpcServer string, keysFilePath stri
 	})
 
 	grpcServer := grpc.NewServer(grpc.MaxSendMsgSize(MaxDaemonSendMsgSize))
-	pb.RegisterSedrawalletdServer(grpcServer, serverInstance)
+	pb.RegisterkestrelcoinwalletdServer(grpcServer, serverInstance)
 
 	spawn("grpcServer.Serve", func() {
 		err := grpcServer.Serve(listener)

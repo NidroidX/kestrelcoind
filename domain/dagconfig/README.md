@@ -2,11 +2,11 @@ dagconfig
 ========
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/sedracoin/sedrad/dagconfig)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/NidroidX/kestrelcoind/dagconfig)
 
 Package dagconfig defines DAG configuration parameters for the standard
-sedrad networks and provides the ability for callers to define their own custom
-sedrad networks.
+kestrelcoind networks and provides the ability for callers to define their own custom
+kestrelcoind networks.
 
 ## Sample Use
 
@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/util"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 )
 
-var testnet = flag.Bool("testnet", false, "operate on the testnet sedra network")
+var testnet = flag.Bool("testnet", false, "operate on the testnet kestrelcoin network")
 
 // By default (without --testnet), use mainnet.
 var dagParams = &dagconfig.MainnetParams

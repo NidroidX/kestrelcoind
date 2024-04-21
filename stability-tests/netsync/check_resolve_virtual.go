@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/rpc"
 	"github.com/pkg/errors"
 	"time"
 )

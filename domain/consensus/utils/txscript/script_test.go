@@ -7,7 +7,7 @@ package txscript
 import (
 	"bytes"
 	"encoding/hex"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"reflect"
 	"testing"
 )

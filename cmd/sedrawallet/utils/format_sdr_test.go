@@ -2,8 +2,8 @@ package utils
 
 import "testing"
 
-// Takes in a string representation of the Sdr value to convert to Seep
-func TestSdrToSeep(t *testing.T) {
+// Takes in a string representation of the Sdr value to convert to Sium
+func TestSdrToSium(t *testing.T) {
 	type testVector struct {
 		originalAmount  string
 		convertedAmount uint64
@@ -18,7 +18,7 @@ func TestSdrToSeep(t *testing.T) {
 	}
 
 	for _, currentTestVector := range validCases {
-		convertedAmount, err := SdrToSeep(currentTestVector.originalAmount)
+		convertedAmount, err := SdrToSium(currentTestVector.originalAmount)
 
 		if err != nil {
 			t.Error(err)
@@ -35,7 +35,7 @@ func TestSdrToSeep(t *testing.T) {
 	}
 
 	for _, currentTestVector := range invalidCases {
-		_, err := SdrToSeep(currentTestVector)
+		_, err := SdrToSium(currentTestVector)
 
 		if err == nil {
 			t.Errorf("Expected an error but succeeded validation for test case %s", currentTestVector)
@@ -51,9 +51,9 @@ func TestValidateAmountFormat(t *testing.T) {
 		"0.1",
 		"0.12345678",
 		"111111111111.11111111", // 12 digits to the left of decimal, 8 digits to the right
-		"184467440737.09551615", // Maximum input that can be represented in seep later
-		"184467440737.09551616", // Cannot be represented in seep, but we'll acccept for "correct format"
-		"999999999999.99999999", // Cannot be represented in seep, but we'll acccept for "correct format"
+		"184467440737.09551615", // Maximum input that can be represented in Sium later
+		"184467440737.09551616", // Cannot be represented in Sium, but we'll acccept for "correct format"
+		"999999999999.99999999", // Cannot be represented in Sium, but we'll acccept for "correct format"
 	}
 
 	for _, testCase := range validCases {
@@ -77,7 +77,7 @@ func TestValidateAmountFormat(t *testing.T) {
 		"111111111111111111111", // all digits
 		"111111111111A11111111", // non-period/non-digit where decimal would be
 		"000000000000.00000000", // all zeros
-		"sedra",                 // all text
+		"kestrelcoin",                 // all text
 	}
 
 	for _, testCase := range invalidCases {

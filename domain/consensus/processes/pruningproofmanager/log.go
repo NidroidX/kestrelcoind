@@ -1,5 +1,5 @@
 package pruningproofmanager
 
-import "github.com/sedracoin/sedrad/infrastructure/logger"
+import "github.com/NidroidX/kestrelcoind/infrastructure/logger"
 
 var log = logger.RegisterSubSystem("PPMN")

@@ -3,10 +3,10 @@ package pastmediantimemanager
 import (
 	"sort"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/sorters"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/sorters"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 

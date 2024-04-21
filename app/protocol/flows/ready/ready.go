@@ -1,13 +1,13 @@
 package ready
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
 	"sync/atomic"
 
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	routerpkg "github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

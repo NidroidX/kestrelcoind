@@ -2,7 +2,7 @@ package utxoindex
 
 import (
 	"encoding/binary"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 	"io"
 	"math/rand"

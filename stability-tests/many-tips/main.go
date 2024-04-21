@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/mining"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/mining"
+	"github.com/NidroidX/kestrelcoind/util"
 	"math/rand"
 	"os"
 	"os/exec"
@@ -15,10 +15,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/rpc"
+	"github.com/NidroidX/kestrelcoind/util/panics"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 	"github.com/pkg/errors"
 )
 
@@ -102,14 +102,14 @@ func realMain() error {
 
 func startNode() (teardown func(), err error) {
 	log.Infof("Starting node")
-	dataDir, err := common.TempDir("sedrad-datadir")
+	dataDir, err := common.TempDir("kestrelcoind-datadir")
 	if err != nil {
 		panic(errors.Wrapf(err, "Error in Tempdir"))
 	}
-	log.Infof("sedrad datadir: %s", dataDir)
+	log.Infof("kestrelcoind datadir: %s", dataDir)
 
-	SedradCmd, err := common.StartCmd("SEDRAD",
-		"sedrad",
+	kestrelcoindCmd, err := common.StartCmd("kestrelcoinD",
+		"kestrelcoind",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", dataDir,
 		"--logdir", dataDir,
@@ -124,15 +124,15 @@ func startNode() (teardown func(), err error) {
 
 	processesStoppedWg := sync.WaitGroup{}
 	processesStoppedWg.Add(1)
-	spawn("startNode-SedradCmd.Wait", func() {
-		err := SedradCmd.Wait()
+	spawn("startNode-kestrelcoindCmd.Wait", func() {
+		err := kestrelcoindCmd.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&shutdown) == 0 {
-				panics.Exit(log, fmt.Sprintf("SedradCmd closed unexpectedly: %s. See logs at: %s", err, dataDir))
+				panics.Exit(log, fmt.Sprintf("kestrelcoindCmd closed unexpectedly: %s. See logs at: %s", err, dataDir))
 			}
 			if !strings.Contains(err.Error(), "signal: killed") {
-				// TODO: Panic here and check why sometimes sedrad closes ungracefully
-				log.Errorf("SedradCmd closed with an error: %s. See logs at: %s", err, dataDir)
+				// TODO: Panic here and check why sometimes kestrelcoind closes ungracefully
+				log.Errorf("kestrelcoindCmd closed with an error: %s. See logs at: %s", err, dataDir)
 			}
 		}
 		processesStoppedWg.Done()
@@ -140,7 +140,7 @@ func startNode() (teardown func(), err error) {
 	return func() {
 		log.Infof("defer start-node")
 		atomic.StoreUint64(&shutdown, 1)
-		killWithSigterm(SedradCmd, "SedradCmd")
+		killWithSigterm(kestrelcoindCmd, "kestrelcoindCmd")
 
 		processesStoppedChan := make(chan struct{})
 		spawn("startNode-processStoppedWg.Wait", func() {
@@ -226,8 +226,8 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	}
 	numOfBlocksBeforeMining := dagInfo.BlockCount
 
-	sedraMinerCmd, err := common.StartCmd("MINER",
-		"sedraminer",
+	kestrelcoinMinerCmd, err := common.StartCmd("MINER",
+		"kestrelcoinminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", rpcAddress,
 		"--mine-when-not-synced",
@@ -240,8 +240,8 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	startMiningTime := time.Now()
 	shutdown := uint64(0)
 
-	spawn("sedra-miner-Cmd.Wait", func() {
-		err := sedraMinerCmd.Wait()
+	spawn("kestrelcoin-miner-Cmd.Wait", func() {
+		err := kestrelcoinMinerCmd.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&shutdown) == 0 {
 				panics.Exit(log, fmt.Sprintf("minerCmd closed unexpectedly: %s.", err))
@@ -283,7 +283,7 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	numOfAddedBlocks := dagInfo.BlockCount - numOfBlocksBeforeMining
 	log.Infof("Added %d blocks to reach this.", numOfAddedBlocks)
 	atomic.StoreUint64(&shutdown, 1)
-	killWithSigterm(sedraMinerCmd, "sedraMinerCmd")
+	killWithSigterm(kestrelcoinMinerCmd, "kestrelcoinMinerCmd")
 	return nil
 }
 

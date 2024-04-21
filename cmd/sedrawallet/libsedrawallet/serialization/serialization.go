@@ -3,9 +3,9 @@ package serialization
 import (
 	"math"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization/protoserialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/serialization/protoserialization"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/proto"
 )

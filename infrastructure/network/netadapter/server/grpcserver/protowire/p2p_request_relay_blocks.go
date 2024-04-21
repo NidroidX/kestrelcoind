@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_RequestRelayBlocks) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_RequestRelayBlocks) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_RequestRelayBlocks is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_RequestRelayBlocks is nil")
 	}
 	return x.RequestRelayBlocks.toAppMessage()
 }
@@ -28,7 +28,7 @@ func (x *RequestRelayBlocksMessage) toAppMessage() (appmessage.Message, error) {
 
 }
 
-func (x *SedradMessage_RequestRelayBlocks) fromAppMessage(msgGetRelayBlocks *appmessage.MsgRequestRelayBlocks) error {
+func (x *kestrelcoindMessage_RequestRelayBlocks) fromAppMessage(msgGetRelayBlocks *appmessage.MsgRequestRelayBlocks) error {
 	if len(msgGetRelayBlocks.Hashes) > appmessage.MaxRequestRelayBlocksHashes {
 		return errors.Errorf("too many hashes for message "+
 			"[count %d, max %d]", len(msgGetRelayBlocks.Hashes), appmessage.MaxRequestRelayBlocksHashes)

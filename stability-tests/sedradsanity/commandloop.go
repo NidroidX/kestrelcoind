@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
 	"github.com/pkg/errors"
 )
 
@@ -23,7 +23,7 @@ func (cf commandFailure) String() string {
 
 func commandLoop(argsChan <-chan []string) ([]commandFailure, error) {
 	failures := make([]commandFailure, 0)
-	dataDirectoryPath, err := common.TempDir("sedradsanity-sedrad-datadir")
+	dataDirectoryPath, err := common.TempDir("kestrelcoindsanity-kestrelcoind-datadir")
 	if err != nil {
 		return nil, errors.Wrapf(err, "error creating temp dir")
 	}
@@ -40,9 +40,9 @@ func commandLoop(argsChan <-chan []string) ([]commandFailure, error) {
 			return nil, err
 		}
 
-		cmd := exec.Command("sedrad", args...)
-		cmd.Stdout = common.NewLogWriter(log, logger.LevelTrace, "SEDRAD-STDOUT")
-		cmd.Stderr = common.NewLogWriter(log, logger.LevelWarn, "SEDRAD-STDERR")
+		cmd := exec.Command("kestrelcoind", args...)
+		cmd.Stdout = common.NewLogWriter(log, logger.LevelTrace, "kestrelcoinD-STDOUT")
+		cmd.Stderr = common.NewLogWriter(log, logger.LevelWarn, "kestrelcoinD-STDERR")
 
 		log.Infof("Running `%s`", cmd)
 		errChan := make(chan error)

@@ -7,7 +7,7 @@ package dagconfig
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 func TestNewHashFromStr(t *testing.T) {

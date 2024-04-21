@@ -7,21 +7,21 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 	"github.com/pkg/errors"
 )
 
-// FormatSdr takes the amount of seeps as uint64, and returns amount of SDR with 8  decimal places
+// FormatSdr takes the amount of Siums as uint64, and returns amount of SDR with 8  decimal places
 func FormatSdr(amount uint64) string {
 	res := "                   "
 	if amount > 0 {
-		res = fmt.Sprintf("%19.8f", float64(amount)/constants.SeepPerSedra)
+		res = fmt.Sprintf("%19.8f", float64(amount)/constants.SiumPerkestrelcoin)
 	}
 	return res
 }
 
-// SdrToSeep takes in a string representation of the Sdr value to convert to Seep
-func SdrToSeep(amount string) (uint64, error) {
+// SdrToSium takes in a string representation of the Sdr value to convert to Sium
+func SdrToSium(amount string) (uint64, error) {
 	err := validateSDRAmountFormat(amount)
 
 	if err != nil {
@@ -33,11 +33,11 @@ func SdrToSeep(amount string) (uint64, error) {
 	parts := strings.Split(amount, ".")
 	amountStr := ""
 
-	if constants.SeepPerSedra%10 != 0 {
-		return 0, errors.Errorf("Unable to convert to seep when SeepPerSedra is not a multiple of 10")
+	if constants.SiumPerkestrelcoin%10 != 0 {
+		return 0, errors.Errorf("Unable to convert to Sium when SiumPerkestrelcoin is not a multiple of 10")
 	}
 
-	decimalPlaces := int(math.Log10(constants.SeepPerSedra))
+	decimalPlaces := int(math.Log10(constants.SiumPerkestrelcoin))
 	decimalStr := ""
 
 	if len(parts) == 2 {

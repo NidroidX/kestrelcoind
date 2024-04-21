@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensusreference"
-	miningmanagermodel "github.com/sedracoin/sedrad/domain/miningmanager/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensusreference"
+	miningmanagermodel "github.com/NidroidX/kestrelcoind/domain/miningmanager/model"
 )
 
 // MiningManager creates block templates for mining as well as maintaining

@@ -1,11 +1,11 @@
 package flowcontext
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/connmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
 	"github.com/pkg/errors"
 )
 

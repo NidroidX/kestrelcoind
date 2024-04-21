@@ -1,8 +1,8 @@
 package addressmanager
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 	"net"
 	"reflect"
 	"testing"

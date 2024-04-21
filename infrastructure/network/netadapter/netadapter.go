@@ -4,12 +4,12 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/id"
+	routerpkg "github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/server"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/server/grpcserver"
 	"github.com/pkg/errors"
 )
 

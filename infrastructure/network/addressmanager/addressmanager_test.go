@@ -9,10 +9,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/db/database/ldb"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database/ldb"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 )
 
 func newAddressManagerForTest(t *testing.T, testName string) (addressManager *AddressManager, teardown func()) {

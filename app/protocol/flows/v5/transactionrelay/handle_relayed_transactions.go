@@ -1,16 +1,16 @@
 package transactionrelay
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flowcontext"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/domain"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/mempool"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

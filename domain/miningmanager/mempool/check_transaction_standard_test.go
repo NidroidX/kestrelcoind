@@ -9,17 +9,17 @@ import (
 	"math"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensusreference"
+	"github.com/NidroidX/kestrelcoind/domain/consensusreference"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/util"
 	"github.com/pkg/errors"
 )
 
@@ -149,8 +149,8 @@ func TestIsTransactionOutputDust(t *testing.T) {
 		},
 		{
 			// Maximum allowed value is never dust.
-			"max seep amount is never dust",
-			externalapi.DomainTransactionOutput{Value: constants.MaxSeep, ScriptPublicKey: scriptPublicKey},
+			"max Sium amount is never dust",
+			externalapi.DomainTransactionOutput{Value: constants.MaxSium, ScriptPublicKey: scriptPublicKey},
 			util.Amount(1000),
 			false,
 		},
@@ -206,7 +206,7 @@ func TestCheckTransactionStandardInIsolation(t *testing.T) {
 		Sequence:         constants.MaxTxInSequenceNum,
 	}
 	addrHash := [32]byte{0x01}
-	addr, err := util.NewAddressPublicKey(addrHash[:], util.Bech32PrefixSedraTest)
+	addr, err := util.NewAddressPublicKey(addrHash[:], util.Bech32PrefixkestrelcoinTest)
 	if err != nil {
 		t.Fatalf("NewAddressPublicKey: unexpected error: %v", err)
 	}

@@ -1,6 +1,6 @@
 package model
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
 // GHOSTDAGManager resolves and manages GHOSTDAG block data
 type GHOSTDAGManager interface {

@@ -1,21 +1,21 @@
 package transactionvalidator_test
 
 import (
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/util"
 
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"
 )
 
@@ -103,7 +103,7 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 			Sequence:         constants.MaxTxInSequenceNum,
 			SigOpCount:       1,
 			UTXOEntry: utxo.NewUTXOEntry(
-				constants.MaxSeep+1,
+				constants.MaxSium+1,
 				scriptPublicKey,
 				false,
 				0),
@@ -226,14 +226,14 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 				isValid:       true,
 				expectedError: nil,
 			},
-			{ // The total inputs amount is bigger than the allowed maximum (constants.MaxSeep)
+			{ // The total inputs amount is bigger than the allowed maximum (constants.MaxSium)
 				name:          "checkTransactionInputAmounts - invalid - after HF",
 				tx:            &txWithInvalidAmount,
 				povBlockHash:  povBlockHash,
 				isValid:       false,
 				expectedError: ruleerrors.ErrBadTxOutValue,
 			},
-			{ // The total SeepIn (sum of inputs amount) is smaller than the total SeepOut (sum of outputs value) and hence invalid.
+			{ // The total SiumIn (sum of inputs amount) is smaller than the total SiumOut (sum of outputs value) and hence invalid.
 				name:          "checkTransactionOutputAmounts",
 				tx:            &txWithBigValue,
 				povBlockHash:  povBlockHash,

@@ -2,10 +2,10 @@ package mempool
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 )
 
 func (mp *mempool) validateAndInsertTransaction(transaction *externalapi.DomainTransaction, isHighPriority bool,

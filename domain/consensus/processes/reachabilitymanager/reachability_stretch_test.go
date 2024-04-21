@@ -8,12 +8,12 @@ import (
 	"os"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/testapi"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 	"github.com/pkg/errors"
 )
 

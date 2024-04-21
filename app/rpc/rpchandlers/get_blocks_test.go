@@ -5,18 +5,18 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/rpc/rpccontext"
-	"github.com/sedracoin/sedrad/app/rpc/rpchandlers"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/miningmanager"
-	"github.com/sedracoin/sedrad/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/rpc/rpccontext"
+	"github.com/NidroidX/kestrelcoind/app/rpc/rpchandlers"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/testapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/hashes"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
 )
 
 type fakeDomain struct {

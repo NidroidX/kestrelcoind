@@ -1,19 +1,19 @@
-package libsedrawallet
+package libkestrelcoinwallet
 
 import (
 	"encoding/hex"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionid"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionid"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
 )
 
-// SedrawalletdUTXOsTolibsedrawalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libsedrawallet.UTXO
-func SedrawalletdUTXOsTolibsedrawalletUTXOs(sedrawalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
-	UTXOs := make([]*UTXO, len(sedrawalletdUtxoEntires))
-	for i, entry := range sedrawalletdUtxoEntires {
+// kestrelcoinwalletdUTXOsTolibkestrelcoinwalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libkestrelcoinwallet.UTXO
+func kestrelcoinwalletdUTXOsTolibkestrelcoinwalletUTXOs(kestrelcoinwalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
+	UTXOs := make([]*UTXO, len(kestrelcoinwalletdUtxoEntires))
+	for i, entry := range kestrelcoinwalletdUtxoEntires {
 		script, err := hex.DecodeString(entry.UtxoEntry.ScriptPublicKey.ScriptPublicKey)
 		if err != nil {
 			return nil, err
@@ -41,8 +41,8 @@ func SedrawalletdUTXOsTolibsedrawalletUTXOs(sedrawalletdUtxoEntires []*pb.UtxosB
 	return UTXOs, nil
 }
 
-// AppMessageUTXOToSedrawalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
-func AppMessageUTXOToSedrawalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
+// AppMessageUTXOTokestrelcoinwalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
+func AppMessageUTXOTokestrelcoinwalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
 	return &pb.UtxosByAddressesEntry{
 		Outpoint: &pb.Outpoint{
 			TransactionId: appUTXOsByAddressesEntry.Outpoint.TransactionID,

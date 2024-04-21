@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/NidroidX/kestrelcoind/util/panics"
 	"github.com/pkg/errors"
 )
 
 func main() {
-	defer panics.HandlePanic(log, "sedradsanity-main", nil)
+	defer panics.HandlePanic(log, "kestrelcoindsanity-main", nil)
 	err := parseConfig()
 	if err != nil {
 		panic(errors.Wrap(err, "error in parseConfig"))

@@ -1,19 +1,19 @@
-package libsedrawallet_test
+package libkestrelcoinwallet_test
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/testutils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/util"
 )
 
 func forSchnorrAndECDSA(t *testing.T, testFunc func(t *testing.T, ecdsa bool)) {
@@ -42,12 +42,12 @@ func TestMultisig(t *testing.T) {
 			publicKeys := make([]string, numKeys)
 			for i := 0; i < numKeys; i++ {
 				var err error
-				mnemonics[i], err = libsedrawallet.CreateMnemonic()
+				mnemonics[i], err = libkestrelcoinwallet.CreateMnemonic()
 				if err != nil {
 					t.Fatalf("CreateMnemonic: %+v", err)
 				}
 
-				publicKeys[i], err = libsedrawallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
+				publicKeys[i], err = libkestrelcoinwallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], true)
 				if err != nil {
 					t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 				}
@@ -55,7 +55,7 @@ func TestMultisig(t *testing.T) {
 
 			const minimumSignatures = 2
 			path := "m/1/2/3"
-			address, err := libsedrawallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
+			address, err := libkestrelcoinwallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
 			if err != nil {
 				t.Fatalf("Address: %+v", err)
 			}
@@ -91,7 +91,7 @@ func TestMultisig(t *testing.T) {
 
 			block1Tx := block1.Transactions[0]
 			block1TxOut := block1Tx.Outputs[0]
-			selectedUTXOs := []*libsedrawallet.UTXO{
+			selectedUTXOs := []*libkestrelcoinwallet.UTXO{
 				{
 					Outpoint: &externalapi.DomainOutpoint{
 						TransactionID: *consensushashing.TransactionID(block1.Transactions[0]),
@@ -102,8 +102,8 @@ func TestMultisig(t *testing.T) {
 				},
 			}
 
-			unsignedTransaction, err := libsedrawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-				[]*libsedrawallet.Payment{{
+			unsignedTransaction, err := libkestrelcoinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+				[]*libkestrelcoinwallet.Payment{{
 					Address: address,
 					Amount:  10,
 				}}, selectedUTXOs)
@@ -111,7 +111,7 @@ func TestMultisig(t *testing.T) {
 				t.Fatalf("CreateUnsignedTransactions: %+v", err)
 			}
 
-			isFullySigned, err := libsedrawallet.IsTransactionFullySigned(unsignedTransaction)
+			isFullySigned, err := libkestrelcoinwallet.IsTransactionFullySigned(unsignedTransaction)
 			if err != nil {
 				t.Fatalf("IsTransactionFullySigned: %+v", err)
 			}
@@ -120,17 +120,17 @@ func TestMultisig(t *testing.T) {
 				t.Fatalf("Transaction is not expected to be signed")
 			}
 
-			_, err = libsedrawallet.ExtractTransaction(unsignedTransaction, ecdsa)
+			_, err = libkestrelcoinwallet.ExtractTransaction(unsignedTransaction, ecdsa)
 			if err == nil || !strings.Contains(err.Error(), fmt.Sprintf("missing %d signatures", minimumSignatures)) {
 				t.Fatal("Unexpectedly succeed to extract a valid transaction out of unsigned transaction")
 			}
 
-			signedTxStep1, err := libsedrawallet.Sign(params, mnemonics[:1], unsignedTransaction, ecdsa)
+			signedTxStep1, err := libkestrelcoinwallet.Sign(params, mnemonics[:1], unsignedTransaction, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			isFullySigned, err = libsedrawallet.IsTransactionFullySigned(signedTxStep1)
+			isFullySigned, err = libkestrelcoinwallet.IsTransactionFullySigned(signedTxStep1)
 			if err != nil {
 				t.Fatalf("IsTransactionFullySigned: %+v", err)
 			}
@@ -139,22 +139,22 @@ func TestMultisig(t *testing.T) {
 				t.Fatalf("Transaction is not expected to be fully signed")
 			}
 
-			signedTxStep2, err := libsedrawallet.Sign(params, mnemonics[1:2], signedTxStep1, ecdsa)
+			signedTxStep2, err := libkestrelcoinwallet.Sign(params, mnemonics[1:2], signedTxStep1, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			extractedSignedTxStep2, err := libsedrawallet.ExtractTransaction(signedTxStep2, ecdsa)
+			extractedSignedTxStep2, err := libkestrelcoinwallet.ExtractTransaction(signedTxStep2, ecdsa)
 			if err != nil {
 				t.Fatalf("ExtractTransaction: %+v", err)
 			}
 
-			signedTxOneStep, err := libsedrawallet.Sign(params, mnemonics[:2], unsignedTransaction, ecdsa)
+			signedTxOneStep, err := libkestrelcoinwallet.Sign(params, mnemonics[:2], unsignedTransaction, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			extractedSignedTxOneStep, err := libsedrawallet.ExtractTransaction(signedTxOneStep, ecdsa)
+			extractedSignedTxOneStep, err := libkestrelcoinwallet.ExtractTransaction(signedTxOneStep, ecdsa)
 			if err != nil {
 				t.Fatalf("ExtractTransaction: %+v", err)
 			}
@@ -197,12 +197,12 @@ func TestP2PK(t *testing.T) {
 			publicKeys := make([]string, numKeys)
 			for i := 0; i < numKeys; i++ {
 				var err error
-				mnemonics[i], err = libsedrawallet.CreateMnemonic()
+				mnemonics[i], err = libkestrelcoinwallet.CreateMnemonic()
 				if err != nil {
 					t.Fatalf("CreateMnemonic: %+v", err)
 				}
 
-				publicKeys[i], err = libsedrawallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], false)
+				publicKeys[i], err = libkestrelcoinwallet.MasterPublicKeyFromMnemonic(&consensusConfig.Params, mnemonics[i], false)
 				if err != nil {
 					t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 				}
@@ -210,7 +210,7 @@ func TestP2PK(t *testing.T) {
 
 			const minimumSignatures = 1
 			path := "m/1/2/3"
-			address, err := libsedrawallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
+			address, err := libkestrelcoinwallet.Address(params, publicKeys, minimumSignatures, path, ecdsa)
 			if err != nil {
 				t.Fatalf("Address: %+v", err)
 			}
@@ -252,7 +252,7 @@ func TestP2PK(t *testing.T) {
 
 			block1Tx := block1.Transactions[0]
 			block1TxOut := block1Tx.Outputs[0]
-			selectedUTXOs := []*libsedrawallet.UTXO{
+			selectedUTXOs := []*libkestrelcoinwallet.UTXO{
 				{
 					Outpoint: &externalapi.DomainOutpoint{
 						TransactionID: *consensushashing.TransactionID(block1.Transactions[0]),
@@ -263,8 +263,8 @@ func TestP2PK(t *testing.T) {
 				},
 			}
 
-			unsignedTransaction, err := libsedrawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-				[]*libsedrawallet.Payment{{
+			unsignedTransaction, err := libkestrelcoinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+				[]*libkestrelcoinwallet.Payment{{
 					Address: address,
 					Amount:  10,
 				}}, selectedUTXOs)
@@ -272,7 +272,7 @@ func TestP2PK(t *testing.T) {
 				t.Fatalf("CreateUnsignedTransactions: %+v", err)
 			}
 
-			isFullySigned, err := libsedrawallet.IsTransactionFullySigned(unsignedTransaction)
+			isFullySigned, err := libkestrelcoinwallet.IsTransactionFullySigned(unsignedTransaction)
 			if err != nil {
 				t.Fatalf("IsTransactionFullySigned: %+v", err)
 			}
@@ -281,17 +281,17 @@ func TestP2PK(t *testing.T) {
 				t.Fatalf("Transaction is not expected to be signed")
 			}
 
-			_, err = libsedrawallet.ExtractTransaction(unsignedTransaction, ecdsa)
+			_, err = libkestrelcoinwallet.ExtractTransaction(unsignedTransaction, ecdsa)
 			if err == nil || !strings.Contains(err.Error(), "missing signature") {
 				t.Fatal("Unexpectedly succeed to extract a valid transaction out of unsigned transaction")
 			}
 
-			signedTx, err := libsedrawallet.Sign(params, mnemonics, unsignedTransaction, ecdsa)
+			signedTx, err := libkestrelcoinwallet.Sign(params, mnemonics, unsignedTransaction, ecdsa)
 			if err != nil {
 				t.Fatalf("Sign: %+v", err)
 			}
 
-			tx, err := libsedrawallet.ExtractTransaction(signedTx, ecdsa)
+			tx, err := libkestrelcoinwallet.ExtractTransaction(signedTx, ecdsa)
 			if err != nil {
 				t.Fatalf("ExtractTransaction: %+v", err)
 			}
@@ -312,13 +312,13 @@ func TestP2PK(t *testing.T) {
 	})
 }
 
-func TestMaxSeep(t *testing.T) {
+func TestMaxSium(t *testing.T) {
 	testutils.ForAllNets(t, true, func(t *testing.T, consensusConfig *consensus.Config) {
 		params := &consensusConfig.Params
 		cfg := *consensusConfig
 		cfg.BlockCoinbaseMaturity = 0
-		cfg.PreDeflationaryPhaseBaseSubsidy = 20e6 * constants.SeepPerSedra
-		tc, teardown, err := consensus.NewFactory().NewTestConsensus(&cfg, "TestMaxSeep")
+		cfg.PreDeflationaryPhaseBaseSubsidy = 20e6 * constants.SiumPerkestrelcoin
+		tc, teardown, err := consensus.NewFactory().NewTestConsensus(&cfg, "TestMaxSium")
 		if err != nil {
 			t.Fatalf("Error setting up tc: %+v", err)
 		}
@@ -329,12 +329,12 @@ func TestMaxSeep(t *testing.T) {
 		publicKeys := make([]string, numKeys)
 		for i := 0; i < numKeys; i++ {
 			var err error
-			mnemonics[i], err = libsedrawallet.CreateMnemonic()
+			mnemonics[i], err = libkestrelcoinwallet.CreateMnemonic()
 			if err != nil {
 				t.Fatalf("CreateMnemonic: %+v", err)
 			}
 
-			publicKeys[i], err = libsedrawallet.MasterPublicKeyFromMnemonic(&cfg.Params, mnemonics[i], false)
+			publicKeys[i], err = libkestrelcoinwallet.MasterPublicKeyFromMnemonic(&cfg.Params, mnemonics[i], false)
 			if err != nil {
 				t.Fatalf("MasterPublicKeyFromMnemonic: %+v", err)
 			}
@@ -342,7 +342,7 @@ func TestMaxSeep(t *testing.T) {
 
 		const minimumSignatures = 1
 		path := "m/1/2/3"
-		address, err := libsedrawallet.Address(params, publicKeys, minimumSignatures, path, false)
+		address, err := libkestrelcoinwallet.Address(params, publicKeys, minimumSignatures, path, false)
 		if err != nil {
 			t.Fatalf("Address: %+v", err)
 		}
@@ -406,7 +406,7 @@ func TestMaxSeep(t *testing.T) {
 		txOut2 := fundingBlock3.Transactions[0].Outputs[0]
 		txOut3 := fundingBlock4.Transactions[0].Outputs[0]
 		txOut4 := block1.Transactions[0].Outputs[0]
-		selectedUTXOsForTxWithLargeInputAmount := []*libsedrawallet.UTXO{
+		selectedUTXOsForTxWithLargeInputAmount := []*libkestrelcoinwallet.UTXO{
 			{
 				Outpoint: &externalapi.DomainOutpoint{
 					TransactionID: *consensushashing.TransactionID(fundingBlock2.Transactions[0]),
@@ -425,8 +425,8 @@ func TestMaxSeep(t *testing.T) {
 			},
 		}
 
-		unsignedTxWithLargeInputAmount, err := libsedrawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-			[]*libsedrawallet.Payment{{
+		unsignedTxWithLargeInputAmount, err := libkestrelcoinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+			[]*libkestrelcoinwallet.Payment{{
 				Address: address,
 				Amount:  10,
 			}}, selectedUTXOsForTxWithLargeInputAmount)
@@ -434,12 +434,12 @@ func TestMaxSeep(t *testing.T) {
 			t.Fatalf("CreateUnsignedTransactions: %+v", err)
 		}
 
-		signedTxWithLargeInputAmount, err := libsedrawallet.Sign(params, mnemonics, unsignedTxWithLargeInputAmount, false)
+		signedTxWithLargeInputAmount, err := libkestrelcoinwallet.Sign(params, mnemonics, unsignedTxWithLargeInputAmount, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		txWithLargeInputAmount, err := libsedrawallet.ExtractTransaction(signedTxWithLargeInputAmount, false)
+		txWithLargeInputAmount, err := libkestrelcoinwallet.ExtractTransaction(signedTxWithLargeInputAmount, false)
 		if err != nil {
 			t.Fatalf("ExtractTransaction: %+v", err)
 		}
@@ -457,7 +457,7 @@ func TestMaxSeep(t *testing.T) {
 			t.Fatalf("Transaction wasn't accepted in the DAG")
 		}
 
-		selectedUTXOsForTxWithLargeInputAndOutputAmount := []*libsedrawallet.UTXO{
+		selectedUTXOsForTxWithLargeInputAndOutputAmount := []*libkestrelcoinwallet.UTXO{
 			{
 				Outpoint: &externalapi.DomainOutpoint{
 					TransactionID: *consensushashing.TransactionID(fundingBlock4.Transactions[0]),
@@ -476,21 +476,21 @@ func TestMaxSeep(t *testing.T) {
 			},
 		}
 
-		unsignedTxWithLargeInputAndOutputAmount, err := libsedrawallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
-			[]*libsedrawallet.Payment{{
+		unsignedTxWithLargeInputAndOutputAmount, err := libkestrelcoinwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
+			[]*libkestrelcoinwallet.Payment{{
 				Address: address,
-				Amount:  22e6 * constants.SeepPerSedra,
+				Amount:  22e6 * constants.SiumPerkestrelcoin,
 			}}, selectedUTXOsForTxWithLargeInputAndOutputAmount)
 		if err != nil {
 			t.Fatalf("CreateUnsignedTransactions: %+v", err)
 		}
 
-		signedTxWithLargeInputAndOutputAmount, err := libsedrawallet.Sign(params, mnemonics, unsignedTxWithLargeInputAndOutputAmount, false)
+		signedTxWithLargeInputAndOutputAmount, err := libkestrelcoinwallet.Sign(params, mnemonics, unsignedTxWithLargeInputAndOutputAmount, false)
 		if err != nil {
 			t.Fatalf("Sign: %+v", err)
 		}
 
-		txWithLargeInputAndOutputAmount, err := libsedrawallet.ExtractTransaction(signedTxWithLargeInputAndOutputAmount, false)
+		txWithLargeInputAndOutputAmount, err := libkestrelcoinwallet.ExtractTransaction(signedTxWithLargeInputAndOutputAmount, false)
 		if err != nil {
 			t.Fatalf("ExtractTransaction: %+v", err)
 		}

@@ -1,10 +1,10 @@
 package utxoindex
 
 import (
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/domain"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 	"sync"
 )
 
@@ -64,7 +64,7 @@ func (ui *UTXOIndex) Reset() error {
 		return err
 	}
 
-	err = ui.store.initializeCirculatingSeepSupply() //At this point the database is empty, so the sole purpose of this call is to initialize the circulating supply key
+	err = ui.store.initializeCirculatingSiumSupply() //At this point the database is empty, so the sole purpose of this call is to initialize the circulating supply key
 	if err != nil {
 		return err
 	}
@@ -199,11 +199,11 @@ func (ui *UTXOIndex) UTXOs(scriptPublicKey *externalapi.ScriptPublicKey) (UTXOOu
 	return ui.store.getUTXOOutpointEntryPairs(scriptPublicKey)
 }
 
-// GetCirculatingSeepSupply returns the current circulating supply of seeps in the network
-func (ui *UTXOIndex) GetCirculatingSeepSupply() (uint64, error) {
+// GetCirculatingSiumSupply returns the current circulating supply of Siums in the network
+func (ui *UTXOIndex) GetCirculatingSiumSupply() (uint64, error) {
 
 	ui.mutex.Lock()
 	defer ui.mutex.Unlock()
 
-	return ui.store.getCirculatingSeepSupply()
+	return ui.store.getCirculatingSiumSupply()
 }

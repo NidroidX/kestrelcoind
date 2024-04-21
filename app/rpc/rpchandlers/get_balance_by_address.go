@@ -1,11 +1,11 @@
 package rpchandlers
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/rpc/rpccontext"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/rpc/rpccontext"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/util"
 	"github.com/pkg/errors"
 )
 
@@ -13,7 +13,7 @@ import (
 func HandleGetBalanceByAddress(context *rpccontext.Context, _ *router.Router, request appmessage.Message) (appmessage.Message, error) {
 	if !context.Config.UTXOIndex {
 		errorMessage := &appmessage.GetUTXOsByAddressesResponseMessage{}
-		errorMessage.Error = appmessage.RPCErrorf("Method unavailable when sedrad is run without --utxoindex")
+		errorMessage.Error = appmessage.RPCErrorf("Method unavailable when kestrelcoind is run without --utxoindex")
 		return errorMessage, nil
 	}
 

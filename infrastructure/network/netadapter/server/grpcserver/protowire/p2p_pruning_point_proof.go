@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_PruningPointProof) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_PruningPointProof) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_PruningPointProof is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_PruningPointProof is nil")
 	}
 
 	if x.PruningPointProof == nil {
@@ -30,7 +30,7 @@ func (x *SedradMessage_PruningPointProof) toAppMessage() (appmessage.Message, er
 	}, nil
 }
 
-func (x *SedradMessage_PruningPointProof) fromAppMessage(msgPruningPointProof *appmessage.MsgPruningPointProof) error {
+func (x *kestrelcoindMessage_PruningPointProof) fromAppMessage(msgPruningPointProof *appmessage.MsgPruningPointProof) error {
 	blockHeaders := make([]*PruningPointProofHeaderArray, len(msgPruningPointProof.Headers))
 	for i, blockHeaderArray := range msgPruningPointProof.Headers {
 		blockHeaders[i] = &PruningPointProofHeaderArray{Headers: make([]*BlockHeader, len(blockHeaderArray))}

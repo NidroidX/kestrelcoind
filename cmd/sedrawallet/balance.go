@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/client"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/utils"
 )
 
 func balance(conf *balanceConfig) error {

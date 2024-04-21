@@ -1,8 +1,8 @@
 # Orphans
-This tool makes sure orphan resolution works and doesn't crash sedrad
+This tool makes sure orphan resolution works and doesn't crash kestrelcoind
 
 ## Running
- 1. `go install` sedrad and orphans.
+ 1. `go install` kestrelcoind and orphans.
  2. `cd run`
  3. `./run.sh`
 

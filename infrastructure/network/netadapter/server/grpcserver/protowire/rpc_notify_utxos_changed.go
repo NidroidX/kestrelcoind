@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_NotifyUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_NotifyUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_NotifyUtxosChangedRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_NotifyUtxosChangedRequest is nil")
 	}
 	return x.NotifyUtxosChangedRequest.toAppMessage()
 }
 
-func (x *SedradMessage_NotifyUtxosChangedRequest) fromAppMessage(message *appmessage.NotifyUTXOsChangedRequestMessage) error {
+func (x *kestrelcoindMessage_NotifyUtxosChangedRequest) fromAppMessage(message *appmessage.NotifyUTXOsChangedRequestMessage) error {
 	x.NotifyUtxosChangedRequest = &NotifyUtxosChangedRequestMessage{
 		Addresses: message.Addresses,
 	}
@@ -28,14 +28,14 @@ func (x *NotifyUtxosChangedRequestMessage) toAppMessage() (appmessage.Message, e
 	}, nil
 }
 
-func (x *SedradMessage_NotifyUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_NotifyUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
 		return nil, errors.Wrapf(errorNil, "NotifyUtxosChangedResponseMessage is nil")
 	}
 	return x.NotifyUtxosChangedResponse.toAppMessage()
 }
 
-func (x *SedradMessage_NotifyUtxosChangedResponse) fromAppMessage(message *appmessage.NotifyUTXOsChangedResponseMessage) error {
+func (x *kestrelcoindMessage_NotifyUtxosChangedResponse) fromAppMessage(message *appmessage.NotifyUTXOsChangedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -60,14 +60,14 @@ func (x *NotifyUtxosChangedResponseMessage) toAppMessage() (appmessage.Message, 
 	}, nil
 }
 
-func (x *SedradMessage_UtxosChangedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_UtxosChangedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_UtxosChangedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_UtxosChangedNotification is nil")
 	}
 	return x.UtxosChangedNotification.toAppMessage()
 }
 
-func (x *SedradMessage_UtxosChangedNotification) fromAppMessage(message *appmessage.UTXOsChangedNotificationMessage) error {
+func (x *kestrelcoindMessage_UtxosChangedNotification) fromAppMessage(message *appmessage.UTXOsChangedNotificationMessage) error {
 	added := make([]*UtxosByAddressesEntry, len(message.Added))
 	for i, entry := range message.Added {
 		added[i] = &UtxosByAddressesEntry{}

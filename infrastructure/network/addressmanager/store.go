@@ -2,9 +2,9 @@ package addressmanager
 
 import (
 	"encoding/binary"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 	"github.com/pkg/errors"
 	"net"
 )

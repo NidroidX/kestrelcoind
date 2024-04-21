@@ -3,12 +3,12 @@ package daawindowstore
 import (
 	"encoding/binary"
 	"github.com/golang/protobuf/proto"
-	"github.com/sedracoin/sedrad/domain/consensus/database/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/lrucachehashpairtoblockghostdagdatahashpair"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/util/staging"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/database/serialization"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/lrucachehashpairtoblockghostdagdatahashpair"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/util/staging"
 	"github.com/pkg/errors"
 )
 

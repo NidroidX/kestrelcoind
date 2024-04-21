@@ -3,12 +3,12 @@ package standalone
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
 
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 // Routes holds the incoming and outgoing routes of a connection created by MinimalNetAdapter

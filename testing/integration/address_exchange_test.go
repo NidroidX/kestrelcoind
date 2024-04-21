@@ -1,7 +1,7 @@
 package integration
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/addressmanager"
 	"testing"
 )
 

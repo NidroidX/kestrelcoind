@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/client"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/utils"
 )
 
 func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
@@ -20,7 +20,7 @@ func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
 	ctx, cancel := context.WithTimeout(context.Background(), daemonTimeout)
 	defer cancel()
 
-	sendAmountSeep, err := utils.SdrToSeep(conf.SendAmount)
+	sendAmountSium, err := utils.SdrToSium(conf.SendAmount)
 
 	if err != nil {
 		return err
@@ -29,7 +29,7 @@ func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
 	response, err := daemonClient.CreateUnsignedTransactions(ctx, &pb.CreateUnsignedTransactionsRequest{
 		From:                     conf.FromAddresses,
 		Address:                  conf.ToAddress,
-		Amount:                   sendAmountSeep,
+		Amount:                   sendAmountSium,
 		IsSendAll:                conf.IsSendAll,
 		UseExistingChangeAddress: conf.UseExistingChangeAddress,
 	})

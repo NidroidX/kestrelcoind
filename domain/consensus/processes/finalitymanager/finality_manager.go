@@ -3,9 +3,9 @@ package finalitymanager
 import (
 	"errors"
 
-	"github.com/sedracoin/sedrad/domain/consensus/database"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/database"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 type finalityManager struct {

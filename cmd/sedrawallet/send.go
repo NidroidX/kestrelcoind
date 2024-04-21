@@ -6,11 +6,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/client"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/keys"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/utils"
 	"github.com/pkg/errors"
 )
 
@@ -33,9 +33,9 @@ func send(conf *sendConfig) error {
 	ctx, cancel := context.WithTimeout(context.Background(), daemonTimeout)
 	defer cancel()
 
-	var sendAmountSeep uint64
+	var sendAmountSium uint64
 	if !conf.IsSendAll {
-		sendAmountSeep, err = utils.SdrToSeep(conf.SendAmount)
+		sendAmountSium, err = utils.SdrToSium(conf.SendAmount)
 
 		if err != nil {
 			return err
@@ -46,7 +46,7 @@ func send(conf *sendConfig) error {
 		daemonClient.CreateUnsignedTransactions(ctx, &pb.CreateUnsignedTransactionsRequest{
 			From:                     conf.FromAddresses,
 			Address:                  conf.ToAddress,
-			Amount:                   sendAmountSeep,
+			Amount:                   sendAmountSium,
 			IsSendAll:                conf.IsSendAll,
 			UseExistingChangeAddress: conf.UseExistingChangeAddress,
 		})
@@ -68,7 +68,7 @@ func send(conf *sendConfig) error {
 
 	signedTransactions := make([][]byte, len(createUnsignedTransactionsResponse.UnsignedTransactions))
 	for i, unsignedTransaction := range createUnsignedTransactionsResponse.UnsignedTransactions {
-		signedTransaction, err := libsedrawallet.Sign(conf.NetParams(), mnemonics, unsignedTransaction, keysFile.ECDSA)
+		signedTransaction, err := libkestrelcoinwallet.Sign(conf.NetParams(), mnemonics, unsignedTransaction, keysFile.ECDSA)
 		if err != nil {
 			return err
 		}

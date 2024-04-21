@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/keys"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/utils"
 
 	"github.com/pkg/errors"
 )
@@ -36,7 +36,7 @@ func dumpUnencryptedData(conf *dumpUnencryptedDataConfig) error {
 	mnemonicPublicKeys := make(map[string]struct{})
 	for i, mnemonic := range mnemonics {
 		fmt.Printf("Mnemonic #%d:\n%s\n\n", i+1, mnemonic)
-		publicKey, err := libsedrawallet.MasterPublicKeyFromMnemonic(conf.NetParams(), mnemonic, len(keysFile.ExtendedPublicKeys) > 1)
+		publicKey, err := libkestrelcoinwallet.MasterPublicKeyFromMnemonic(conf.NetParams(), mnemonic, len(keysFile.ExtendedPublicKeys) > 1)
 		if err != nil {
 			return err
 		}

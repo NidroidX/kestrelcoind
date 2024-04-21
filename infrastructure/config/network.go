@@ -3,14 +3,14 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"math/big"
 	"os"
 	"time"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/util/difficulty"
 	"github.com/pkg/errors"
 )
 

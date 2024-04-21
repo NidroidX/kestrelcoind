@@ -1,6 +1,6 @@
 package model
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
 // GHOSTDAGDataStore represents a store of BlockGHOSTDAGData
 type GHOSTDAGDataStore interface {

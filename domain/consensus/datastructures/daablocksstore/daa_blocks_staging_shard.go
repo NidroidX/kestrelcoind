@@ -1,9 +1,9 @@
 package daablocksstore
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/database/binaryserialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/database/binaryserialization"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 type daaBlocksStagingShard struct {

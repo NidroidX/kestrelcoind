@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 )
 
 // AddressRandomize implement addressRandomizer interface

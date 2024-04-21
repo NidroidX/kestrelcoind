@@ -1,8 +1,8 @@
 package txmass
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
 )
 
 // Calculator exposes methods to calculate the mass of a transaction

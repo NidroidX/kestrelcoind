@@ -1,14 +1,14 @@
-ARG SEDRAD_IMAGE
-ARG SEDRAMINER_IMAGE
+ARG kestrelcoinD_IMAGE
+ARG kestrelcoinMINER_IMAGE
 
-FROM ${SEDRAD_IMAGE} as sedrad
-FROM ${SEDRAMINER_IMAGE} as sedraminer
+FROM ${kestrelcoinD_IMAGE} as kestrelcoind
+FROM ${kestrelcoinMINER_IMAGE} as kestrelcoinminer
 
 FROM golang:1.19-alpine
 
-RUN mkdir -p /go/src/github.com/sedracoin/sedrad
+RUN mkdir -p /go/src/github.com/NidroidX/kestrelcoind
 
-WORKDIR /go/src/github.com/sedracoin/sedrad
+WORKDIR /go/src/github.com/NidroidX/kestrelcoind
 
 RUN apk add bash build-base git
 
@@ -19,11 +19,11 @@ RUN go mod download
 
 COPY . .
 
-COPY --from=sedrad /app/ /app/
-COPY --from=sedraminer /app/ /app/
+COPY --from=kestrelcoind /app/ /app/
+COPY --from=kestrelcoinminer /app/ /app/
 ENV PATH="/app:${PATH}"
 
-WORKDIR /go/src/github.com/sedracoin/sedrad/stability-tests
+WORKDIR /go/src/github.com/NidroidX/kestrelcoind/stability-tests
 
 RUN go install ./...
 

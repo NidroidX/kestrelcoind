@@ -6,18 +6,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flowcontext"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/util"
 )
 
 func TestTxRelay(t *testing.T) {
@@ -139,7 +139,7 @@ func generateTx(t *testing.T, firstBlockCoinbase *externalapi.DomainTransaction,
 	txIns := make([]*appmessage.TxIn, 1)
 	txIns[0] = appmessage.NewTxIn(appmessage.NewOutpoint(consensushashing.TransactionID(firstBlockCoinbase), 0), []byte{}, 0, 1)
 
-	payeeAddress, err := util.DecodeAddress(payee.miningAddress, util.Bech32PrefixSedraSim)
+	payeeAddress, err := util.DecodeAddress(payee.miningAddress, util.Bech32PrefixkestrelcoinSim)
 	if err != nil {
 		t.Fatalf("Error decoding payeeAddress: %+v", err)
 	}

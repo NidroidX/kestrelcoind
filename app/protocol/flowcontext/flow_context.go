@@ -4,18 +4,18 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/domain"
+	"github.com/NidroidX/kestrelcoind/domain"
 
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/addressmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/connmanager"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/id"
 )
 
 // OnNewBlockTemplateHandler is a handler function that's triggered when a new block template is available

@@ -7,7 +7,7 @@ package appmessage
 import (
 	"net"
 
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 )
 
 // NetAddress defines information about a peer on the network including the time

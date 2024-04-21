@@ -1,7 +1,7 @@
 package transactionid
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // FromString creates a new DomainTransactionID from the given string

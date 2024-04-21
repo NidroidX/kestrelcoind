@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 )
 
 func TestIntegrationBasicSync(t *testing.T) {

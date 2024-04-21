@@ -7,7 +7,7 @@ package addressmanager
 import (
 	"net"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 )
 
 var (

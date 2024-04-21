@@ -1,11 +1,11 @@
 package transactionvalidator
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
 	"github.com/pkg/errors"
 )
 
@@ -67,35 +67,35 @@ func (v *transactionValidator) checkTransactionAmountRanges(tx *externalapi.Doma
 	// output must not be negative or more than the max allowed per
 	// transaction. Also, the total of all outputs must abide by the same
 	// restrictions. All amounts in a transaction are in a unit value known
-	// as a seep. One sedra is a quantity of seep as defined by the
-	// seepPerSedra constant.
-	var totalSeep uint64
+	// as a Sium. One kestrelcoin is a quantity of Sium as defined by the
+	// SiumPerkestrelcoin constant.
+	var totalSium uint64
 	for _, txOut := range tx.Outputs {
-		seep := txOut.Value
-		if seep == 0 {
+		Sium := txOut.Value
+		if Sium == 0 {
 			return errors.Wrap(ruleerrors.ErrTxOutValueZero, "zero value outputs are forbidden")
 		}
 
-		if seep > constants.MaxSeep {
+		if Sium > constants.MaxSium {
 			return errors.Wrapf(ruleerrors.ErrBadTxOutValue, "transaction output value of %d is "+
-				"higher than max allowed value of %d", seep, constants.MaxSeep)
+				"higher than max allowed value of %d", Sium, constants.MaxSium)
 		}
 
 		// Binary arithmetic guarantees that any overflow is detected and reported.
-		// This is impossible for sedra, but perhaps possible if an alt increases
+		// This is impossible for kestrelcoin, but perhaps possible if an alt increases
 		// the total money supply.
-		newTotalSeep := totalSeep + seep
-		if newTotalSeep < totalSeep {
+		newTotalSium := totalSium + Sium
+		if newTotalSium < totalSium {
 			return errors.Wrapf(ruleerrors.ErrBadTxOutValue, "total value of all transaction "+
 				"outputs exceeds max allowed value of %d",
-				constants.MaxSeep)
+				constants.MaxSium)
 		}
-		totalSeep = newTotalSeep
-		if totalSeep > constants.MaxSeep {
+		totalSium = newTotalSium
+		if totalSium > constants.MaxSium {
 			return errors.Wrapf(ruleerrors.ErrBadTxOutValue, "total value of all transaction "+
 				"outputs is %d which is higher than max "+
-				"allowed value of %d", totalSeep,
-				constants.MaxSeep)
+				"allowed value of %d", totalSium,
+				constants.MaxSium)
 		}
 	}
 

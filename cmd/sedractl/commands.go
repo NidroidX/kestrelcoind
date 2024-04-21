@@ -5,42 +5,42 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/server/grpcserver/protowire"
 )
 
 var commandTypes = []reflect.Type{
-	reflect.TypeOf(protowire.SedradMessage_AddPeerRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetConnectedPeerInfoRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetPeerAddressesRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetCurrentNetworkRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetInfoRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_AddPeerRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetConnectedPeerInfoRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetPeerAddressesRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetCurrentNetworkRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetInfoRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetBlockRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBlocksRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetHeadersRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBlockCountRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBlockDagInfoRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetSelectedTipHashRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetVirtualSelectedParentBlueScoreRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetVirtualSelectedParentChainFromBlockRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_ResolveFinalityConflictRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_EstimateNetworkHashesPerSecondRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetBlockRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetBlocksRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetHeadersRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetBlockCountRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetBlockDagInfoRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetSelectedTipHashRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetVirtualSelectedParentBlueScoreRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_ResolveFinalityConflictRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_EstimateNetworkHashesPerSecondRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetBlockTemplateRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_SubmitBlockRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetBlockTemplateRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_SubmitBlockRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetMempoolEntryRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetMempoolEntriesRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetMempoolEntriesByAddressesRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetMempoolEntryRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetMempoolEntriesRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetMempoolEntriesByAddressesRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_SubmitTransactionRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_SubmitTransactionRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetUtxosByAddressesRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBalanceByAddressRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetCoinSupplyRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetUtxosByAddressesRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetBalanceByAddressRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_GetCoinSupplyRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_BanRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_UnbanRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_BanRequest{}),
+	reflect.TypeOf(protowire.kestrelcoindMessage_UnbanRequest{}),
 }
 
 type commandDescription struct {

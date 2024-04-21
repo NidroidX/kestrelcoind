@@ -1,7 +1,7 @@
 package rpcclient
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 )
 
 // SubmitTransaction sends an RPC request respective to the function's name and returns the RPC server's response

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/util"
 	"github.com/pkg/errors"
 	"golang.org/x/exp/slices"
 )
@@ -57,7 +57,7 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 		fromAddresses = append(fromAddresses, fromAddress)
 	}
 
-	selectedUTXOs, spendValue, changeSeep, err := s.selectUTXOs(amount, isSendAll, feePerInput, fromAddresses)
+	selectedUTXOs, spendValue, changeSium, err := s.selectUTXOs(amount, isSendAll, feePerInput, fromAddresses)
 	if err != nil {
 		return nil, err
 	}
@@ -71,17 +71,17 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 		return nil, err
 	}
 
-	payments := []*libsedrawallet.Payment{{
+	payments := []*libkestrelcoinwallet.Payment{{
 		Address: toAddress,
 		Amount:  spendValue,
 	}}
-	if changeSeep > 0 {
-		payments = append(payments, &libsedrawallet.Payment{
+	if changeSium > 0 {
+		payments = append(payments, &libkestrelcoinwallet.Payment{
 			Address: changeAddress,
-			Amount:  changeSeep,
+			Amount:  changeSium,
 		})
 	}
-	unsignedTransaction, err := libsedrawallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
+	unsignedTransaction, err := libkestrelcoinwallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
 		s.keysFile.MinimumSignatures,
 		payments, selectedUTXOs)
 	if err != nil {
@@ -96,9 +96,9 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 }
 
 func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uint64, fromAddresses []*walletAddress) (
-	selectedUTXOs []*libsedrawallet.UTXO, totalReceived uint64, changeSeep uint64, err error) {
+	selectedUTXOs []*libkestrelcoinwallet.UTXO, totalReceived uint64, changeSium uint64, err error) {
 
-	selectedUTXOs = []*libsedrawallet.UTXO{}
+	selectedUTXOs = []*libkestrelcoinwallet.UTXO{}
 	totalValue := uint64(0)
 
 	dagInfo, err := s.rpcClient.GetBlockDAGInfo()
@@ -107,7 +107,7 @@ func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uin
 	}
 
 	coinbaseMaturity := s.params.BlockCoinbaseMaturity
-	if dagInfo.NetworkName == "sedra-testnet-11" {
+	if dagInfo.NetworkName == "kestrelcoin-testnet-11" {
 		coinbaseMaturity = 1000
 	}
 
@@ -125,7 +125,7 @@ func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uin
 			}
 		}
 
-		selectedUTXOs = append(selectedUTXOs, &libsedrawallet.UTXO{
+		selectedUTXOs = append(selectedUTXOs, &libkestrelcoinwallet.UTXO{
 			Outpoint:       utxo.Outpoint,
 			UTXOEntry:      utxo.UTXOEntry,
 			DerivationPath: s.walletAddressPath(utxo.address),
@@ -151,7 +151,7 @@ func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uin
 	}
 	if totalValue < totalSpend {
 		return nil, 0, 0, errors.Errorf("Insufficient funds for send: %f required, while only %f available",
-			float64(totalSpend)/constants.SeepPerSedra, float64(totalValue)/constants.SeepPerSedra)
+			float64(totalSpend)/constants.SiumPerkestrelcoin, float64(totalValue)/constants.SiumPerkestrelcoin)
 	}
 
 	return selectedUTXOs, totalReceived, totalValue - totalSpend, nil

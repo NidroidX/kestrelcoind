@@ -35,7 +35,7 @@ package logger
 import (
 	"bytes"
 	"fmt"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 	"os"
 	"runtime"
 	"sync/atomic"

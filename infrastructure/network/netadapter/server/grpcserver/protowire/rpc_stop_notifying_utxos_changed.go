@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_StopNotifyingUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_StopNotifyingUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_StopNotifyingUtxosChangedRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_StopNotifyingUtxosChangedRequest is nil")
 	}
 	return x.StopNotifyingUtxosChangedRequest.toAppMessage()
 }
 
-func (x *SedradMessage_StopNotifyingUtxosChangedRequest) fromAppMessage(message *appmessage.StopNotifyingUTXOsChangedRequestMessage) error {
+func (x *kestrelcoindMessage_StopNotifyingUtxosChangedRequest) fromAppMessage(message *appmessage.StopNotifyingUTXOsChangedRequestMessage) error {
 	x.StopNotifyingUtxosChangedRequest = &StopNotifyingUtxosChangedRequestMessage{
 		Addresses: message.Addresses,
 	}
@@ -28,14 +28,14 @@ func (x *StopNotifyingUtxosChangedRequestMessage) toAppMessage() (appmessage.Mes
 	}, nil
 }
 
-func (x *SedradMessage_StopNotifyingUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_StopNotifyingUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_StopNotifyingUtxosChangedResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_StopNotifyingUtxosChangedResponse is nil")
 	}
 	return x.StopNotifyingUtxosChangedResponse.toAppMessage()
 }
 
-func (x *SedradMessage_StopNotifyingUtxosChangedResponse) fromAppMessage(message *appmessage.StopNotifyingUTXOsChangedResponseMessage) error {
+func (x *kestrelcoindMessage_StopNotifyingUtxosChangedResponse) fromAppMessage(message *appmessage.StopNotifyingUTXOsChangedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

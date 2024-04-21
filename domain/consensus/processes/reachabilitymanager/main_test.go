@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 )
 
 const logLevel = logger.LevelWarn

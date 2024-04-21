@@ -1,8 +1,8 @@
 package appmessage
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
-// MsgPruningPointUTXOSetChunk represents a sedra PruningPointUTXOSetChunk message
+// MsgPruningPointUTXOSetChunk represents a kestrelcoin PruningPointUTXOSetChunk message
 type MsgPruningPointUTXOSetChunk struct {
 	baseMessage
 	OutpointAndUTXOEntryPairs []*OutpointAndUTXOEntryPair

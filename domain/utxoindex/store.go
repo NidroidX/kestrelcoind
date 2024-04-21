@@ -3,10 +3,10 @@ package utxoindex
 import (
 	"encoding/binary"
 
-	"github.com/sedracoin/sedrad/domain/consensus/database/binaryserialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/database/binaryserialization"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 
@@ -119,7 +119,7 @@ func (uis *utxoIndexStore) commit() error {
 	}
 	defer dbTransaction.RollbackUnlessClosed()
 
-	toRemoveSeepSupply := uint64(0)
+	toRemoveSiumSupply := uint64(0)
 
 	for scriptPublicKeyString, toRemoveUTXOOutpointEntryPairs := range uis.toRemove {
 		scriptPublicKey := externalapi.NewScriptPublicKeyFromString(string(scriptPublicKeyString))
@@ -133,11 +133,11 @@ func (uis *utxoIndexStore) commit() error {
 			if err != nil {
 				return err
 			}
-			toRemoveSeepSupply = toRemoveSeepSupply + utxoEntryToRemove.Amount()
+			toRemoveSiumSupply = toRemoveSiumSupply + utxoEntryToRemove.Amount()
 		}
 	}
 
-	toAddSeepSupply := uint64(0)
+	toAddSiumSupply := uint64(0)
 
 	for scriptPublicKeyString, toAddUTXOOutpointEntryPairs := range uis.toAdd {
 		scriptPublicKey := externalapi.NewScriptPublicKeyFromString(string(scriptPublicKeyString))
@@ -155,7 +155,7 @@ func (uis *utxoIndexStore) commit() error {
 			if err != nil {
 				return err
 			}
-			toAddSeepSupply = toAddSeepSupply + utxoEntryToAdd.Amount()
+			toAddSiumSupply = toAddSiumSupply + utxoEntryToAdd.Amount()
 		}
 	}
 
@@ -165,7 +165,7 @@ func (uis *utxoIndexStore) commit() error {
 		return err
 	}
 
-	err = uis.updateCirculatingSeepSupply(dbTransaction, toAddSeepSupply, toRemoveSeepSupply)
+	err = uis.updateCirculatingSiumSupply(dbTransaction, toAddSiumSupply, toRemoveSiumSupply)
 	if err != nil {
 		return err
 	}
@@ -180,7 +180,7 @@ func (uis *utxoIndexStore) commit() error {
 }
 
 func (uis *utxoIndexStore) addAndCommitOutpointsWithoutTransaction(utxoPairs []*externalapi.OutpointAndUTXOEntryPair) error {
-	toAddSeepSupply := uint64(0)
+	toAddSiumSupply := uint64(0)
 	for _, pair := range utxoPairs {
 		bucket := uis.bucketForScriptPublicKey(pair.UTXOEntry.ScriptPublicKey())
 		key, err := uis.convertOutpointToKey(bucket, pair.Outpoint)
@@ -197,10 +197,10 @@ func (uis *utxoIndexStore) addAndCommitOutpointsWithoutTransaction(utxoPairs []*
 		if err != nil {
 			return err
 		}
-		toAddSeepSupply = toAddSeepSupply + pair.UTXOEntry.Amount()
+		toAddSiumSupply = toAddSiumSupply + pair.UTXOEntry.Amount()
 	}
 
-	err := uis.updateCirculatingSeepSupplyWithoutTransaction(toAddSeepSupply, uint64(0))
+	err := uis.updateCirculatingSiumSupplyWithoutTransaction(toAddSiumSupply, uint64(0))
 	if err != nil {
 		return err
 	}
@@ -343,7 +343,7 @@ func (uis *utxoIndexStore) deleteAll() error {
 	return nil
 }
 
-func (uis *utxoIndexStore) initializeCirculatingSeepSupply() error {
+func (uis *utxoIndexStore) initializeCirculatingSiumSupply() error {
 
 	cursor, err := uis.database.Cursor(utxoIndexBucket)
 	if err != nil {
@@ -351,7 +351,7 @@ func (uis *utxoIndexStore) initializeCirculatingSeepSupply() error {
 	}
 	defer cursor.Close()
 
-	circulatingSeepSupplyInDatabase := uint64(0)
+	circulatingSiumSupplyInDatabase := uint64(0)
 	for cursor.Next() {
 		serializedUTXOEntry, err := cursor.Value()
 		if err != nil {
@@ -362,12 +362,12 @@ func (uis *utxoIndexStore) initializeCirculatingSeepSupply() error {
 			return err
 		}
 
-		circulatingSeepSupplyInDatabase = circulatingSeepSupplyInDatabase + utxoEntry.Amount()
+		circulatingSiumSupplyInDatabase = circulatingSiumSupplyInDatabase + utxoEntry.Amount()
 	}
 
 	err = uis.database.Put(
 		circulatingSupplyKey,
-		binaryserialization.SerializeUint64(circulatingSeepSupplyInDatabase),
+		binaryserialization.SerializeUint64(circulatingSiumSupplyInDatabase),
 	)
 
 	if err != nil {
@@ -377,8 +377,8 @@ func (uis *utxoIndexStore) initializeCirculatingSeepSupply() error {
 	return nil
 }
 
-func (uis *utxoIndexStore) updateCirculatingSeepSupply(dbTransaction database.Transaction, toAddSeepSupply uint64, toRemoveSeepSupply uint64) error {
-	if toAddSeepSupply != toRemoveSeepSupply {
+func (uis *utxoIndexStore) updateCirculatingSiumSupply(dbTransaction database.Transaction, toAddSiumSupply uint64, toRemoveSiumSupply uint64) error {
+	if toAddSiumSupply != toRemoveSiumSupply {
 		circulatingSupplyBytes, err := dbTransaction.Get(circulatingSupplyKey)
 		if err != nil {
 			return err
@@ -390,7 +390,7 @@ func (uis *utxoIndexStore) updateCirculatingSeepSupply(dbTransaction database.Tr
 		}
 		err = dbTransaction.Put(
 			circulatingSupplyKey,
-			binaryserialization.SerializeUint64(circulatingSupply+toAddSeepSupply-toRemoveSeepSupply),
+			binaryserialization.SerializeUint64(circulatingSupply+toAddSiumSupply-toRemoveSiumSupply),
 		)
 		if err != nil {
 			return err
@@ -399,8 +399,8 @@ func (uis *utxoIndexStore) updateCirculatingSeepSupply(dbTransaction database.Tr
 	return nil
 }
 
-func (uis *utxoIndexStore) updateCirculatingSeepSupplyWithoutTransaction(toAddSeepSupply uint64, toRemoveSeepSupply uint64) error {
-	if toAddSeepSupply != toRemoveSeepSupply {
+func (uis *utxoIndexStore) updateCirculatingSiumSupplyWithoutTransaction(toAddSiumSupply uint64, toRemoveSiumSupply uint64) error {
+	if toAddSiumSupply != toRemoveSiumSupply {
 		circulatingSupplyBytes, err := uis.database.Get(circulatingSupplyKey)
 		if err != nil {
 			return err
@@ -412,7 +412,7 @@ func (uis *utxoIndexStore) updateCirculatingSeepSupplyWithoutTransaction(toAddSe
 		}
 		err = uis.database.Put(
 			circulatingSupplyKey,
-			binaryserialization.SerializeUint64(circulatingSupply+toAddSeepSupply-toRemoveSeepSupply),
+			binaryserialization.SerializeUint64(circulatingSupply+toAddSiumSupply-toRemoveSiumSupply),
 		)
 		if err != nil {
 			return err
@@ -421,7 +421,7 @@ func (uis *utxoIndexStore) updateCirculatingSeepSupplyWithoutTransaction(toAddSe
 	return nil
 }
 
-func (uis *utxoIndexStore) getCirculatingSeepSupply() (uint64, error) {
+func (uis *utxoIndexStore) getCirculatingSiumSupply() (uint64, error) {
 	if uis.isAnythingStaged() {
 		return 0, errors.Errorf("cannot get circulatingSupply while staging isn't empty")
 	}

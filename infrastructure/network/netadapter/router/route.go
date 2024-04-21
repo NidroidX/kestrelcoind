@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 

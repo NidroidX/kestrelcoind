@@ -3,18 +3,18 @@ package handshake
 import (
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/domain"
+	"github.com/NidroidX/kestrelcoind/domain"
 
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/addressmanager"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	routerpkg "github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

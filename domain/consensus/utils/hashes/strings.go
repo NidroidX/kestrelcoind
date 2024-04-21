@@ -1,7 +1,7 @@
 package hashes
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // ToStrings converts a slice of hashes into a slice of the corresponding strings

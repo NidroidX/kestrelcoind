@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
 	"time"
 )

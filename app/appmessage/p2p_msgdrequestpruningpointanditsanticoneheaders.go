@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgRequestPruningPointAndItsAnticone represents a sedra RequestPruningPointAndItsAnticone message
+// MsgRequestPruningPointAndItsAnticone represents a kestrelcoin RequestPruningPointAndItsAnticone message
 type MsgRequestPruningPointAndItsAnticone struct {
 	baseMessage
 }

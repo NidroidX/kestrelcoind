@@ -5,11 +5,11 @@
 package util_test
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 	"math"
 	"testing"
 
-	. "github.com/sedracoin/sedrad/util"
+	. "github.com/NidroidX/kestrelcoind/util"
 )
 
 func TestAmountCreation(t *testing.T) {
@@ -30,13 +30,13 @@ func TestAmountCreation(t *testing.T) {
 			name:     "max producible",
 			amount:   29e9,
 			valid:    true,
-			expected: Amount(constants.MaxSeep),
+			expected: Amount(constants.MaxSium),
 		},
 		{
 			name:     "one hundred",
 			amount:   100,
 			valid:    true,
-			expected: 100 * constants.SeepPerSedra,
+			expected: 100 * constants.SiumPerkestrelcoin,
 		},
 		{
 			name:     "fraction",
@@ -48,13 +48,13 @@ func TestAmountCreation(t *testing.T) {
 			name:     "rounding up",
 			amount:   54.999999999999943157,
 			valid:    true,
-			expected: 55 * constants.SeepPerSedra,
+			expected: 55 * constants.SiumPerkestrelcoin,
 		},
 		{
 			name:     "rounding down",
 			amount:   55.000000000000056843,
 			valid:    true,
-			expected: 55 * constants.SeepPerSedra,
+			expected: 55 * constants.SiumPerkestrelcoin,
 		},
 
 		// Negative tests.
@@ -103,28 +103,28 @@ func TestAmountUnitConversions(t *testing.T) {
 	}{
 		{
 			name:      "MSDR",
-			amount:    Amount(constants.MaxSeep),
+			amount:    Amount(constants.MaxSium),
 			unit:      AmountMegaSDR,
 			converted: 29000,
 			s:         "29000 MSDR",
 		},
 		{
 			name:      "kSDR",
-			amount:    44433322211100,
+			amount:    44433324206900,
 			unit:      AmountKiloSDR,
-			converted: 444.33322211100,
-			s:         "444.333222111 kSDR",
+			converted: 444.33324206900,
+			s:         "444.333242069 kSDR",
 		},
 		{
 			name:      "SDR",
-			amount:    44433322211100,
+			amount:    44433324206900,
 			unit:      AmountSDR,
-			converted: 444333.22211100,
-			s:         "444333.222111 SDR",
+			converted: 444333.24206900,
+			s:         "444333.242069 SDR",
 		},
 		{
 			name:      "mSDR",
-			amount:    44433322211100,
+			amount:    44433324206900,
 			unit:      AmountMilliSDR,
 			converted: 444333222.11100,
 			s:         "444333222.111 mSDR",
@@ -132,26 +132,26 @@ func TestAmountUnitConversions(t *testing.T) {
 		{
 
 			name:      "μSDR",
-			amount:    44433322211100,
+			amount:    44433324206900,
 			unit:      AmountMicroSDR,
-			converted: 444333222111.00,
-			s:         "444333222111 μSDR",
+			converted: 444333242069.00,
+			s:         "444333242069 μSDR",
 		},
 		{
 
-			name:      "seep",
-			amount:    44433322211100,
-			unit:      AmountSeep,
-			converted: 44433322211100,
-			s:         "44433322211100 Seep",
+			name:      "Sium",
+			amount:    44433324206900,
+			unit:      AmountSium,
+			converted: 44433324206900,
+			s:         "44433324206900 Sium",
 		},
 		{
 
 			name:      "non-standard unit",
-			amount:    44433322211100,
+			amount:    44433324206900,
 			unit:      AmountUnit(-1),
-			converted: 4443332.2211100,
-			s:         "4443332.22111 1e-1 SDR",
+			converted: 4443332.4206900,
+			s:         "4443332.42069 1e-1 SDR",
 		},
 	}
 
@@ -205,15 +205,15 @@ func TestAmountMulF64(t *testing.T) {
 		},
 		{
 			name: "Round down",
-			amt:  49, // 49 Seep
+			amt:  49, // 49 Sium
 			mul:  0.01,
 			res:  0,
 		},
 		{
 			name: "Round up",
-			amt:  50, // 50 Seep
+			amt:  50, // 50 Sium
 			mul:  0.01,
-			res:  1, // 1 Seep
+			res:  1, // 1 Sium
 		},
 		{
 			name: "Multiply by 0.",
@@ -223,27 +223,27 @@ func TestAmountMulF64(t *testing.T) {
 		},
 		{
 			name: "Multiply 1 by 0.5.",
-			amt:  1, // 1 Seep
+			amt:  1, // 1 Sium
 			mul:  0.5,
-			res:  1, // 1 Seep
+			res:  1, // 1 Sium
 		},
 		{
 			name: "Multiply 100 by 66%.",
-			amt:  100, // 100 Seep
+			amt:  100, // 100 Sium
 			mul:  0.66,
-			res:  66, // 66 Seep
+			res:  66, // 66 Sium
 		},
 		{
 			name: "Multiply 100 by 66.6%.",
-			amt:  100, // 100 Seep
+			amt:  100, // 100 Sium
 			mul:  0.666,
-			res:  67, // 67 Seep
+			res:  67, // 67 Sium
 		},
 		{
 			name: "Multiply 100 by 2/3.",
-			amt:  100, // 100 Seep
+			amt:  100, // 100 Sium
 			mul:  2.0 / 3,
-			res:  67, // 67 Seep
+			res:  67, // 67 Sium
 		},
 	}
 

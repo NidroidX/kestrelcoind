@@ -3,13 +3,13 @@ package transactionvalidator
 import (
 	"math"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/transactionhelper"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
 	"github.com/pkg/errors"
 )
 
@@ -73,17 +73,17 @@ func (v *transactionValidator) ValidateTransactionInContextAndPopulateFee(stagin
 		return err
 	}
 
-	totalSeepIn, err := v.checkTransactionInputAmounts(tx)
+	totalSiumIn, err := v.checkTransactionInputAmounts(tx)
 	if err != nil {
 		return err
 	}
 
-	totalSeepOut, err := v.checkTransactionOutputAmounts(tx, totalSeepIn)
+	totalSiumOut, err := v.checkTransactionOutputAmounts(tx, totalSiumIn)
 	if err != nil {
 		return err
 	}
 
-	tx.Fee = totalSeepIn - totalSeepOut
+	tx.Fee = totalSiumIn - totalSiumOut
 
 	err = v.checkTransactionSequenceLock(stagingArea, povBlockHash, tx)
 	if err != nil {
@@ -135,8 +135,8 @@ func (v *transactionValidator) checkTransactionCoinbaseMaturity(stagingArea *mod
 	return nil
 }
 
-func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.DomainTransaction) (totalSeepIn uint64, err error) {
-	totalSeepIn = 0
+func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.DomainTransaction) (totalSiumIn uint64, err error) {
+	totalSiumIn = 0
 
 	var missingOutpoints []*externalapi.DomainOutpoint
 	for _, input := range tx.Inputs {
@@ -149,10 +149,10 @@ func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.Doma
 		// Ensure the transaction amounts are in range. Each of the
 		// output values of the input transactions must not be negative
 		// or more than the max allowed per transaction. All amounts in
-		// a transaction are in a unit value known as a seep. One
-		// sedra is a quantity of seep as defined by the
-		// SeepPerSedra constant.
-		totalSeepIn, err = v.checkEntryAmounts(utxoEntry, totalSeepIn)
+		// a transaction are in a unit value known as a Sium. One
+		// kestrelcoin is a quantity of Sium as defined by the
+		// SiumPerkestrelcoin constant.
+		totalSiumIn, err = v.checkEntryAmounts(utxoEntry, totalSiumIn)
 		if err != nil {
 			return 0, err
 		}
@@ -162,42 +162,42 @@ func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.Doma
 		return 0, ruleerrors.NewErrMissingTxOut(missingOutpoints)
 	}
 
-	return totalSeepIn, nil
+	return totalSiumIn, nil
 }
 
-func (v *transactionValidator) checkEntryAmounts(entry externalapi.UTXOEntry, totalSeepInBefore uint64) (totalSeepInAfter uint64, err error) {
+func (v *transactionValidator) checkEntryAmounts(entry externalapi.UTXOEntry, totalSiumInBefore uint64) (totalSiumInAfter uint64, err error) {
 	// The total of all outputs must not be more than the max
 	// allowed per transaction. Also, we could potentially overflow
 	// the accumulator so check for overflow.
 
-	originTxSeep := entry.Amount()
-	totalSeepInAfter = totalSeepInBefore + originTxSeep
-	if totalSeepInAfter < totalSeepInBefore ||
-		totalSeepInAfter > constants.MaxSeep {
+	originTxSium := entry.Amount()
+	totalSiumInAfter = totalSiumInBefore + originTxSium
+	if totalSiumInAfter < totalSiumInBefore ||
+		totalSiumInAfter > constants.MaxSium {
 		return 0, errors.Wrapf(ruleerrors.ErrBadTxOutValue, "total value of all transaction "+
 			"inputs is %d which is higher than max "+
-			"allowed value of %d", totalSeepInBefore,
-			constants.MaxSeep)
+			"allowed value of %d", totalSiumInBefore,
+			constants.MaxSium)
 	}
-	return totalSeepInAfter, nil
+	return totalSiumInAfter, nil
 }
 
-func (v *transactionValidator) checkTransactionOutputAmounts(tx *externalapi.DomainTransaction, totalSeepIn uint64) (uint64, error) {
-	totalSeepOut := uint64(0)
+func (v *transactionValidator) checkTransactionOutputAmounts(tx *externalapi.DomainTransaction, totalSiumIn uint64) (uint64, error) {
+	totalSiumOut := uint64(0)
 	// Calculate the total output amount for this transaction. It is safe
 	// to ignore overflow and out of range errors here because those error
 	// conditions would have already been caught by checkTransactionAmountRanges.
 	for _, output := range tx.Outputs {
-		totalSeepOut += output.Value
+		totalSiumOut += output.Value
 	}
 
 	// Ensure the transaction does not spend more than its inputs.
-	if totalSeepIn < totalSeepOut {
+	if totalSiumIn < totalSiumOut {
 		return 0, errors.Wrapf(ruleerrors.ErrSpendTooHigh, "total value of all transaction inputs for "+
 			"the transaction is %d which is less than the amount "+
-			"spent of %d", totalSeepIn, totalSeepOut)
+			"spent of %d", totalSiumIn, totalSiumOut)
 	}
-	return totalSeepOut, nil
+	return totalSiumOut, nil
 }
 
 func (v *transactionValidator) checkTransactionSequenceLock(stagingArea *model.StagingArea,

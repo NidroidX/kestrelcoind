@@ -3,16 +3,16 @@ package standalone
 import (
 	"sync"
 
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/id"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter"
 
 	"github.com/pkg/errors"
 )

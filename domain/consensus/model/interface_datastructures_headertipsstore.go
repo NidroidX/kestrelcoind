@@ -1,6 +1,6 @@
 package model
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
 // HeaderSelectedTipStore represents a store of the headers selected tip
 type HeaderSelectedTipStore interface {

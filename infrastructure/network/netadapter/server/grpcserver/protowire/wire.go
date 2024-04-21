@@ -1,7 +1,7 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
@@ -9,10 +9,10 @@ type converter interface {
 	toAppMessage() (appmessage.Message, error)
 }
 
-// ToAppMessage converts a SedradMessage to its appmessage.Message representation
-func (x *SedradMessage) ToAppMessage() (appmessage.Message, error) {
+// ToAppMessage converts a kestrelcoindMessage to its appmessage.Message representation
+func (x *kestrelcoindMessage) ToAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage is nil")
 	}
 	converter, ok := x.Payload.(converter)
 	if !ok {
@@ -25,18 +25,18 @@ func (x *SedradMessage) ToAppMessage() (appmessage.Message, error) {
 	return appMessage, nil
 }
 
-// FromAppMessage creates a SedradMessage from a appmessage.Message
-func FromAppMessage(message appmessage.Message) (*SedradMessage, error) {
+// FromAppMessage creates a kestrelcoindMessage from a appmessage.Message
+func FromAppMessage(message appmessage.Message) (*kestrelcoindMessage, error) {
 	payload, err := toPayload(message)
 	if err != nil {
 		return nil, err
 	}
-	return &SedradMessage{
+	return &kestrelcoindMessage{
 		Payload: payload,
 	}, nil
 }
 
-func toPayload(message appmessage.Message) (isSedradMessage_Payload, error) {
+func toPayload(message appmessage.Message) (iskestrelcoindMessage_Payload, error) {
 	p2pPayload, err := toP2PPayload(message)
 	if err != nil {
 		return nil, err
@@ -56,304 +56,304 @@ func toPayload(message appmessage.Message) (isSedradMessage_Payload, error) {
 	return nil, errors.Errorf("unknown message type %T", message)
 }
 
-func toP2PPayload(message appmessage.Message) (isSedradMessage_Payload, error) {
+func toP2PPayload(message appmessage.Message) (iskestrelcoindMessage_Payload, error) {
 	switch message := message.(type) {
 	case *appmessage.MsgAddresses:
-		payload := new(SedradMessage_Addresses)
+		payload := new(kestrelcoindMessage_Addresses)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlock:
-		payload := new(SedradMessage_Block)
+		payload := new(kestrelcoindMessage_Block)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestBlockLocator:
-		payload := new(SedradMessage_RequestBlockLocator)
+		payload := new(kestrelcoindMessage_RequestBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlockLocator:
-		payload := new(SedradMessage_BlockLocator)
+		payload := new(kestrelcoindMessage_BlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestAddresses:
-		payload := new(SedradMessage_RequestAddresses)
+		payload := new(kestrelcoindMessage_RequestAddresses)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestIBDBlocks:
-		payload := new(SedradMessage_RequestIBDBlocks)
+		payload := new(kestrelcoindMessage_RequestIBDBlocks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestNextHeaders:
-		payload := new(SedradMessage_RequestNextHeaders)
+		payload := new(kestrelcoindMessage_RequestNextHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgDoneHeaders:
-		payload := new(SedradMessage_DoneHeaders)
+		payload := new(kestrelcoindMessage_DoneHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestRelayBlocks:
-		payload := new(SedradMessage_RequestRelayBlocks)
+		payload := new(kestrelcoindMessage_RequestRelayBlocks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestTransactions:
-		payload := new(SedradMessage_RequestTransactions)
+		payload := new(kestrelcoindMessage_RequestTransactions)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgTransactionNotFound:
-		payload := new(SedradMessage_TransactionNotFound)
+		payload := new(kestrelcoindMessage_TransactionNotFound)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgInvRelayBlock:
-		payload := new(SedradMessage_InvRelayBlock)
+		payload := new(kestrelcoindMessage_InvRelayBlock)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgInvTransaction:
-		payload := new(SedradMessage_InvTransactions)
+		payload := new(kestrelcoindMessage_InvTransactions)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPing:
-		payload := new(SedradMessage_Ping)
+		payload := new(kestrelcoindMessage_Ping)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPong:
-		payload := new(SedradMessage_Pong)
+		payload := new(kestrelcoindMessage_Pong)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgTx:
-		payload := new(SedradMessage_Transaction)
+		payload := new(kestrelcoindMessage_Transaction)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgVerAck:
-		payload := new(SedradMessage_Verack)
+		payload := new(kestrelcoindMessage_Verack)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgVersion:
-		payload := new(SedradMessage_Version)
+		payload := new(kestrelcoindMessage_Version)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgReject:
-		payload := new(SedradMessage_Reject)
+		payload := new(kestrelcoindMessage_Reject)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestPruningPointUTXOSet:
-		payload := new(SedradMessage_RequestPruningPointUTXOSet)
+		payload := new(kestrelcoindMessage_RequestPruningPointUTXOSet)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPruningPointUTXOSetChunk:
-		payload := new(SedradMessage_PruningPointUtxoSetChunk)
+		payload := new(kestrelcoindMessage_PruningPointUtxoSetChunk)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgUnexpectedPruningPoint:
-		payload := new(SedradMessage_UnexpectedPruningPoint)
+		payload := new(kestrelcoindMessage_UnexpectedPruningPoint)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlockLocator:
-		payload := new(SedradMessage_IbdBlockLocator)
+		payload := new(kestrelcoindMessage_IbdBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlockLocatorHighestHash:
-		payload := new(SedradMessage_IbdBlockLocatorHighestHash)
+		payload := new(kestrelcoindMessage_IbdBlockLocatorHighestHash)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlockLocatorHighestHashNotFound:
-		payload := new(SedradMessage_IbdBlockLocatorHighestHashNotFound)
+		payload := new(kestrelcoindMessage_IbdBlockLocatorHighestHashNotFound)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BlockHeadersMessage:
-		payload := new(SedradMessage_BlockHeaders)
+		payload := new(kestrelcoindMessage_BlockHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestNextPruningPointUTXOSetChunk:
-		payload := new(SedradMessage_RequestNextPruningPointUtxoSetChunk)
+		payload := new(kestrelcoindMessage_RequestNextPruningPointUtxoSetChunk)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgDonePruningPointUTXOSetChunks:
-		payload := new(SedradMessage_DonePruningPointUtxoSetChunks)
+		payload := new(kestrelcoindMessage_DonePruningPointUtxoSetChunks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlockWithTrustedData:
-		payload := new(SedradMessage_BlockWithTrustedData)
+		payload := new(kestrelcoindMessage_BlockWithTrustedData)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestPruningPointAndItsAnticone:
-		payload := new(SedradMessage_RequestPruningPointAndItsAnticone)
+		payload := new(kestrelcoindMessage_RequestPruningPointAndItsAnticone)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgDoneBlocksWithTrustedData:
-		payload := new(SedradMessage_DoneBlocksWithTrustedData)
+		payload := new(kestrelcoindMessage_DoneBlocksWithTrustedData)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDBlock:
-		payload := new(SedradMessage_IbdBlock)
+		payload := new(kestrelcoindMessage_IbdBlock)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestHeaders:
-		payload := new(SedradMessage_RequestHeaders)
+		payload := new(kestrelcoindMessage_RequestHeaders)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPruningPoints:
-		payload := new(SedradMessage_PruningPoints)
+		payload := new(kestrelcoindMessage_PruningPoints)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestPruningPointProof:
-		payload := new(SedradMessage_RequestPruningPointProof)
+		payload := new(kestrelcoindMessage_RequestPruningPointProof)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgPruningPointProof:
-		payload := new(SedradMessage_PruningPointProof)
+		payload := new(kestrelcoindMessage_PruningPointProof)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgReady:
-		payload := new(SedradMessage_Ready)
+		payload := new(kestrelcoindMessage_Ready)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgTrustedData:
-		payload := new(SedradMessage_TrustedData)
+		payload := new(kestrelcoindMessage_TrustedData)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgBlockWithTrustedDataV4:
-		payload := new(SedradMessage_BlockWithTrustedDataV4)
+		payload := new(kestrelcoindMessage_BlockWithTrustedDataV4)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestNextPruningPointAndItsAnticoneBlocks:
-		payload := new(SedradMessage_RequestNextPruningPointAndItsAnticoneBlocks)
+		payload := new(kestrelcoindMessage_RequestNextPruningPointAndItsAnticoneBlocks)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestIBDChainBlockLocator:
-		payload := new(SedradMessage_RequestIBDChainBlockLocator)
+		payload := new(kestrelcoindMessage_RequestIBDChainBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgIBDChainBlockLocator:
-		payload := new(SedradMessage_IbdChainBlockLocator)
+		payload := new(kestrelcoindMessage_IbdChainBlockLocator)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.MsgRequestAnticone:
-		payload := new(SedradMessage_RequestAnticone)
+		payload := new(kestrelcoindMessage_RequestAnticone)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
@@ -364,605 +364,605 @@ func toP2PPayload(message appmessage.Message) (isSedradMessage_Payload, error) {
 	}
 }
 
-func toRPCPayload(message appmessage.Message) (isSedradMessage_Payload, error) {
+func toRPCPayload(message appmessage.Message) (iskestrelcoindMessage_Payload, error) {
 	switch message := message.(type) {
 	case *appmessage.GetCurrentNetworkRequestMessage:
-		payload := new(SedradMessage_GetCurrentNetworkRequest)
+		payload := new(kestrelcoindMessage_GetCurrentNetworkRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetCurrentNetworkResponseMessage:
-		payload := new(SedradMessage_GetCurrentNetworkResponse)
+		payload := new(kestrelcoindMessage_GetCurrentNetworkResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitBlockRequestMessage:
-		payload := new(SedradMessage_SubmitBlockRequest)
+		payload := new(kestrelcoindMessage_SubmitBlockRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitBlockResponseMessage:
-		payload := new(SedradMessage_SubmitBlockResponse)
+		payload := new(kestrelcoindMessage_SubmitBlockResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockTemplateRequestMessage:
-		payload := new(SedradMessage_GetBlockTemplateRequest)
+		payload := new(kestrelcoindMessage_GetBlockTemplateRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockTemplateResponseMessage:
-		payload := new(SedradMessage_GetBlockTemplateResponse)
+		payload := new(kestrelcoindMessage_GetBlockTemplateResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyBlockAddedRequestMessage:
-		payload := new(SedradMessage_NotifyBlockAddedRequest)
+		payload := new(kestrelcoindMessage_NotifyBlockAddedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyBlockAddedResponseMessage:
-		payload := new(SedradMessage_NotifyBlockAddedResponse)
+		payload := new(kestrelcoindMessage_NotifyBlockAddedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BlockAddedNotificationMessage:
-		payload := new(SedradMessage_BlockAddedNotification)
+		payload := new(kestrelcoindMessage_BlockAddedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetPeerAddressesRequestMessage:
-		payload := new(SedradMessage_GetPeerAddressesRequest)
+		payload := new(kestrelcoindMessage_GetPeerAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetPeerAddressesResponseMessage:
-		payload := new(SedradMessage_GetPeerAddressesResponse)
+		payload := new(kestrelcoindMessage_GetPeerAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSelectedTipHashRequestMessage:
-		payload := new(SedradMessage_GetSelectedTipHashRequest)
+		payload := new(kestrelcoindMessage_GetSelectedTipHashRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSelectedTipHashResponseMessage:
-		payload := new(SedradMessage_GetSelectedTipHashResponse)
+		payload := new(kestrelcoindMessage_GetSelectedTipHashResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntryRequestMessage:
-		payload := new(SedradMessage_GetMempoolEntryRequest)
+		payload := new(kestrelcoindMessage_GetMempoolEntryRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntryResponseMessage:
-		payload := new(SedradMessage_GetMempoolEntryResponse)
+		payload := new(kestrelcoindMessage_GetMempoolEntryResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetConnectedPeerInfoRequestMessage:
-		payload := new(SedradMessage_GetConnectedPeerInfoRequest)
+		payload := new(kestrelcoindMessage_GetConnectedPeerInfoRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetConnectedPeerInfoResponseMessage:
-		payload := new(SedradMessage_GetConnectedPeerInfoResponse)
+		payload := new(kestrelcoindMessage_GetConnectedPeerInfoResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.AddPeerRequestMessage:
-		payload := new(SedradMessage_AddPeerRequest)
+		payload := new(kestrelcoindMessage_AddPeerRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.AddPeerResponseMessage:
-		payload := new(SedradMessage_AddPeerResponse)
+		payload := new(kestrelcoindMessage_AddPeerResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitTransactionRequestMessage:
-		payload := new(SedradMessage_SubmitTransactionRequest)
+		payload := new(kestrelcoindMessage_SubmitTransactionRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.SubmitTransactionResponseMessage:
-		payload := new(SedradMessage_SubmitTransactionResponse)
+		payload := new(kestrelcoindMessage_SubmitTransactionResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentChainChangedRequestMessage:
-		payload := new(SedradMessage_NotifyVirtualSelectedParentChainChangedRequest)
+		payload := new(kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentChainChangedResponseMessage:
-		payload := new(SedradMessage_NotifyVirtualSelectedParentChainChangedResponse)
+		payload := new(kestrelcoindMessage_NotifyVirtualSelectedParentChainChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.VirtualSelectedParentChainChangedNotificationMessage:
-		payload := new(SedradMessage_VirtualSelectedParentChainChangedNotification)
+		payload := new(kestrelcoindMessage_VirtualSelectedParentChainChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockRequestMessage:
-		payload := new(SedradMessage_GetBlockRequest)
+		payload := new(kestrelcoindMessage_GetBlockRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockResponseMessage:
-		payload := new(SedradMessage_GetBlockResponse)
+		payload := new(kestrelcoindMessage_GetBlockResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSubnetworkRequestMessage:
-		payload := new(SedradMessage_GetSubnetworkRequest)
+		payload := new(kestrelcoindMessage_GetSubnetworkRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetSubnetworkResponseMessage:
-		payload := new(SedradMessage_GetSubnetworkResponse)
+		payload := new(kestrelcoindMessage_GetSubnetworkResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentChainFromBlockRequestMessage:
-		payload := new(SedradMessage_GetVirtualSelectedParentChainFromBlockRequest)
+		payload := new(kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentChainFromBlockResponseMessage:
-		payload := new(SedradMessage_GetVirtualSelectedParentChainFromBlockResponse)
+		payload := new(kestrelcoindMessage_GetVirtualSelectedParentChainFromBlockResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlocksRequestMessage:
-		payload := new(SedradMessage_GetBlocksRequest)
+		payload := new(kestrelcoindMessage_GetBlocksRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlocksResponseMessage:
-		payload := new(SedradMessage_GetBlocksResponse)
+		payload := new(kestrelcoindMessage_GetBlocksResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockCountRequestMessage:
-		payload := new(SedradMessage_GetBlockCountRequest)
+		payload := new(kestrelcoindMessage_GetBlockCountRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockCountResponseMessage:
-		payload := new(SedradMessage_GetBlockCountResponse)
+		payload := new(kestrelcoindMessage_GetBlockCountResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockDAGInfoRequestMessage:
-		payload := new(SedradMessage_GetBlockDagInfoRequest)
+		payload := new(kestrelcoindMessage_GetBlockDagInfoRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBlockDAGInfoResponseMessage:
-		payload := new(SedradMessage_GetBlockDagInfoResponse)
+		payload := new(kestrelcoindMessage_GetBlockDagInfoResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ResolveFinalityConflictRequestMessage:
-		payload := new(SedradMessage_ResolveFinalityConflictRequest)
+		payload := new(kestrelcoindMessage_ResolveFinalityConflictRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ResolveFinalityConflictResponseMessage:
-		payload := new(SedradMessage_ResolveFinalityConflictResponse)
+		payload := new(kestrelcoindMessage_ResolveFinalityConflictResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyFinalityConflictsRequestMessage:
-		payload := new(SedradMessage_NotifyFinalityConflictsRequest)
+		payload := new(kestrelcoindMessage_NotifyFinalityConflictsRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyFinalityConflictsResponseMessage:
-		payload := new(SedradMessage_NotifyFinalityConflictsResponse)
+		payload := new(kestrelcoindMessage_NotifyFinalityConflictsResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.FinalityConflictNotificationMessage:
-		payload := new(SedradMessage_FinalityConflictNotification)
+		payload := new(kestrelcoindMessage_FinalityConflictNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.FinalityConflictResolvedNotificationMessage:
-		payload := new(SedradMessage_FinalityConflictResolvedNotification)
+		payload := new(kestrelcoindMessage_FinalityConflictResolvedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesRequestMessage:
-		payload := new(SedradMessage_GetMempoolEntriesRequest)
+		payload := new(kestrelcoindMessage_GetMempoolEntriesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesResponseMessage:
-		payload := new(SedradMessage_GetMempoolEntriesResponse)
+		payload := new(kestrelcoindMessage_GetMempoolEntriesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ShutDownRequestMessage:
-		payload := new(SedradMessage_ShutDownRequest)
+		payload := new(kestrelcoindMessage_ShutDownRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.ShutDownResponseMessage:
-		payload := new(SedradMessage_ShutDownResponse)
+		payload := new(kestrelcoindMessage_ShutDownResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetHeadersRequestMessage:
-		payload := new(SedradMessage_GetHeadersRequest)
+		payload := new(kestrelcoindMessage_GetHeadersRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetHeadersResponseMessage:
-		payload := new(SedradMessage_GetHeadersResponse)
+		payload := new(kestrelcoindMessage_GetHeadersResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyUTXOsChangedRequestMessage:
-		payload := new(SedradMessage_NotifyUtxosChangedRequest)
+		payload := new(kestrelcoindMessage_NotifyUtxosChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyUTXOsChangedResponseMessage:
-		payload := new(SedradMessage_NotifyUtxosChangedResponse)
+		payload := new(kestrelcoindMessage_NotifyUtxosChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.UTXOsChangedNotificationMessage:
-		payload := new(SedradMessage_UtxosChangedNotification)
+		payload := new(kestrelcoindMessage_UtxosChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.StopNotifyingUTXOsChangedRequestMessage:
-		payload := new(SedradMessage_StopNotifyingUtxosChangedRequest)
+		payload := new(kestrelcoindMessage_StopNotifyingUtxosChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.StopNotifyingUTXOsChangedResponseMessage:
-		payload := new(SedradMessage_StopNotifyingUtxosChangedResponse)
+		payload := new(kestrelcoindMessage_StopNotifyingUtxosChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetUTXOsByAddressesRequestMessage:
-		payload := new(SedradMessage_GetUtxosByAddressesRequest)
+		payload := new(kestrelcoindMessage_GetUtxosByAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetUTXOsByAddressesResponseMessage:
-		payload := new(SedradMessage_GetUtxosByAddressesResponse)
+		payload := new(kestrelcoindMessage_GetUtxosByAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalanceByAddressRequestMessage:
-		payload := new(SedradMessage_GetBalanceByAddressRequest)
+		payload := new(kestrelcoindMessage_GetBalanceByAddressRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalanceByAddressResponseMessage:
-		payload := new(SedradMessage_GetBalanceByAddressResponse)
+		payload := new(kestrelcoindMessage_GetBalanceByAddressResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentBlueScoreRequestMessage:
-		payload := new(SedradMessage_GetVirtualSelectedParentBlueScoreRequest)
+		payload := new(kestrelcoindMessage_GetVirtualSelectedParentBlueScoreRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetVirtualSelectedParentBlueScoreResponseMessage:
-		payload := new(SedradMessage_GetVirtualSelectedParentBlueScoreResponse)
+		payload := new(kestrelcoindMessage_GetVirtualSelectedParentBlueScoreResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage:
-		payload := new(SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)
+		payload := new(kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage:
-		payload := new(SedradMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)
+		payload := new(kestrelcoindMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.VirtualSelectedParentBlueScoreChangedNotificationMessage:
-		payload := new(SedradMessage_VirtualSelectedParentBlueScoreChangedNotification)
+		payload := new(kestrelcoindMessage_VirtualSelectedParentBlueScoreChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BanRequestMessage:
-		payload := new(SedradMessage_BanRequest)
+		payload := new(kestrelcoindMessage_BanRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.BanResponseMessage:
-		payload := new(SedradMessage_BanResponse)
+		payload := new(kestrelcoindMessage_BanResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.UnbanRequestMessage:
-		payload := new(SedradMessage_UnbanRequest)
+		payload := new(kestrelcoindMessage_UnbanRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.UnbanResponseMessage:
-		payload := new(SedradMessage_UnbanResponse)
+		payload := new(kestrelcoindMessage_UnbanResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetInfoRequestMessage:
-		payload := new(SedradMessage_GetInfoRequest)
+		payload := new(kestrelcoindMessage_GetInfoRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetInfoResponseMessage:
-		payload := new(SedradMessage_GetInfoResponse)
+		payload := new(kestrelcoindMessage_GetInfoResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyPruningPointUTXOSetOverrideRequestMessage:
-		payload := new(SedradMessage_NotifyPruningPointUTXOSetOverrideRequest)
+		payload := new(kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyPruningPointUTXOSetOverrideResponseMessage:
-		payload := new(SedradMessage_NotifyPruningPointUTXOSetOverrideResponse)
+		payload := new(kestrelcoindMessage_NotifyPruningPointUTXOSetOverrideResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.PruningPointUTXOSetOverrideNotificationMessage:
-		payload := new(SedradMessage_PruningPointUTXOSetOverrideNotification)
+		payload := new(kestrelcoindMessage_PruningPointUTXOSetOverrideNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.StopNotifyingPruningPointUTXOSetOverrideRequestMessage:
-		payload := new(SedradMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)
+		payload := new(kestrelcoindMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.EstimateNetworkHashesPerSecondRequestMessage:
-		payload := new(SedradMessage_EstimateNetworkHashesPerSecondRequest)
+		payload := new(kestrelcoindMessage_EstimateNetworkHashesPerSecondRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.EstimateNetworkHashesPerSecondResponseMessage:
-		payload := new(SedradMessage_EstimateNetworkHashesPerSecondResponse)
+		payload := new(kestrelcoindMessage_EstimateNetworkHashesPerSecondResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualDaaScoreChangedRequestMessage:
-		payload := new(SedradMessage_NotifyVirtualDaaScoreChangedRequest)
+		payload := new(kestrelcoindMessage_NotifyVirtualDaaScoreChangedRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyVirtualDaaScoreChangedResponseMessage:
-		payload := new(SedradMessage_NotifyVirtualDaaScoreChangedResponse)
+		payload := new(kestrelcoindMessage_NotifyVirtualDaaScoreChangedResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.VirtualDaaScoreChangedNotificationMessage:
-		payload := new(SedradMessage_VirtualDaaScoreChangedNotification)
+		payload := new(kestrelcoindMessage_VirtualDaaScoreChangedNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalancesByAddressesRequestMessage:
-		payload := new(SedradMessage_GetBalancesByAddressesRequest)
+		payload := new(kestrelcoindMessage_GetBalancesByAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetBalancesByAddressesResponseMessage:
-		payload := new(SedradMessage_GetBalancesByAddressesResponse)
+		payload := new(kestrelcoindMessage_GetBalancesByAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyNewBlockTemplateRequestMessage:
-		payload := new(SedradMessage_NotifyNewBlockTemplateRequest)
+		payload := new(kestrelcoindMessage_NotifyNewBlockTemplateRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NotifyNewBlockTemplateResponseMessage:
-		payload := new(SedradMessage_NotifyNewBlockTemplateResponse)
+		payload := new(kestrelcoindMessage_NotifyNewBlockTemplateResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.NewBlockTemplateNotificationMessage:
-		payload := new(SedradMessage_NewBlockTemplateNotification)
+		payload := new(kestrelcoindMessage_NewBlockTemplateNotification)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesByAddressesRequestMessage:
-		payload := new(SedradMessage_GetMempoolEntriesByAddressesRequest)
+		payload := new(kestrelcoindMessage_GetMempoolEntriesByAddressesRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetMempoolEntriesByAddressesResponseMessage:
-		payload := new(SedradMessage_GetMempoolEntriesByAddressesResponse)
+		payload := new(kestrelcoindMessage_GetMempoolEntriesByAddressesResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetCoinSupplyRequestMessage:
-		payload := new(SedradMessage_GetCoinSupplyRequest)
+		payload := new(kestrelcoindMessage_GetCoinSupplyRequest)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err
 		}
 		return payload, nil
 	case *appmessage.GetCoinSupplyResponseMessage:
-		payload := new(SedradMessage_GetCoinSupplyResponse)
+		payload := new(kestrelcoindMessage_GetCoinSupplyResponse)
 		err := payload.fromAppMessage(message)
 		if err != nil {
 			return nil, err

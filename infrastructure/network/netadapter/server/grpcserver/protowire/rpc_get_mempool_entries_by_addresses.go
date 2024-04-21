@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetMempoolEntriesByAddressesRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetMempoolEntriesByAddressesRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_SedradMessage_GetMempoolEntriesByAddressesRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_kestrelcoindMessage_GetMempoolEntriesByAddressesRequest is nil")
 	}
 	return x.GetMempoolEntriesByAddressesRequest.toAppMessage()
 }
 
-func (x *SedradMessage_GetMempoolEntriesByAddressesRequest) fromAppMessage(message *appmessage.GetMempoolEntriesByAddressesRequestMessage) error {
+func (x *kestrelcoindMessage_GetMempoolEntriesByAddressesRequest) fromAppMessage(message *appmessage.GetMempoolEntriesByAddressesRequestMessage) error {
 	x.GetMempoolEntriesByAddressesRequest = &GetMempoolEntriesByAddressesRequestMessage{
 		Addresses:             message.Addresses,
 		IncludeOrphanPool:     message.IncludeOrphanPool,
@@ -23,7 +23,7 @@ func (x *SedradMessage_GetMempoolEntriesByAddressesRequest) fromAppMessage(messa
 
 func (x *GetMempoolEntriesByAddressesRequestMessage) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetMempoolEntriesRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetMempoolEntriesRequest is nil")
 	}
 	return &appmessage.GetMempoolEntriesByAddressesRequestMessage{
 		Addresses:             x.Addresses,
@@ -32,14 +32,14 @@ func (x *GetMempoolEntriesByAddressesRequestMessage) toAppMessage() (appmessage.
 	}, nil
 }
 
-func (x *SedradMessage_GetMempoolEntriesByAddressesResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetMempoolEntriesByAddressesResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetMempoolEntriesByAddressesResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetMempoolEntriesByAddressesResponse is nil")
 	}
 	return x.GetMempoolEntriesByAddressesResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetMempoolEntriesByAddressesResponse) fromAppMessage(message *appmessage.GetMempoolEntriesByAddressesResponseMessage) error {
+func (x *kestrelcoindMessage_GetMempoolEntriesByAddressesResponse) fromAppMessage(message *appmessage.GetMempoolEntriesByAddressesResponseMessage) error {
 	var rpcErr *RPCError
 	if message.Error != nil {
 		rpcErr = &RPCError{Message: message.Error.Message}

@@ -1,10 +1,10 @@
 package appmessage
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
-// MsgIBDBlockLocatorHighestHash represents a sedra BlockLocatorHighestHash message
+// MsgIBDBlockLocatorHighestHash represents a kestrelcoin BlockLocatorHighestHash message
 type MsgIBDBlockLocatorHighestHash struct {
 	baseMessage
 	HighestHash *externalapi.DomainHash

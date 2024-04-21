@@ -3,8 +3,8 @@ package dagtraversalmanager
 import (
 	"container/heap"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 func blockGHOSTDAGDataHashPairLess(left, right *externalapi.BlockGHOSTDAGDataHashPair, gm model.GHOSTDAGManager) bool {

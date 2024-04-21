@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 // OnConnectedHandler is a function that is to be called

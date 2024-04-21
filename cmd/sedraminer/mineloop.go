@@ -2,18 +2,18 @@ package main
 
 import (
 	nativeerrors "errors"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/NidroidX/kestrelcoind/version"
 	"math/rand"
 	"sync/atomic"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/cmd/sedraminer/templatemanager"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/pow"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinminer/templatemanager"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/pow"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/util"
 	"github.com/pkg/errors"
 )
 
@@ -176,7 +176,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 		}
 		if !isSynced && !mineWhenNotSynced {
 			if shouldLog {
-				log.Warnf("sedrad is not synced. Skipping current block template")
+				log.Warnf("kestrelcoind is not synced. Skipping current block template")
 			}
 			time.Sleep(sleepTimeWhenNotSynced)
 			continue
@@ -188,7 +188,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 
 func templatesLoop(client *minerClient, miningAddr util.Address, errChan chan error) {
 	getBlockTemplate := func() {
-		template, err := client.GetBlockTemplate(miningAddr.String(), "sedraminer-"+version.Version())
+		template, err := client.GetBlockTemplate(miningAddr.String(), "kestrelcoinminer-"+version.Version())
 		if nativeerrors.Is(err, router.ErrTimeout) {
 			log.Warnf("Got timeout while requesting block template from %s: %s", client.Address(), err)
 			reconnectErr := client.Reconnect()

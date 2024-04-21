@@ -3,18 +3,18 @@ package consensushashing_test
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
 	"testing"
 
-	"github.com/sedracoin/go-secp256k1"
+	"github.com/kestrelcoincoin/go-secp256k1"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/util"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // shortened versions of SigHash types to fit in single line of test case
@@ -337,8 +337,8 @@ func generateTxs() (nativeTx, subnetworkTx *externalapi.DomainTransaction, err e
 	genesisCoinbase := dagconfig.SimnetParams.GenesisBlock.Transactions[0]
 	genesisCoinbaseTransactionID := consensushashing.TransactionID(genesisCoinbase)
 
-	address1Str := "sedrasim:qzpj2cfa9m40w9m2cmr8pvfuqpp32mzzwsuw6ukhfduqpp32mzzws59e8fapc"
-	address1, err := util.DecodeAddress(address1Str, util.Bech32PrefixSedraSim)
+	address1Str := "kestrelcoinsim:qzpj2cfa9m40w9m2cmr8pvfuqpp32mzzwsuw6ukhfduqpp32mzzws59e8fapc"
+	address1, err := util.DecodeAddress(address1Str, util.Bech32PrefixkestrelcoinSim)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error decoding address1: %+v", err)
 	}
@@ -347,8 +347,8 @@ func generateTxs() (nativeTx, subnetworkTx *externalapi.DomainTransaction, err e
 		return nil, nil, fmt.Errorf("error generating script: %+v", err)
 	}
 
-	address2Str := "sedrasim:qr7w7nqsdnc3zddm6u8s9fex4ysk95hm3v30q353ymuqpp32mzzws59e8fapc"
-	address2, err := util.DecodeAddress(address2Str, util.Bech32PrefixSedraSim)
+	address2Str := "kestrelcoinsim:qr7w7nqsdnc3zddm6u8s9fex4ysk95hm3v30q353ymuqpp32mzzws59e8fapc"
+	address2, err := util.DecodeAddress(address2Str, util.Bech32PrefixkestrelcoinSim)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error decoding address2: %+v", err)
 	}
@@ -489,9 +489,9 @@ func generateInputs(size int, sourceScript *externalapi.ScriptPublicKey) []*exte
 }
 
 func getSourceScript(b *testing.B) *externalapi.ScriptPublicKey {
-	sourceAddressStr := "sedrasim:qz6f9z6l3x4v3lf9mgf0t934th4nx5kgzu663x9yjh"
+	sourceAddressStr := "kestrelcoinsim:qz6f9z6l3x4v3lf9mgf0t934th4nx5kgzu663x9yjh"
 
-	sourceAddress, err := util.DecodeAddress(sourceAddressStr, util.Bech32PrefixSedraSim)
+	sourceAddress, err := util.DecodeAddress(sourceAddressStr, util.Bech32PrefixkestrelcoinSim)
 	if err != nil {
 		b.Fatalf("Error from DecodeAddress: %+v", err)
 	}

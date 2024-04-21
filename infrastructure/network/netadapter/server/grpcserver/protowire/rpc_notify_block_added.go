@@ -1,27 +1,27 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_NotifyBlockAddedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_NotifyBlockAddedRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.NotifyBlockAddedRequestMessage{}, nil
 }
 
-func (x *SedradMessage_NotifyBlockAddedRequest) fromAppMessage(_ *appmessage.NotifyBlockAddedRequestMessage) error {
+func (x *kestrelcoindMessage_NotifyBlockAddedRequest) fromAppMessage(_ *appmessage.NotifyBlockAddedRequestMessage) error {
 	x.NotifyBlockAddedRequest = &NotifyBlockAddedRequestMessage{}
 	return nil
 }
 
-func (x *SedradMessage_NotifyBlockAddedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_NotifyBlockAddedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_NotifyBlockAddedResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_NotifyBlockAddedResponse is nil")
 	}
 	return x.NotifyBlockAddedResponse.toAppMessage()
 }
 
-func (x *SedradMessage_NotifyBlockAddedResponse) fromAppMessage(message *appmessage.NotifyBlockAddedResponseMessage) error {
+func (x *kestrelcoindMessage_NotifyBlockAddedResponse) fromAppMessage(message *appmessage.NotifyBlockAddedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -46,14 +46,14 @@ func (x *NotifyBlockAddedResponseMessage) toAppMessage() (appmessage.Message, er
 	}, nil
 }
 
-func (x *SedradMessage_BlockAddedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_BlockAddedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_BlockAddedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_BlockAddedNotification is nil")
 	}
 	return x.BlockAddedNotification.toAppMessage()
 }
 
-func (x *SedradMessage_BlockAddedNotification) fromAppMessage(message *appmessage.BlockAddedNotificationMessage) error {
+func (x *kestrelcoindMessage_BlockAddedNotification) fromAppMessage(message *appmessage.BlockAddedNotificationMessage) error {
 	block := &RpcBlock{}
 	err := block.fromAppMessage(message.Block)
 	if err != nil {

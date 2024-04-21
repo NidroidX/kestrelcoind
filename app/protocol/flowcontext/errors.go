@@ -5,9 +5,9 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
+	"github.com/NidroidX/kestrelcoind/app/protocol/protocolerrors"
 )
 
 var (

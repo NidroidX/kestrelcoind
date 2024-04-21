@@ -1,10 +1,10 @@
 package consensusstatestore
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxolrucache"
-	"github.com/sedracoin/sedrad/util/staging"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxolrucache"
+	"github.com/NidroidX/kestrelcoind/util/staging"
 )
 
 var importingPruningPointUTXOSetKeyName = []byte("importing-pruning-point-utxo-set")

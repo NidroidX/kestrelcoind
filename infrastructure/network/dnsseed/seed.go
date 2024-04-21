@@ -12,15 +12,15 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	pb2 "github.com/sedracoin/sedrad/infrastructure/network/dnsseed/pb"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	pb2 "github.com/NidroidX/kestrelcoind/infrastructure/network/dnsseed/pb"
 	"google.golang.org/grpc"
 
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 )
 
 const (

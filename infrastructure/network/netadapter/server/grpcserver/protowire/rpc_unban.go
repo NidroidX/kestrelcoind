@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_UnbanRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_UnbanRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_UnbanRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_UnbanRequest is nil")
 	}
 	return x.UnbanRequest.toAppMessage()
 }
 
-func (x *SedradMessage_UnbanRequest) fromAppMessage(message *appmessage.UnbanRequestMessage) error {
+func (x *kestrelcoindMessage_UnbanRequest) fromAppMessage(message *appmessage.UnbanRequestMessage) error {
 	x.UnbanRequest = &UnbanRequestMessage{Ip: message.IP}
 	return nil
 }
@@ -26,14 +26,14 @@ func (x *UnbanRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_UnbanResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_UnbanResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_UnbanResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_UnbanResponse is nil")
 	}
 	return x.UnbanResponse.toAppMessage()
 }
 
-func (x *SedradMessage_UnbanResponse) fromAppMessage(message *appmessage.UnbanResponseMessage) error {
+func (x *kestrelcoindMessage_UnbanResponse) fromAppMessage(message *appmessage.UnbanResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

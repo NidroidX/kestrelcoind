@@ -1,6 +1,6 @@
 package server
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 
 type walletUTXO struct {
 	Outpoint  *externalapi.DomainOutpoint

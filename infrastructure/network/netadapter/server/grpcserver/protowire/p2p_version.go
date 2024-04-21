@@ -1,15 +1,15 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/id"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_Version) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_Version) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_Version is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_Version is nil")
 	}
 	return x.Version.toAppMessage()
 }
@@ -25,7 +25,7 @@ func (x *VersionMessage) toAppMessage() (appmessage.Message, error) {
 	}
 
 	subnetworkID, err := x.SubnetworkId.toDomain()
-	//  Full sedra nodes set SubnetworkId==nil
+	//  Full kestrelcoin nodes set SubnetworkId==nil
 	if err != nil && !errors.Is(err, errorNil) {
 		return nil, err
 	}
@@ -57,7 +57,7 @@ func (x *VersionMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_Version) fromAppMessage(msgVersion *appmessage.MsgVersion) error {
+func (x *kestrelcoindMessage_Version) fromAppMessage(msgVersion *appmessage.MsgVersion) error {
 	err := appmessage.ValidateUserAgent(msgVersion.UserAgent)
 	if err != nil {
 		return err

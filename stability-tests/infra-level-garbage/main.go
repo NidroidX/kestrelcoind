@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 )
 
 const timeout = 5 * time.Second

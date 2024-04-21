@@ -5,22 +5,22 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/util/txmass"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/client"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/serialization"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/utils"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/utxo"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/mempool"
+	"github.com/NidroidX/kestrelcoind/util"
+	"github.com/NidroidX/kestrelcoind/util/txmass"
 	"github.com/pkg/errors"
 )
 
@@ -33,7 +33,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	publicKeybytes, err := libsedrawallet.PublicKeyFromPrivateKey(privateKeyBytes)
+	publicKeybytes, err := libkestrelcoinwallet.PublicKeyFromPrivateKey(privateKeyBytes)
 	if err != nil {
 		return err
 	}
@@ -64,7 +64,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	UTXOs, err := libsedrawallet.SedrawalletdUTXOsTolibsedrawalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
+	UTXOs, err := libkestrelcoinwallet.kestrelcoinwalletdUTXOsTolibkestrelcoinwalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
 	if err != nil {
 		return err
 	}
@@ -140,7 +140,7 @@ func newDummyTransaction() *externalapi.DomainTransaction {
 
 func createSplitTransactionsWithSchnorrPrivteKey(
 	params *dagconfig.Params,
-	selectedUTXOs []*libsedrawallet.UTXO,
+	selectedUTXOs []*libkestrelcoinwallet.UTXO,
 	toAddress util.Address,
 	feePerInput int) ([]*externalapi.DomainTransaction, error) {
 

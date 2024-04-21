@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-option go_package = "github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb";
-package sedrawalletd;
+option go_package = "github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb";
+package kestrelcoinwalletd;
 
-service sedrawalletd {
+service kestrelcoinwalletd {
   rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {}
   rpc GetExternalSpendableUTXOs (GetExternalSpendableUTXOsRequest) returns (GetExternalSpendableUTXOsResponse) {}
   rpc CreateUnsignedTransactions (CreateUnsignedTransactionsRequest) returns (CreateUnsignedTransactionsResponse) {}

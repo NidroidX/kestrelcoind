@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgPruningPointProof represents a sedra PruningPointProof message
+// MsgPruningPointProof represents a kestrelcoin PruningPointProof message
 type MsgPruningPointProof struct {
 	baseMessage
 

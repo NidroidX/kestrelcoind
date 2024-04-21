@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/standalone"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/standalone"
 )
 
 func connectToNode() *standalone.Routes {
 	cfg := activeConfig()
 
-	sedradConfig := config.DefaultConfig()
-	sedradConfig.NetworkFlags = cfg.NetworkFlags
+	kestrelcoindConfig := config.DefaultConfig()
+	kestrelcoindConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(sedradConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(kestrelcoindConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error creating minimalNetAdapter: %+v", err)
 		os.Exit(1)

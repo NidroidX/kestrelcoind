@@ -7,9 +7,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common/rpc"
+	"github.com/NidroidX/kestrelcoind/util/profiling"
 )
 
 var timeout = 30 * time.Second
@@ -49,7 +49,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Wait a second to let sedrad process orphans
+	// Wait a second to let kestrelcoind process orphans
 	<-time.After(1 * time.Second)
 
 	err = checkTopBlockIsTip(rpcClient, topBlock)

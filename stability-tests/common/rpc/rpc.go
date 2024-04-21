@@ -3,10 +3,10 @@ package rpc
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/rpcclient"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 )
 
 const defaultRPCServer = "localhost"

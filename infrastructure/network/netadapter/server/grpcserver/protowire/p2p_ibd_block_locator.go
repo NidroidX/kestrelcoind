@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_IbdBlockLocator) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_IbdBlockLocator) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_IbdBlockLocator is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_IbdBlockLocator is nil")
 	}
 	return x.IbdBlockLocator.toAppMessage()
 }
@@ -30,7 +30,7 @@ func (x *IbdBlockLocatorMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_IbdBlockLocator) fromAppMessage(message *appmessage.MsgIBDBlockLocator) error {
+func (x *kestrelcoindMessage_IbdBlockLocator) fromAppMessage(message *appmessage.MsgIBDBlockLocator) error {
 	x.IbdBlockLocator = &IbdBlockLocatorMessage{
 		TargetHash:         domainHashToProto(message.TargetHash),
 		BlockLocatorHashes: domainHashesToProto(message.BlockLocatorHashes),

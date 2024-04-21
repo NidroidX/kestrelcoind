@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/util"
 	"github.com/pkg/errors"
 )
 
@@ -33,12 +33,12 @@ func (s *server) changeAddress(useExisting bool, fromAddresses []*walletAddress)
 		walletAddr = &walletAddress{
 			index:         internalIndex,
 			cosignerIndex: s.keysFile.CosignerIndex,
-			keyChain:      libsedrawallet.InternalKeychain,
+			keyChain:      libkestrelcoinwallet.InternalKeychain,
 		}
 	}
 
 	path := s.walletAddressPath(walletAddr)
-	address, err := libsedrawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+	address, err := libkestrelcoinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -58,10 +58,10 @@ func (s *server) ShowAddresses(_ context.Context, request *pb.ShowAddressesReque
 		walletAddr := &walletAddress{
 			index:         i,
 			cosignerIndex: s.keysFile.CosignerIndex,
-			keyChain:      libsedrawallet.ExternalKeychain,
+			keyChain:      libkestrelcoinwallet.ExternalKeychain,
 		}
 		path := s.walletAddressPath(walletAddr)
-		address, err := libsedrawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+		address, err := libkestrelcoinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 		if err != nil {
 			return nil, err
 		}
@@ -92,10 +92,10 @@ func (s *server) NewAddress(_ context.Context, request *pb.NewAddressRequest) (*
 	walletAddr := &walletAddress{
 		index:         s.keysFile.LastUsedExternalIndex(),
 		cosignerIndex: s.keysFile.CosignerIndex,
-		keyChain:      libsedrawallet.ExternalKeychain,
+		keyChain:      libkestrelcoinwallet.ExternalKeychain,
 	}
 	path := s.walletAddressPath(walletAddr)
-	address, err := libsedrawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+	address, err := libkestrelcoinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 	if err != nil {
 		return nil, err
 	}
@@ -105,7 +105,7 @@ func (s *server) NewAddress(_ context.Context, request *pb.NewAddressRequest) (*
 
 func (s *server) walletAddressString(wAddr *walletAddress) (string, error) {
 	path := s.walletAddressPath(wAddr)
-	addr, err := libsedrawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
+	addr, err := libkestrelcoinwallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, path, s.keysFile.ECDSA)
 	if err != nil {
 		return "", err
 	}

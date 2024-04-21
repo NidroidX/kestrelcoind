@@ -1,10 +1,10 @@
-package libsedrawallet
+package libkestrelcoinwallet
 
 import (
 	"fmt"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/bip32"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 	"github.com/pkg/errors"
 	"github.com/tyler-smith/go-bip39"
 )
@@ -69,13 +69,13 @@ func extendedKeyFromMnemonicAndPath(mnemonic string, path string, params *dagcon
 func versionFromParams(params *dagconfig.Params) ([4]byte, error) {
 	switch params.Name {
 	case dagconfig.MainnetParams.Name:
-		return bip32.SedraMainnetPrivate, nil
+		return bip32.kestrelcoinMainnetPrivate, nil
 	case dagconfig.TestnetParams.Name:
-		return bip32.SedraTestnetPrivate, nil
+		return bip32.kestrelcoinTestnetPrivate, nil
 	case dagconfig.DevnetParams.Name:
-		return bip32.SedraDevnetPrivate, nil
+		return bip32.kestrelcoinDevnetPrivate, nil
 	case dagconfig.SimnetParams.Name:
-		return bip32.SedraSimnetPrivate, nil
+		return bip32.kestrelcoinSimnetPrivate, nil
 	}
 
 	return [4]byte{}, errors.Errorf("unknown network %s", params.Name)

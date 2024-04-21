@@ -4,8 +4,8 @@ import (
 	"path/filepath"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/stability-tests/common"
+	"github.com/NidroidX/kestrelcoind/infrastructure/config"
+	"github.com/NidroidX/kestrelcoind/stability-tests/common"
 )
 
 const (

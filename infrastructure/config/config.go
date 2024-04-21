@@ -18,21 +18,21 @@ import (
 
 	"github.com/btcsuite/go-socks/socks"
 	"github.com/jessevdk/go-flags"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/util/network"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/util"
+	"github.com/NidroidX/kestrelcoind/util/network"
+	"github.com/NidroidX/kestrelcoind/version"
 	"github.com/pkg/errors"
 )
 
 const (
-	defaultConfigFilename      = "sedrad.conf"
+	defaultConfigFilename      = "kestrelcoind.conf"
 	defaultLogLevel            = "info"
 	defaultLogDirname          = "logs"
-	defaultLogFilename         = "sedrad.log"
-	defaultErrLogFilename      = "sedrad_err.log"
+	defaultLogFilename         = "kestrelcoind.log"
+	defaultErrLogFilename      = "kestrelcoind_err.log"
 	defaultTargetOutboundPeers = 8
 	defaultMaxInboundPeers     = 117
 	defaultBanDuration         = time.Hour * 24
@@ -46,19 +46,19 @@ const (
 	defaultBlockMaxMass          = 10_000_000
 	blockMaxMassMin              = 1000
 	blockMaxMassMax              = 10_000_000
-	defaultMinRelayTxFee         = 1e-5 // 1 seep per byte
+	defaultMinRelayTxFee         = 1e-5 // 1 Sium per byte
 	defaultMaxOrphanTransactions = 100
 	//DefaultMaxOrphanTxSize is the default maximum size for an orphan transaction
 	DefaultMaxOrphanTxSize  = 100_000
 	defaultSigCacheMaxSize  = 100_000
-	sampleConfigFilename    = "sample-sedrad.conf"
+	sampleConfigFilename    = "sample-kestrelcoind.conf"
 	defaultMaxUTXOCacheSize = 5_000_000_000
 	defaultProtocolVersion  = 5
 )
 
 var (
-	// DefaultAppDir is the default home directory for sedrad.
-	DefaultAppDir = util.AppDir("sedrad", false)
+	// DefaultAppDir is the default home directory for kestrelcoind.
+	DefaultAppDir = util.AppDir("kestrelcoind", false)
 
 	defaultConfigFile  = filepath.Join(DefaultAppDir, defaultConfigFilename)
 	defaultDataDir     = filepath.Join(DefaultAppDir)
@@ -66,14 +66,14 @@ var (
 	defaultRPCCertFile = filepath.Join(DefaultAppDir, "rpc.cert")
 )
 
-//go:embed sample-sedrad.conf
+//go:embed sample-kestrelcoind.conf
 var sampleConfig string
 
 // RunServiceCommand is only set to a real function on Windows. It is used
 // to parse and execute service commands specified via the -s flag.
 var RunServiceCommand func(string) error
 
-// Flags defines the configuration options for sedrad.
+// Flags defines the configuration options for kestrelcoind.
 //
 // See loadConfig for details on the configuration load process.
 type Flags struct {
@@ -84,7 +84,7 @@ type Flags struct {
 	AddPeers                        []string      `short:"a" long:"addpeer" description:"Add a peer to connect with at startup"`
 	ConnectPeers                    []string      `long:"connect" description:"Connect only to the specified peers at startup"`
 	DisableListen                   bool          `long:"nolisten" description:"Disable listening for incoming connections -- NOTE: Listening is automatically disabled if the --connect or --proxy options are used without also specifying listen interfaces via --listen"`
-	Listeners                       []string      `long:"listen" description:"Add an interface/port to listen for connections (default all interfaces port: 22111, testnet: 22211)"`
+	Listeners                       []string      `long:"listen" description:"Add an interface/port to listen for connections (default all interfaces port: 42069, testnet: 22211)"`
 	TargetOutboundPeers             int           `long:"outpeers" description:"Target number of outbound peers"`
 	MaxInboundPeers                 int           `long:"maxinpeers" description:"Max number of inbound peers"`
 	EnableBanning                   bool          `long:"enablebanning" description:"Enable banning of misbehaving peers"`
@@ -130,7 +130,7 @@ type Flags struct {
 	ServiceOptions *ServiceOptions
 }
 
-// Config defines the configuration options for sedrad.
+// Config defines the configuration options for kestrelcoind.
 //
 // See loadConfig for details on the configuration load process.
 type Config struct {
@@ -196,7 +196,7 @@ func defaultFlags() *Flags {
 	}
 }
 
-// DefaultConfig returns the default sedrad configuration
+// DefaultConfig returns the default kestrelcoind configuration
 func DefaultConfig() *Config {
 	config := &Config{Flags: defaultFlags()}
 	config.NetworkFlags.ActiveNetParams = &dagconfig.MainnetParams
@@ -212,7 +212,7 @@ func DefaultConfig() *Config {
 //  3. Load configuration file overwriting defaults with any specified options
 //  4. Parse CLI options and overwrite/add any specified options
 //
-// The above results in sedrad functioning properly without any config settings
+// The above results in kestrelcoind functioning properly without any config settings
 // while still allowing the user to override settings with config files and
 // command line options. Command line options always take precedence.
 func LoadConfig() (*Config, error) {
@@ -575,7 +575,7 @@ func LoadConfig() (*Config, error) {
 	return cfg, nil
 }
 
-// createDefaultConfig copies the file sample-sedrad.conf to the given destination path,
+// createDefaultConfig copies the file sample-kestrelcoind.conf to the given destination path,
 // and populates it with some randomly generated RPC username and password.
 func createDefaultConfigFile(destinationPath string) error {
 	// Create the destination directory if it does not exists

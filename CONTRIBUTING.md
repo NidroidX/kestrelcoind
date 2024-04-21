@@ -1,6 +1,6 @@
 # Contributing to kastrelcoind
 
-Any contribution to sedrad is very welcome.
+Any contribution to kestrelcoind is very welcome.
 
 ## Getting started
 

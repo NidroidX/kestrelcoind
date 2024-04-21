@@ -2,27 +2,27 @@ package util_test
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/NidroidX/kestrelcoind/util/difficulty"
 	"math"
 	"math/big"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/util"
 )
 
 func ExampleAmount() {
 
 	a := util.Amount(0)
-	fmt.Println("Zero Seep:", a)
+	fmt.Println("Zero Sium:", a)
 
 	a = util.Amount(1e8)
-	fmt.Println("100,000,000 Seep:", a)
+	fmt.Println("100,000,000 Sium:", a)
 
 	a = util.Amount(1e5)
-	fmt.Println("100,000 Seep:", a)
+	fmt.Println("100,000 Sium:", a)
 	// Output:
-	// Zero Seep: 0 SDR
-	// 100,000,000 Seep: 1 SDR
-	// 100,000 Seep: 0.001 SDR
+	// Zero Sium: 0 SDR
+	// 100,000,000 Sium: 1 SDR
+	// 100,000 Sium: 0.001 SDR
 }
 
 func ExampleNewAmount() {
@@ -57,24 +57,24 @@ func ExampleNewAmount() {
 	// Output: 1 SDR
 	// 0.01234567 SDR
 	// 0 SDR
-	// invalid sedra amount
+	// invalid kestrelcoin amount
 }
 
 func ExampleAmount_unitConversions() {
-	amount := util.Amount(44433322211100)
+	amount := util.Amount(44433324206900)
 
-	fmt.Println("Seep to kSDR:", amount.Format(util.AmountKiloSDR))
-	fmt.Println("Seep to SDR:", amount)
-	fmt.Println("Seep to MilliSDR:", amount.Format(util.AmountMilliSDR))
-	fmt.Println("Seep to MicroSDR:", amount.Format(util.AmountMicroSDR))
-	fmt.Println("Seep to Seep:", amount.Format(util.AmountSeep))
+	fmt.Println("Sium to kSDR:", amount.Format(util.AmountKiloSDR))
+	fmt.Println("Sium to SDR:", amount)
+	fmt.Println("Sium to MilliSDR:", amount.Format(util.AmountMilliSDR))
+	fmt.Println("Sium to MicroSDR:", amount.Format(util.AmountMicroSDR))
+	fmt.Println("Sium to Sium:", amount.Format(util.AmountSium))
 
 	// Output:
-	// Seep to kSDR: 444.333222111 kSDR
-	// Seep to SDR: 444333.222111 SDR
-	// Seep to MilliSDR: 444333222.111 mSDR
-	// Seep to MicroSDR: 444333222111 μSDR
-	// Seep to Seep: 44433322211100 Seep
+	// Sium to kSDR: 444.333242069 kSDR
+	// Sium to SDR: 444333.242069 SDR
+	// Sium to MilliSDR: 444333222.111 mSDR
+	// Sium to MicroSDR: 444333242069 μSDR
+	// Sium to Sium: 44433324206900 Sium
 }
 
 // This example demonstrates how to convert the compact "bits" in a block header

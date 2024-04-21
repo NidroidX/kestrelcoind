@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/bip32"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/utils"
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/keys"
 )
 
 func create(conf *createConfig) error {
@@ -32,8 +32,8 @@ func create(conf *createConfig) error {
 	}
 
 	fmt.Printf("Notice the above is neither a secret key to your wallet " +
-		"(use \"sedrawallet dump-unencrypted-data\" to see a secret seed phrase) " +
-		"nor a wallet public address (use \"sedrawallet new-address\" to create and see one)\n\n")
+		"(use \"kestrelcoinwallet dump-unencrypted-data\" to see a secret seed phrase) " +
+		"nor a wallet public address (use \"kestrelcoinwallet new-address\" to create and see one)\n\n")
 
 	extendedPublicKeys := make([]string, conf.NumPrivateKeys, conf.NumPublicKeys)
 	copy(extendedPublicKeys, signerExtendedPublicKeys)
@@ -58,7 +58,7 @@ func create(conf *createConfig) error {
 	// For a read only wallet the cosigner index is 0
 	cosignerIndex := uint32(0)
 	if len(signerExtendedPublicKeys) > 0 {
-		cosignerIndex, err = libsedrawallet.MinimumCosignerIndex(signerExtendedPublicKeys, extendedPublicKeys)
+		cosignerIndex, err = libkestrelcoinwallet.MinimumCosignerIndex(signerExtendedPublicKeys, extendedPublicKeys)
 		if err != nil {
 			return err
 		}

@@ -1,7 +1,7 @@
 package netadapter
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 )
 
 var log = logger.RegisterSubSystem("NTAR")

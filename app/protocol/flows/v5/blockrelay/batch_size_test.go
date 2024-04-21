@@ -1,7 +1,7 @@
 package blockrelay
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 	"testing"
 )
 

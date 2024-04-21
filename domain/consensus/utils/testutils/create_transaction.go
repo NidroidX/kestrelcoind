@@ -1,15 +1,15 @@
 package testutils
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"
 )
 
 // CreateTransaction create a transaction that spends the first output of provided transaction.
 // Assumes that the output being spent has opTrueScript as it's scriptPublicKey
-// Creates the value of the spent output minus 1 seep
+// Creates the value of the spent output minus 1 Sium
 func CreateTransaction(txToSpend *externalapi.DomainTransaction, fee uint64) (*externalapi.DomainTransaction, error) {
 	scriptPublicKey, redeemScript := OpTrueScript()
 

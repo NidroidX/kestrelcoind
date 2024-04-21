@@ -1,8 +1,8 @@
 package rpcclient
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	routerpkg "github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 type rpcRouter struct {

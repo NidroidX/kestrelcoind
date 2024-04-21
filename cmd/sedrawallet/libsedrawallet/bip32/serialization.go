@@ -2,8 +2,8 @@ package bip32
 
 import (
 	"encoding/binary"
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32/base58"
+	"github.com/kestrelcoincoin/go-secp256k1"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/bip32/base58"
 	"github.com/pkg/errors"
 )
 

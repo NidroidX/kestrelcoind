@@ -1,16 +1,16 @@
 package v5
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/addressexchange"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/blockrelay"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/ping"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/rejects"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/transactionrelay"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flowcontext"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flows/v5/addressexchange"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flows/v5/blockrelay"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flows/v5/ping"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flows/v5/rejects"
+	"github.com/NidroidX/kestrelcoind/app/protocol/flows/v5/transactionrelay"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	routerpkg "github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
 )
 
 type protocolManager interface {

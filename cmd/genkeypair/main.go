@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
+	"github.com/NidroidX/kestrelcoind/util"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 		panic(err)
 	}
 
-	privateKey, publicKey, err := libsedrawallet.CreateKeyPair(false)
+	privateKey, publicKey, err := libkestrelcoinwallet.CreateKeyPair(false)
 	if err != nil {
 		panic(err)
 	}

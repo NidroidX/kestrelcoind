@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgIBDBlockLocatorHighestHashNotFound represents a sedra BlockLocatorHighestHashNotFound message
+// MsgIBDBlockLocatorHighestHashNotFound represents a kestrelcoin BlockLocatorHighestHashNotFound message
 type MsgIBDBlockLocatorHighestHashNotFound struct {
 	baseMessage
 }

@@ -1,7 +1,7 @@
 package ldb
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
 )
 
 var log = logger.RegisterSubSystem("KSDB")

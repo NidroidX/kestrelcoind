@@ -1,6 +1,6 @@
-# sedraminer
+# kestrelcoinminer
 
-sedraminer is a CPU-based miner for sedrad
+kestrelcoinminer is a CPU-based miner for kestrelcoind
 
 ## Requirements
 
@@ -19,11 +19,11 @@ Go 1.19 or later.
 $ go version
 ```
 
-- Run the following commands to obtain and install sedrad including all dependencies:
+- Run the following commands to obtain and install kestrelcoind including all dependencies:
 
 ```bash
-$ git clone https://github.com/sedracoin/sedrad
-$ cd sedrad/cmd/sedraminer
+$ git clone https://github.com/NidroidX/kestrelcoind
+$ cd kestrelcoind/cmd/kestrelcoinminer
 $ go install .
 ```
 
@@ -33,13 +33,13 @@ $ go install .
   
 ## Usage
 
-The full sedraminer configuration options can be seen with:
+The full kestrelcoinminer configuration options can be seen with:
 
 ```bash
-$ sedraminer --help
+$ kestrelcoinminer --help
 ```
 
 But the minimum configuration needed to run it is:
 ```bash
-$ sedraminer --miningaddr=<YOUR_MINING_ADDRESS>
+$ kestrelcoinminer --miningaddr=<YOUR_MINING_ADDRESS>
 ```

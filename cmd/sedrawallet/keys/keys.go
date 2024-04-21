@@ -12,17 +12,17 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/utils"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
+	"github.com/NidroidX/kestrelcoind/util"
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/argon2"
 	"golang.org/x/crypto/chacha20poly1305"
 )
 
 var (
-	defaultAppDir = util.AppDir("sedrawallet", false)
+	defaultAppDir = util.AppDir("kestrelcoinwallet", false)
 )
 
 // LastVersion is the most up to date file format version

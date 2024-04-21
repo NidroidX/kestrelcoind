@@ -5,13 +5,13 @@
 package addressmanager
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/NidroidX/kestrelcoind/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/util/mstime"
 	"net"
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
@@ -55,7 +55,7 @@ func netAddressKey(netAddress *appmessage.NetAddress) addressKey {
 }
 
 // AddressManager provides a concurrency safe address manager for caching potential
-// peers on the sedra network.
+// peers on the kestrelcoin network.
 type AddressManager struct {
 	store          *addressStore
 	localAddresses *localAddressManager
@@ -64,7 +64,7 @@ type AddressManager struct {
 	random         addressRandomizer
 }
 
-// New returns a new sedra address manager.
+// New returns a new kestrelcoin address manager.
 func New(cfg *Config, database database.Database) (*AddressManager, error) {
 	addressStore, err := newAddressStore(database)
 	if err != nil {

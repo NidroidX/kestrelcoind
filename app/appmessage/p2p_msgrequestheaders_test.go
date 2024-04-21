@@ -7,7 +7,7 @@ package appmessage
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 // TestRequstIBDBlocks tests the MsgRequestIBDBlocks API.

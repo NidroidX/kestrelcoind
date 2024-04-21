@@ -1,22 +1,22 @@
 package handshake
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/protocol/common"
+	peerpkg "github.com/NidroidX/kestrelcoind/app/protocol/peer"
+	"github.com/NidroidX/kestrelcoind/infrastructure/logger"
+	"github.com/NidroidX/kestrelcoind/infrastructure/network/netadapter/router"
+	"github.com/NidroidX/kestrelcoind/version"
 	"github.com/pkg/errors"
 )
 
 var (
 	// userAgentName is the user agent name and is used to help identify
-	// ourselves to other sedra peers.
-	userAgentName = "sedrad"
+	// ourselves to other kestrelcoin peers.
+	userAgentName = "kestrelcoind"
 
 	// userAgentVersion is the user agent version and is used to help
-	// identify ourselves to other sedra peers.
+	// identify ourselves to other kestrelcoin peers.
 	userAgentVersion = version.Version()
 
 	// defaultServices describes the default services that are supported by

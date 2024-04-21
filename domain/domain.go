@@ -5,15 +5,15 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/sedracoin/sedrad/domain/consensusreference"
+	"github.com/NidroidX/kestrelcoind/domain/consensusreference"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/miningmanager"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
-	"github.com/sedracoin/sedrad/domain/prefixmanager"
-	"github.com/sedracoin/sedrad/domain/prefixmanager/prefix"
-	infrastructuredatabase "github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/NidroidX/kestrelcoind/domain/consensus"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager"
+	"github.com/NidroidX/kestrelcoind/domain/miningmanager/mempool"
+	"github.com/NidroidX/kestrelcoind/domain/prefixmanager"
+	"github.com/NidroidX/kestrelcoind/domain/prefixmanager/prefix"
+	infrastructuredatabase "github.com/NidroidX/kestrelcoind/infrastructure/db/database"
 	"github.com/pkg/errors"
 )
 

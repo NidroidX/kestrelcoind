@@ -1,11 +1,11 @@
 package protowire
 
-import "github.com/sedracoin/sedrad/app/appmessage"
+import "github.com/NidroidX/kestrelcoind/app/appmessage"
 
-func (x *SedradMessage_UnexpectedPruningPoint) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_UnexpectedPruningPoint) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.MsgUnexpectedPruningPoint{}, nil
 }
 
-func (x *SedradMessage_UnexpectedPruningPoint) fromAppMessage(_ *appmessage.MsgUnexpectedPruningPoint) error {
+func (x *kestrelcoindMessage_UnexpectedPruningPoint) fromAppMessage(_ *appmessage.MsgUnexpectedPruningPoint) error {
 	return nil
 }

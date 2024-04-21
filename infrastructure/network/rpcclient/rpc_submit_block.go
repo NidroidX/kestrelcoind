@@ -1,8 +1,8 @@
 package rpcclient
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 )
 
 func (c *RPCClient) submitBlock(block *externalapi.DomainBlock, allowNonDAABlocks bool) (appmessage.RejectReason, error) {

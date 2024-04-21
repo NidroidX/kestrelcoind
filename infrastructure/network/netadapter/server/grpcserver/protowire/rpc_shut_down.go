@@ -1,27 +1,27 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_ShutDownRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_ShutDownRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.ShutDownRequestMessage{}, nil
 }
 
-func (x *SedradMessage_ShutDownRequest) fromAppMessage(_ *appmessage.ShutDownRequestMessage) error {
+func (x *kestrelcoindMessage_ShutDownRequest) fromAppMessage(_ *appmessage.ShutDownRequestMessage) error {
 	x.ShutDownRequest = &ShutDownRequestMessage{}
 	return nil
 }
 
-func (x *SedradMessage_ShutDownResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_ShutDownResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_ShutDownResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_ShutDownResponse is nil")
 	}
 	return x.ShutDownResponse.toAppMessage()
 }
 
-func (x *SedradMessage_ShutDownResponse) fromAppMessage(message *appmessage.ShutDownResponseMessage) error {
+func (x *kestrelcoindMessage_ShutDownResponse) fromAppMessage(message *appmessage.ShutDownResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

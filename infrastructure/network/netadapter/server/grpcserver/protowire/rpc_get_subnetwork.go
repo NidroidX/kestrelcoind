@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetSubnetworkRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetSubnetworkRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetSubnetworkRequest is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetSubnetworkRequest is nil")
 	}
 	return x.GetSubnetworkRequest.toAppMessage()
 }
 
-func (x *SedradMessage_GetSubnetworkRequest) fromAppMessage(message *appmessage.GetSubnetworkRequestMessage) error {
+func (x *kestrelcoindMessage_GetSubnetworkRequest) fromAppMessage(message *appmessage.GetSubnetworkRequestMessage) error {
 	x.GetSubnetworkRequest = &GetSubnetworkRequestMessage{
 		SubnetworkId: message.SubnetworkID,
 	}
@@ -28,14 +28,14 @@ func (x *GetSubnetworkRequestMessage) toAppMessage() (appmessage.Message, error)
 	}, nil
 }
 
-func (x *SedradMessage_GetSubnetworkResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetSubnetworkResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetSubnetworkResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetSubnetworkResponse is nil")
 	}
 	return x.GetSubnetworkResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetSubnetworkResponse) fromAppMessage(message *appmessage.GetSubnetworkResponseMessage) error {
+func (x *kestrelcoindMessage_GetSubnetworkResponse) fromAppMessage(message *appmessage.GetSubnetworkResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

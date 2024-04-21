@@ -1,26 +1,26 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetSelectedTipHashRequest) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetSelectedTipHashRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.GetSelectedTipHashRequestMessage{}, nil
 }
 
-func (x *SedradMessage_GetSelectedTipHashRequest) fromAppMessage(_ *appmessage.GetSelectedTipHashRequestMessage) error {
+func (x *kestrelcoindMessage_GetSelectedTipHashRequest) fromAppMessage(_ *appmessage.GetSelectedTipHashRequestMessage) error {
 	return nil
 }
 
-func (x *SedradMessage_GetSelectedTipHashResponse) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_GetSelectedTipHashResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetSelectedTipHashResponse is nil")
+		return nil, errors.Wrapf(errorNil, "kestrelcoindMessage_GetSelectedTipHashResponse is nil")
 	}
 	return x.GetSelectedTipHashResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetSelectedTipHashResponse) fromAppMessage(message *appmessage.GetSelectedTipHashResponseMessage) error {
+func (x *kestrelcoindMessage_GetSelectedTipHashResponse) fromAppMessage(message *appmessage.GetSelectedTipHashResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

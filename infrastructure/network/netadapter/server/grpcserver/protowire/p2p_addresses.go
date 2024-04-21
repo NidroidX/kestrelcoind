@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_Addresses) toAppMessage() (appmessage.Message, error) {
+func (x *kestrelcoindMessage_Addresses) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrap(errorNil, "SedradMessage_Addresses is nil")
+		return nil, errors.Wrap(errorNil, "kestrelcoindMessage_Addresses is nil")
 	}
 	addressList, err := x.Addresses.toAppMessage()
 	if err != nil {
@@ -38,7 +38,7 @@ func (x *AddressesMessage) toAppMessage() ([]*appmessage.NetAddress, error) {
 	return addressList, nil
 }
 
-func (x *SedradMessage_Addresses) fromAppMessage(msgAddresses *appmessage.MsgAddresses) error {
+func (x *kestrelcoindMessage_Addresses) fromAppMessage(msgAddresses *appmessage.MsgAddresses) error {
 	if len(msgAddresses.AddressList) > appmessage.MaxAddressesPerMsg {
 		return errors.Errorf("too many addresses for message "+
 			"[count %d, max %d]", len(msgAddresses.AddressList), appmessage.MaxAddressesPerMsg)
