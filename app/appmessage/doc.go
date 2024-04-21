@@ -1,30 +1,30 @@
 /*
-Package appmessage implements the sedra appmessage protocol.
+Package appmessage implements the kestrelcoin appmessage protocol.
 
 At a high level, this package provides support for marshalling and unmarshalling
-supported sedra messages to and from the appmessage. This package does not deal
+supported kestrelcoin messages to and from the appmessage. This package does not deal
 with the specifics of message handling such as what to do when a message is
 received. This provides the caller with a high level of flexibility.
 
-# sedra Message Overview
+# kestrelcoin Message Overview
 
-The sedra protocol consists of exchanging messages between peers. Each
+The kestrelcoin protocol consists of exchanging messages between peers. Each
 message is preceded by a header which identifies information about it such as
-which sedra network it is a part of, its type, how big it is, and a checksum
+which kestrelcoin network it is a part of, its type, how big it is, and a checksum
 to verify validity. All encoding and decoding of message headers is handled by
 this package.
 
-To accomplish this, there is a generic interface for sedra messages named
+To accomplish this, there is a generic interface for kestrelcoin messages named
 Message which allows messages of any type to be read, written, or passed around
 through channels, functions, etc. In addition, concrete implementations of most
-of the currently supported sedra messages are provided. For these supported
+of the currently supported kestrelcoin messages are provided. For these supported
 messages, all of the details of marshalling and unmarshalling to and from the
-appmessage using sedra encoding are handled so the caller doesn't have to concern
+appmessage using kestrelcoin encoding are handled so the caller doesn't have to concern
 themselves with the specifics.
 
 # Message Interaction
 
-The following provides a quick summary of how the sedra messages are intended
+The following provides a quick summary of how the kestrelcoin messages are intended
 to interact with one another. As stated above, these interactions are not
 directly handled by this package.
 
@@ -48,7 +48,7 @@ interactions in no particular order.
 # Common Parameters
 
 There are several common parameters that arise when using this package to read
-and write sedra messages. The following sections provide a quick overview of
+and write kestrelcoin messages. The following sections provide a quick overview of
 these parameters so the next sections can build on them.
 
 # Protocol Version
@@ -60,10 +60,10 @@ latest protocol version this package supports and is typically the value to use
 for all outbound connections before a potentially lower protocol version is
 negotiated.
 
-# sedra Network
+# kestrelcoin Network
 
-The sedra network is a magic number which is used to identify the start of a
-message and which sedra network the message applies to. This package provides
+The kestrelcoin network is a magic number which is used to identify the start of a
+message and which kestrelcoin network the message applies to. This package provides
 the following constants:
 
 	appmessage.Mainnet
@@ -73,8 +73,8 @@ the following constants:
 
 # Determining Message Type
 
-As discussed in the sedra message overview section, this package reads
-and writes sedra messages using a generic interface named Message. In
+As discussed in the kestrelcoin message overview section, this package reads
+and writes kestrelcoin messages using a generic interface named Message. In
 order to determine the actual concrete type of the message, use a type
 switch or type assertion. An example of a type switch follows:
 
@@ -91,33 +91,33 @@ switch or type assertion. An example of a type switch follows:
 
 # Reading Messages
 
-In order to unmarshall sedra messages from the appmessage, use the ReadMessage
+In order to unmarshall kestrelcoin messages from the appmessage, use the ReadMessage
 function. It accepts any io.Reader, but typically this will be a net.Conn to
-a remote node running a sedra peer. Example syntax is:
+a remote node running a kestrelcoin peer. Example syntax is:
 
-	// Reads and validates the next sedra message from conn using the
-	// protocol version pver and the sedra network sedraNet. The returns
+	// Reads and validates the next kestrelcoin message from conn using the
+	// protocol version pver and the kestrelcoin network sedraNet. The returns
 	// are a appmessage.Message, a []byte which contains the unmarshalled
 	// raw payload, and a possible error.
-	msg, rawPayload, err := appmessage.ReadMessage(conn, pver, sedraNet)
+	msg, rawPayload, err := appmessage.ReadMessage(conn, pver, kestrelcoinNet)
 	if err != nil {
 		// Log and handle the error
 	}
 
 # Writing Messages
 
-In order to marshall sedra messages to the appmessage, use the WriteMessage
+In order to marshall kestrelcoin messages to the appmessage, use the WriteMessage
 function. It accepts any io.Writer, but typically this will be a net.Conn to
-a remote node running a sedra peer. Example syntax to request addresses
+a remote node running a kestrelcoin peer. Example syntax to request addresses
 from a remote peer is:
 
-	// Create a new getaddr sedra message.
+	// Create a new getaddr kestrelcoin message.
 	msg := appmessage.NewMsgRequestAddresses()
 
-	// Writes a sedra message msg to conn using the protocol version
-	// pver, and the sedra network sedraNet. The return is a possible
+	// Writes a kestrelcoin message msg to conn using the protocol version
+	// pver, and the kestrelcoin network sedraNet. The return is a possible
 	// error.
-	err := appmessage.WriteMessage(conn, msg, pver, sedraNet)
+	err := appmessage.WriteMessage(conn, msg, pver, kestrelcoinNet)
 	if err != nil {
 		// Log and handle the error
 	}
