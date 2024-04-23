@@ -211,12 +211,12 @@ var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "kestrelcoin-mainnet",
 	Net:         appmessage.Mainnet,
-	RPCPort:     "22110",
+	RPCPort:     "42096",
 	DefaultPort: "42069",
 	DNSSeeds: []string{
-		"kestrelcoin-seed-1.kestrelcoincoin.com",
-		"kestrelcoin-seed-2.kestrelcoincoin.com",
-		"kestrelcoin-seed-3.kestrelcoincoin.com",
+		"kestrelcoin-seed-1.kestrelcoin.com",
+		"kestrelcoin-seed-2.kestrelcoin.com",
+		"kestrelcoin-seed-3.kestrelcoin.com",
 	},
 
 	// DAG parameters
@@ -351,8 +351,8 @@ var SimnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "kestrelcoin-simnet",
 	Net:         appmessage.Simnet,
-	RPCPort:     "22510",
-	DefaultPort: "22511",
+	RPCPort:     "42098",
+	DefaultPort: "42099",
 	DNSSeeds:    []string{}, // NOTE: There must NOT be any seeds.
 
 	// DAG parameters
@@ -412,7 +412,7 @@ var DevnetParams = Params{
 	Name:        "kestrelcoin-devnet",
 	Net:         appmessage.Devnet,
 	RPCPort:     "22610",
-	DefaultPort: "22611",
+	DefaultPort: "42022",
 	DNSSeeds:    []string{}, // NOTE: There must NOT be any seeds.
 
 	// DAG parameters

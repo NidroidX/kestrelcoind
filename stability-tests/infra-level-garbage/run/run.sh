@@ -6,7 +6,7 @@ kestrelcoinD_PID=$!
 
 sleep 1
 
-infra-level-garbage --devnet -alocalhost:22611 -m messages.dat --profile=7000
+infra-level-garbage --devnet -alocalhost:42022 -m messages.dat --profile=7000
 TEST_EXIT_CODE=$?
 
 kill $kestrelcoinD_PID

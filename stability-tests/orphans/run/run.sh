@@ -6,7 +6,7 @@ kestrelcoinD_PID=$!
 
 sleep 1
 
-orphans --simnet -alocalhost:22511 -n20 --profile=7000
+orphans --simnet -alocalhost:42099 -n20 --profile=7000
 TEST_EXIT_CODE=$?
 
 kill $kestrelcoinD_PID
