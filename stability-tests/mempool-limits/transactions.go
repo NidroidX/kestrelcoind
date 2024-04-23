@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"

@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/sedracoin/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"github.com/pkg/errors"
 
 	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"
