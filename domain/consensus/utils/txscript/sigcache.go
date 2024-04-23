@@ -5,7 +5,7 @@
 package txscript
 
 import (
-	"https://github.com/NidroidX/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 )
 
 // sigCacheEntry represents an entry in the SigCache. Entries within the

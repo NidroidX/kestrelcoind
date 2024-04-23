@@ -2,7 +2,7 @@ package bip32
 
 import (
 	"encoding/binary"
-	"https://github.com/NidroidX/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"github.com/pkg/errors"
 )
 

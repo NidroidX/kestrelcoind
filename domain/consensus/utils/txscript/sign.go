@@ -5,7 +5,7 @@
 package txscript
 
 import (
-	"https://github.com/NidroidX/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 	"github.com/pkg/errors"

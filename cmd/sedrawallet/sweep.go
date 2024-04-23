@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"https://github.com/NidroidX/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/client"
 	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/daemon/pb"
 	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet"

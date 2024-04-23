@@ -12,7 +12,7 @@ import (
 
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 
-	"https://github.com/NidroidX/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 

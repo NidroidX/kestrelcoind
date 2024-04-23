@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"https://github.com/NidroidX/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/cmd/kestrelcoinwallet/libkestrelcoinwallet/bip32"
 	"github.com/NidroidX/kestrelcoind/domain/dagconfig"
 	"github.com/NidroidX/kestrelcoind/util"

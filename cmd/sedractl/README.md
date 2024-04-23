@@ -22,7 +22,7 @@ $ go version
 - Run the following commands to obtain and install kestrelcoind including all dependencies:
 
 ```bash
-$ git clone https://github.com/NidroidX/kestrelcoind
+$ git clone github.com/NidroidX/kestrelcoind
 $ cd kestrelcoind/cmd/kestrelcoinctl
 $ go install .
 ```

@@ -6,7 +6,7 @@ package txscript
 
 import (
 	"crypto/rand"
-	"https://github.com/NidroidX/go-secp256k1"
+	"github.com/NidroidX/go-secp256k1"
 	"testing"
 )
 

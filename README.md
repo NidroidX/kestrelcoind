@@ -25,7 +25,7 @@ Note that all kestrelcoind and the miner must be running in parallel. That is, e
 
 #### Download Binaries
 
-The easiest way to use kestrelcoind is to download the binaries from [here](https://github.com/NidroidX/kestrelcoindd/releases/latest). After downloading the binaries that fit your operating system, you should extract them to some folder.
+The easiest way to use kestrelcoind is to download the binaries from [here](github.com/NidroidX/kestrelcoindd/releases/latest). After downloading the binaries that fit your operating system, you should extract them to some folder.
 
 Notice that the rest of the tutorial assumes that you installed from source, so before each command you run you should first run: 
 ```bash
@@ -51,7 +51,7 @@ $ go version
 - Run the following commands to obtain and install kestrelcoind including all dependencies:
 
 ```bash
-$ git clone https://github.com/NidroidX/kestrelcoind
+$ git clone github.com/NidroidX/kestrelcoind
 $ cd kestrelcoind
 $ go install . ./cmd/...
 ```
@@ -114,7 +114,7 @@ $ kestrelcoinminer --miningaddr kestrelcoin:<YOUR_CREATED_ADDRESS>
 
 ### GPU Miner
 
-A community developed GPU miner with CUDA support is available here: [https://github.com/elichai/kestrelcoin-miner/releases/latest.](https://https://github.com/NidroidX/kestrelcoin-miner)
+A community developed GPU miner with CUDA support is available here: [https://github.com/elichai/kestrelcoin-miner/releases/latest.](https://github.com/NidroidX/kestrelcoin-miner)
 The GPU miner now supports openCL and AMD GPUs as well.
 
 ### Mining on Additional Computers
