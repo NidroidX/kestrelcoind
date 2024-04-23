@@ -5,7 +5,7 @@
 package dagconfig
 
 import (
-	"github.com/kestrelcoincoin/go-muhash"
+	"https://github.com/NidroidX/go-muhash"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/blockheader"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"

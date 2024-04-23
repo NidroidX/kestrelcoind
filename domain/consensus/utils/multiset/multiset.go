@@ -1,7 +1,7 @@
 package multiset
 
 import (
-	"github.com/kestrelcoincoin/go-muhash"
+	"https://github.com/NidroidX/go-muhash"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/model"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"

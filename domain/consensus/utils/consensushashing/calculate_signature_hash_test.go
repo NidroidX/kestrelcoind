@@ -6,7 +6,7 @@ import (
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/subnetworks"
 	"testing"
 
-	"github.com/kestrelcoincoin/go-secp256k1"
+	"https://github.com/NidroidX/go-secp256k1"
 
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/txscript"

@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/kestrelcoincoin/go-secp256k1"
+	"https://github.com/NidroidX/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/NidroidX/kestrelcoind/stability-tests/common"
 	"github.com/NidroidX/kestrelcoind/stability-tests/common/rpc"

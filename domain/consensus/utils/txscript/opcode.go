@@ -17,7 +17,7 @@ import (
 
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/constants"
 
-	"github.com/kestrelcoincoin/go-secp256k1"
+	"https://github.com/NidroidX/go-secp256k1"
 )
 
 // An opcode defines the information related to a txscript opcode. opfunc, if

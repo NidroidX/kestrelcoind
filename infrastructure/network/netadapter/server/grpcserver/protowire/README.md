@@ -11,5 +11,5 @@ Documentation
 -------------
 
 To generate `rpc.md`:
-1. `go install -u github.com/kestrelcoincoin/protoc-gen-doc/cmd/protoc-gen-doc`
+1. `go install -u https://github.com/NidroidX/protoc-gen-doc/cmd/protoc-gen-doc`
 2. In the protowire directory: `protoc --doc_out=. --doc_opt=markdown,rpc.md rpc.proto`

@@ -114,7 +114,7 @@ $ kestrelcoinminer --miningaddr kestrelcoin:<YOUR_CREATED_ADDRESS>
 
 ### GPU Miner
 
-A community developed GPU miner with CUDA support is available here: [https://github.com/elichai/kestrelcoin-miner/releases/latest.](https://github.com/kestrelcoincoin/kestrelcoin-miner)
+A community developed GPU miner with CUDA support is available here: [https://github.com/elichai/kestrelcoin-miner/releases/latest.](https://https://github.com/NidroidX/kestrelcoin-miner)
 The GPU miner now supports openCL and AMD GPUs as well.
 
 ### Mining on Additional Computers
