@@ -1,7 +1,7 @@
 package transactionvalidator_test
 
 import (
-	"github.com/NidroidX/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/domain/consensus"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/ruleerrors"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/consensushashing"

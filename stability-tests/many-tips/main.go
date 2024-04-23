@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/NidroidX/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/NidroidX/kestrelcoind/app/appmessage"
 	"github.com/NidroidX/kestrelcoind/domain/consensus/utils/mining"
 	"github.com/NidroidX/kestrelcoind/util"
